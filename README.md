@@ -5,4 +5,4 @@ This is  static web app for Ops Manager demo. This is actually fake one, so you 
 Just
 `$ git clone https://github.com/Pivotal-Japan/fake-ops-manager.git`
 
-All links will be refreshed and hit "index.html"
+All links will be refreshed and hit "index.html" from your web browser.
