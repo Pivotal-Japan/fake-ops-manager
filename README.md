@@ -1,5 +1,5 @@
 # fake-ops-manager
-This is  static web app for Ops Manager demo. This is actually fake one, so you cannot save and apply change etc.. but you can show functions of Ops Manager.
+This is  static web app for Ops Manager demo. This is actually fake one, so you cannot save and apply change etc.. but you can show functions and look'n'feel of Ops Manager.
 
 ## How to use
 Just
