@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="hZXVw7FQskiLbglMZHsLJ06SkDjbg5ytRgkBz8+RiZZ8OZYeoKcb9zu909R2sCM2/vMye8/Wb4IvJqNwxvhA0Q==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_030.css" type="text/css" rel="stylesheet">
+</head>
+<body class="forms-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Pivotal Elastic Runtime</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_002.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="statuses.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials_001.html" indepth="true">Credentials</a>
+</li>
+<li>
+<a id="show-logs-action" href="jobs_logs.html" indepth="true">Logs</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-cf-azs-and-network-assignment-action" href="edit_002.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-domains-action" href="edit_017.html" indepth="true"><i class="fa fa-check-circle"></i>
+Domains
+</a></li>
+<li class="status">
+<a id="show-networking-action" href="edit_018.html" indepth="true"><i class="fa fa-check-circle"></i>
+Networking
+</a></li>
+<li class="status">
+<a id="show-app_containers-action" href="edit_019.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Containers
+</a></li>
+<li class="status">
+<a id="show-application_dev_controls-action" href="edit_020.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Developer Controls
+</a></li>
+<li class="status">
+<a id="show-application_security_groups-action" href="edit_021.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Security Groups
+</a></li>
+<li class="status">
+<a id="show-uaa-action" href="edit_022.html" indepth="true"><i class="fa fa-check-circle"></i>
+Authentication and Enterprise SSO
+</a></li>
+<li class="status">
+<a id="show-system_database-action" href="edit_023.html" indepth="true"><i class="fa fa-check-circle"></i>
+Databases
+</a></li>
+<li class="status">
+<a id="show-mysql_config-action" href="edit_024.html" indepth="true"><i class="fa fa-check-circle"></i>
+Internal MySQL
+</a></li>
+<li class="status">
+<a id="show-system_blobstore-action" href="edit_025.html" indepth="true"><i class="fa fa-check-circle"></i>
+File Storage
+</a></li>
+<li class="status">
+<a id="show-syslog_aggregator-action" href="edit_026.html" indepth="true"><i class="fa fa-check-circle"></i>
+System Logging
+</a></li>
+<li class="status">
+<a id="show-generic_white_label_config-action" href="edit_027.html" indepth="true"><i class="fa fa-check-circle"></i>
+Custom Branding
+</a></li>
+<li class="status">
+<a id="show-apps_manager_config-action" href="edit_028.html" indepth="true"><i class="fa fa-check-circle"></i>
+Apps Manager
+</a></li>
+<li class="status">
+<a id="show-smtp_config-action" href="edit_029.html" indepth="true"><i class="fa fa-check-circle"></i>
+Email Notifications
+</a></li>
+<li class="active status">
+<a id="show-cloud_controller-action" href="edit_030.html" indepth="true"><i class="fa fa-check-circle"></i>
+Restore CCDB Encryption Key
+</a></li>
+<li class="status">
+<a id="show-smoke_tests-action" href="edit_031.html" indepth="true"><i class="fa fa-check-circle"></i>
+Smoke Tests
+</a></li>
+<li class="status">
+<a id="show-experimental_features-action" href="edit_032.html" indepth="true"><i class="fa fa-check-circle"></i>
+Advanced Features
+</a></li>
+<li class="status">
+<a id="show-product-errands-action" href="edit_033.html" indepth="true"><i class="fa fa-check-circle"></i>
+Errands
+</a></li>
+<li class="status">
+<a id="show-cf-resource-sizes-action" href="edit_034.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+<li class="status">
+<a id="show-cf-stemcell-assignment-action" href="edit_035.html" indepth="true"><i class="fa fa-check-circle"></i>
+Stemcell
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="new_tempest_form_renderers_form" id="new_tempest_form_renderers_form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/products/cf-236816a17dff00ecc296/forms/cloud_controller" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="hZXVw7FQskiLbglMZHsLJ06SkDjbg5ytRgkBz8+RiZZ8OZYeoKcb9zu909R2sCM2/vMye8/Wb4IvJqNwxvhA0Q==" type="hidden"><h2 class="content-title">You must enter your original database encryption key here once you have deployed Elastic Runtime for the first time. Anytime thereafter your encryption key will remain the same, if you specify the same key here. This is important for backup and restore of data as well as upgrades.</h2>
+
+<div class="control-group reverse-hereditary-focus secret">
+<label class="control-label">
+Cloud Controller DB Encryption Key
+</label>
+<div class="controls">
+<input autocomplete="off" data-masked-field-with-change-link="false" data-product-credential="true" name="cloud_controller[.cloud_controller.encrypt_key][secret]" placeholder="Secret" value="" type="password">
+</div>
+<div class="hint">Leave blank unless restoring a Cloud Controller Database exported from a previous installation.</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+
+</div>
+</div>
+</form>
+<form class="modal fade" style="display: none;" id="rsa-certificate-form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/rsa_certificates" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden"><div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<i class="fa fa-times-circle"></i>
+</button>
+<h2>
+<i class="fa fa-check"></i>
+Generate RSA Certificate
+</h2>
+</div>
+
+<div class="modal-body">
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label">Example: *.app.domain.com, *.system.domain.com, my.webapp.com, *.domain.com</label>
+<div class="controls">
+<input name="rsa_certificate[domains]" id="rsa_certificate_domains" autocomplete="off" value="" type="text">
+
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn-tertiary btn" data-dismiss="modal">Cancel</button>
+<button class="btn btn-primary" id="save-rsa-certificate-action" type="submit">
+Generate
+</button>
+
+
+</div>
+</div>
+</div>
+</form>
+
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="LbjDVwHt4fvpAV6tiJ0DE7O/9Jxbd+pTUz9Cx21Y70jUFICKEBpIRFnShDWaVisCA95W308iGXw6EOB4ZDEmDw==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_032.css" type="text/css" rel="stylesheet">
+</head>
+<body class="forms-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Pivotal Elastic Runtime</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_002.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="statuses.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials_001.html" indepth="true">Credentials</a>
+</li>
+<li>
+<a id="show-logs-action" href="jobs_logs.html" indepth="true">Logs</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-cf-azs-and-network-assignment-action" href="edit_002.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-domains-action" href="edit_017.html" indepth="true"><i class="fa fa-check-circle"></i>
+Domains
+</a></li>
+<li class="status">
+<a id="show-networking-action" href="edit_018.html" indepth="true"><i class="fa fa-check-circle"></i>
+Networking
+</a></li>
+<li class="status">
+<a id="show-app_containers-action" href="edit_019.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Containers
+</a></li>
+<li class="status">
+<a id="show-application_dev_controls-action" href="edit_020.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Developer Controls
+</a></li>
+<li class="status">
+<a id="show-application_security_groups-action" href="edit_021.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Security Groups
+</a></li>
+<li class="status">
+<a id="show-uaa-action" href="edit_022.html" indepth="true"><i class="fa fa-check-circle"></i>
+Authentication and Enterprise SSO
+</a></li>
+<li class="status">
+<a id="show-system_database-action" href="edit_023.html" indepth="true"><i class="fa fa-check-circle"></i>
+Databases
+</a></li>
+<li class="status">
+<a id="show-mysql_config-action" href="edit_024.html" indepth="true"><i class="fa fa-check-circle"></i>
+Internal MySQL
+</a></li>
+<li class="status">
+<a id="show-system_blobstore-action" href="edit_025.html" indepth="true"><i class="fa fa-check-circle"></i>
+File Storage
+</a></li>
+<li class="status">
+<a id="show-syslog_aggregator-action" href="edit_026.html" indepth="true"><i class="fa fa-check-circle"></i>
+System Logging
+</a></li>
+<li class="status">
+<a id="show-generic_white_label_config-action" href="edit_027.html" indepth="true"><i class="fa fa-check-circle"></i>
+Custom Branding
+</a></li>
+<li class="status">
+<a id="show-apps_manager_config-action" href="edit_028.html" indepth="true"><i class="fa fa-check-circle"></i>
+Apps Manager
+</a></li>
+<li class="status">
+<a id="show-smtp_config-action" href="edit_029.html" indepth="true"><i class="fa fa-check-circle"></i>
+Email Notifications
+</a></li>
+<li class="status">
+<a id="show-cloud_controller-action" href="edit_030.html" indepth="true"><i class="fa fa-check-circle"></i>
+Restore CCDB Encryption Key
+</a></li>
+<li class="status">
+<a id="show-smoke_tests-action" href="edit_031.html" indepth="true"><i class="fa fa-check-circle"></i>
+Smoke Tests
+</a></li>
+<li class="active status">
+<a id="show-experimental_features-action" href="edit_032.html" indepth="true"><i class="fa fa-check-circle"></i>
+Advanced Features
+</a></li>
+<li class="status">
+<a id="show-product-errands-action" href="edit_033.html" indepth="true"><i class="fa fa-check-circle"></i>
+Errands
+</a></li>
+<li class="status">
+<a id="show-cf-resource-sizes-action" href="edit_034.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+<li class="status">
+<a id="show-cf-stemcell-assignment-action" href="edit_035.html" indepth="true"><i class="fa fa-check-circle"></i>
+Stemcell
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="new_tempest_form_renderers_form" id="new_tempest_form_renderers_form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/products/cf-236816a17dff00ecc296/forms/experimental_features" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="LbjDVwHt4fvpAV6tiJ0DE7O/9Jxbd+pTUz9Cx21Y70jUFICKEBpIRFnShDWaVisCA95W308iGXw6EOB4ZDEmDw==" type="hidden"><h2 class="content-title">These are several features that may require a greater understanding of Cloud Foundry system components and their more recently introduced capabilities.</h2>
+
+<div class="markdown">
+<h2>You can specify how much memory or disk you want to set as the Diego Cells' available capacity. You can overcommit these resources with values that exceed the Diego Cell VM sizes configured in the Resource Config section.</h2>
+
+</div>
+
+<div class="control-group integer reverse-hereditary-focus">
+<label class="control-label">
+Cell Memory Capacity (MB)
+<span class="integer-constraints">
+min: 1
+</span>
+</label>
+<div class="controls">
+<input id="__diego_cell__executor_memory_capacity_75a7c782-e754-4588-95f0-63aee6f7300a" name="experimental_features[.diego_cell.executor_memory_capacity]" autocomplete="off" value="" type="text">
+</div>
+</div>
+
+<div class="control-group integer reverse-hereditary-focus">
+<label class="control-label">
+Cell Disk Capacity (MB)
+<span class="integer-constraints">
+min: 1
+</span>
+</label>
+<div class="controls">
+<input id="__diego_cell__executor_disk_capacity_8e3ea483-2dde-429f-80d4-3a49f0114cc3" name="experimental_features[.diego_cell.executor_disk_capacity]" autocomplete="off" value="" type="text">
+</div>
+</div>
+
+<div class="control-group required reverse-hereditary-focus string_list">
+<label class="control-label">
+Whitelist for non-RFC-1918 Private Networks
+</label>
+<div class="controls">
+<input id="__nfs_server__blobstore_internal_access_rules_ed62637f-7715-4b45-b722-efdddc9c5389" name="experimental_features[.nfs_server.blobstore_internal_access_rules]" placeholder="e.g.: allow 172.99.0.0/24;,allow 172.55.0.0/24;" value="allow 10.0.0.0/8;,allow 172.16.0.0/12;,allow 192.168.0.0/16;" autocomplete="off" type="text">
+</div>
+<div class="hint">If your Elastic Runtime deployment is using a private network that is not RFC 1918 (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), then you must type in "allow &lt;your-network&gt;;" here. It is important to include the word "allow" and the semi-colon at the end. Multiple rules should be separated by a comma. For example, "allow 172.99.0.0/24;,allow 172.55.0.0/24;"</div>
+</div>
+
+<div class="control-group integer reverse-hereditary-focus">
+<label class="control-label">
+CF CLI Connection Timeout
+</label>
+<div class="controls">
+<input id="__properties__cf_dial_timeout_in_seconds_164e8d76-f5d7-46e5-9030-f8d83521e4c3" name="experimental_features[.properties.cf_dial_timeout_in_seconds]" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">Max wait time to establish a connection, including name resolution, in seconds.</div>
+</div>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>BETA: Enabling the Container-to-Container network will allow policy-driven, direct communication between containers on an overlay network occupying the 10.255.0.0/16 range.</label>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="experimental_features[.properties.container_networking][value]" id="option_enable_9496bf84-116f-4cb6-b090-86f1df4ad587" value="enable" class="accordion-group-radio" checked="checked" type="radio">
+Enable
+</label>
+<div class="accordion-group-section control-group" data-accordion-target-of-id="option_enable_9496bf84-116f-4cb6-b090-86f1df4ad587" data-fields-enabled-by="option_enable_9496bf84-116f-4cb6-b090-86f1df4ad587" style="display: block;">
+<div class="control-group reverse-hereditary-focus string">
+<label class="control-label">
+Network CIDR
+</label>
+<div class="controls">
+<input id="__properties__container_networking__enable__network_cidr_71668e50-f017-4d85-83ed-ddd5da10f5f3" name="experimental_features[.properties.container_networking][enable][.properties.container_networking.enable.network_cidr]" placeholder="10.255.0.0/16" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">Defines the range of the overlay network. The CIDR must specify a RFC 1918 range. Defaults to 10.255.0.0/16.</div>
+</div>
+
+
+<div class="control-group integer reverse-hereditary-focus">
+<label class="control-label">
+Network Maximum Transmission Unit (MTU) (in bytes)
+</label>
+<div class="controls">
+<input id="__properties__container_networking__enable__mtu_5238878b-161c-4e67-a38c-3fe805ad8a80" name="experimental_features[.properties.container_networking][enable][.properties.container_networking.enable.mtu]" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">Sets the MTU for the container networking driver. Leaving this unset will use the driver default value.</div>
+</div>
+
+
+</div>
+<label>
+<input name="experimental_features[.properties.container_networking][value]" id="option_disable_fcd990d3-db51-4a30-a900-ddb95e4e91ac" value="disable" class="accordion-group-radio" type="radio">
+Disable
+</label>
+</div>
+</div>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>BETA: Enabling CF API Rate Limiting will prevent API consumers from overwhelming the platform API servers. Limits are imposed on a per-user or per-client basis and reset on an hourly interval.</label>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="experimental_features[.properties.cc_api_rate_limit][value]" id="option_enable_b3860395-672e-4c80-abe2-3a244c0f131d" value="enable" class="accordion-group-radio" type="radio">
+Enable
+</label>
+<div class="accordion-group-section control-group hidden disabled" data-accordion-target-of-id="option_enable_b3860395-672e-4c80-abe2-3a244c0f131d" data-fields-enabled-by="option_enable_b3860395-672e-4c80-abe2-3a244c0f131d" style="display: none;">
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+General Limit
+</label>
+<div class="controls">
+<input id="__properties__cc_api_rate_limit__enable__general_limit_b0554cd2-26fa-4699-93cb-fa0deb44037f" name="experimental_features[.properties.cc_api_rate_limit][enable][.properties.cc_api_rate_limit.enable.general_limit]" value="2000" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">The number of requests a user or client is allowed to make for all endpoints that do not have a custom limit over an hour interval.</div>
+</div>
+
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Unauthenticated Limit
+</label>
+<div class="controls">
+<input id="__properties__cc_api_rate_limit__enable__unauthenticated_limit_a1aee499-3dd6-4620-b9cd-12df5d478818" name="experimental_features[.properties.cc_api_rate_limit][enable][.properties.cc_api_rate_limit.enable.unauthenticated_limit]" value="100" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">The number of requests an unauthenticated client is allowed to make over an hour interval.</div>
+</div>
+
+
+</div>
+<label>
+<input name="experimental_features[.properties.cc_api_rate_limit][value]" id="option_disable_f1ac3636-d162-4d78-9b9c-cbb273344f72" value="disable" class="accordion-group-radio" checked="checked" type="radio">
+Disable
+</label>
+</div>
+</div>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>BETA: Enabling NFSv3 volume services will allow application developers to bind existing NFS volumes to their applications for shared file access.</label>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="experimental_features[.properties.nfs_volume_driver][value]" id="option_enable_73505163-44ed-4e29-877d-96f1d8475b11" value="enable" class="accordion-group-radio" checked="checked" type="radio">
+Enable
+</label>
+<label>
+<input name="experimental_features[.properties.nfs_volume_driver][value]" id="option_disable_2ccc285c-7c09-4af9-824b-1281da7eee26" value="disable" class="accordion-group-radio" type="radio">
+Disable
+</label>
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+
+</div>
+</div>
+</form>
+<form class="modal fade" style="display: none;" id="rsa-certificate-form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/rsa_certificates" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden"><div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<i class="fa fa-times-circle"></i>
+</button>
+<h2>
+<i class="fa fa-check"></i>
+Generate RSA Certificate
+</h2>
+</div>
+
+<div class="modal-body">
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label">Example: *.app.domain.com, *.system.domain.com, my.webapp.com, *.domain.com</label>
+<div class="controls">
+<input name="rsa_certificate[domains]" id="rsa_certificate_domains" autocomplete="off" value="" type="text">
+
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn-tertiary btn" data-dismiss="modal">Cancel</button>
+<button class="btn btn-primary" id="save-rsa-certificate-action" type="submit">
+Generate
+</button>
+
+
+</div>
+</div>
+</div>
+</form>
+
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

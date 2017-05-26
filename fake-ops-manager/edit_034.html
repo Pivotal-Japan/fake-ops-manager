@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="kemEX2MhWMulebHYyyQBNbjAIkxTAHXB30tznHF4+RNoRceCctbxdBWqa0DZ7ykkCKGAD0dVhu62ZNEjeBEwVA==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_034.css" type="text/css" rel="stylesheet">
+</head>
+<body class="resources-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Pivotal Elastic Runtime</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_002.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="statuses.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials_001.html" indepth="true">Credentials</a>
+</li>
+<li>
+<a id="show-logs-action" href="jobs_logs.html" indepth="true">Logs</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-cf-azs-and-network-assignment-action" href="edit_002.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-domains-action" href="edit_017.html" indepth="true"><i class="fa fa-check-circle"></i>
+Domains
+</a></li>
+<li class="status">
+<a id="show-networking-action" href="edit_018.html" indepth="true"><i class="fa fa-check-circle"></i>
+Networking
+</a></li>
+<li class="status">
+<a id="show-app_containers-action" href="edit_019.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Containers
+</a></li>
+<li class="status">
+<a id="show-application_dev_controls-action" href="edit_020.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Developer Controls
+</a></li>
+<li class="status">
+<a id="show-application_security_groups-action" href="edit_021.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Security Groups
+</a></li>
+<li class="status">
+<a id="show-uaa-action" href="edit_022.html" indepth="true"><i class="fa fa-check-circle"></i>
+Authentication and Enterprise SSO
+</a></li>
+<li class="status">
+<a id="show-system_database-action" href="edit_023.html" indepth="true"><i class="fa fa-check-circle"></i>
+Databases
+</a></li>
+<li class="status">
+<a id="show-mysql_config-action" href="edit_024.html" indepth="true"><i class="fa fa-check-circle"></i>
+Internal MySQL
+</a></li>
+<li class="status">
+<a id="show-system_blobstore-action" href="edit_025.html" indepth="true"><i class="fa fa-check-circle"></i>
+File Storage
+</a></li>
+<li class="status">
+<a id="show-syslog_aggregator-action" href="edit_026.html" indepth="true"><i class="fa fa-check-circle"></i>
+System Logging
+</a></li>
+<li class="status">
+<a id="show-generic_white_label_config-action" href="edit_027.html" indepth="true"><i class="fa fa-check-circle"></i>
+Custom Branding
+</a></li>
+<li class="status">
+<a id="show-apps_manager_config-action" href="edit_028.html" indepth="true"><i class="fa fa-check-circle"></i>
+Apps Manager
+</a></li>
+<li class="status">
+<a id="show-smtp_config-action" href="edit_029.html" indepth="true"><i class="fa fa-check-circle"></i>
+Email Notifications
+</a></li>
+<li class="status">
+<a id="show-cloud_controller-action" href="edit_030.html" indepth="true"><i class="fa fa-check-circle"></i>
+Restore CCDB Encryption Key
+</a></li>
+<li class="status">
+<a id="show-smoke_tests-action" href="edit_031.html" indepth="true"><i class="fa fa-check-circle"></i>
+Smoke Tests
+</a></li>
+<li class="status">
+<a id="show-experimental_features-action" href="edit_032.html" indepth="true"><i class="fa fa-check-circle"></i>
+Advanced Features
+</a></li>
+<li class="status">
+<a id="show-product-errands-action" href="edit_033.html" indepth="true"><i class="fa fa-check-circle"></i>
+Errands
+</a></li>
+<li class="active status">
+<a id="show-cf-resource-sizes-action" href="edit_034.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+<li class="status">
+<a id="show-cf-stemcell-assignment-action" href="edit_035.html" indepth="true"><i class="fa fa-check-circle"></i>
+Stemcell
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="new_product_resources_presenter" id="new_product_resources_presenter" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/products/cf-236816a17dff00ecc296/resources" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="kemEX2MhWMulebHYyyQBNbjAIkxTAHXB30tznHF4+RNoRceCctbxdBWqa0DZ7ykkCKGAD0dVhu62ZNEjeBEwVA==" type="hidden"><h2 class="content-title">Resource Config</h2>
+<table class="table spreadsheet product-resources">
+<thead>
+<tr>
+<th class="job-col">Job</th>
+<th class="instances-col">Instances</th>
+<th class="persistent-disk-col">Persistent Disk Type</th>
+<th class="instance-type-col">VM type</th>
+<th class="elb-names-col">Load Balancers</th>
+<th class="floating-ips-col">Floating IPs</th>
+<th class="internet-connected-col">Internet Connected</th>
+</tr>
+</thead><tbody>
+<tr>
+<td class="row-title" id="consul_server-label">Consul</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[consul_server][instances]" id="product_resources_form_consul_server_instances"><option value="">Automatic: 1</option>
+<option value="1">1</option>
+<option value="3">3</option>
+<option value="5">5</option>
+<option value="7">7</option>
+<option value="9">9</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[consul_server][disk_type_id]" id="product_resources_form_consul_server_disk_type_id"><option value="">Automatic: 1 GB</option>
+<option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[consul_server][vm_type_id]" id="product_resources_form_consul_server_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[consul_server][elb_names]" id="product_resources_form_consul_server_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[consul_server][floating_ips]" id="product_resources_form_consul_server_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[consul_server][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[consul_server][internet_connected]" id="product_resources_form_consul_server_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="nats-label">NATS</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[nats][instances]" id="product_resources_form_nats_instances"><option value="">Automatic: 1</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[nats][vm_type_id]" id="product_resources_form_nats_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[nats][elb_names]" id="product_resources_form_nats_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[nats][floating_ips]" id="product_resources_form_nats_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[nats][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[nats][internet_connected]" id="product_resources_form_nats_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="etcd_tls_server-label">etcd Server</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[etcd_tls_server][instances]" id="product_resources_form_etcd_tls_server_instances"><option value="">Automatic: 1</option>
+<option value="1">1</option>
+<option value="3">3</option>
+<option value="5">5</option>
+<option value="7">7</option>
+<option value="9">9</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[etcd_tls_server][disk_type_id]" id="product_resources_form_etcd_tls_server_disk_type_id"><option value="">Automatic: 1 GB</option>
+<option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[etcd_tls_server][vm_type_id]" id="product_resources_form_etcd_tls_server_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[etcd_tls_server][elb_names]" id="product_resources_form_etcd_tls_server_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[etcd_tls_server][floating_ips]" id="product_resources_form_etcd_tls_server_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[etcd_tls_server][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[etcd_tls_server][internet_connected]" id="product_resources_form_etcd_tls_server_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="nfs_server-label">File Storage</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[nfs_server][instances]" id="product_resources_form_nfs_server_instances"><option value="">Automatic: 1</option>
+<option selected="selected" value="0">0</option>
+<option value="1">1</option></select>
+</td>
+<td class="disk-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[nfs_server][disk_type_id]" id="product_resources_form_nfs_server_disk_type_id"><option value="">Automatic: 100 GB</option>
+<option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[nfs_server][vm_type_id]" id="product_resources_form_nfs_server_vm_type_id"><option value="">Automatic: Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[nfs_server][elb_names]" id="product_resources_form_nfs_server_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[nfs_server][floating_ips]" id="product_resources_form_nfs_server_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[nfs_server][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[nfs_server][internet_connected]" id="product_resources_form_nfs_server_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="mysql_proxy-label">MySQL Proxy</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[mysql_proxy][instances]" id="product_resources_form_mysql_proxy_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[mysql_proxy][vm_type_id]" id="product_resources_form_mysql_proxy_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[mysql_proxy][elb_names]" id="product_resources_form_mysql_proxy_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[mysql_proxy][floating_ips]" id="product_resources_form_mysql_proxy_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[mysql_proxy][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[mysql_proxy][internet_connected]" id="product_resources_form_mysql_proxy_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="mysql-label">MySQL Server</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[mysql][instances]" id="product_resources_form_mysql_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="3">3</option>
+<option value="5">5</option>
+<option value="7">7</option>
+<option value="9">9</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[mysql][disk_type_id]" id="product_resources_form_mysql_disk_type_id"><option value="">Automatic: 100 GB</option>
+<option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[mysql][vm_type_id]" id="product_resources_form_mysql_vm_type_id"><option value="">Automatic: Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[mysql][elb_names]" id="product_resources_form_mysql_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[mysql][floating_ips]" id="product_resources_form_mysql_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[mysql][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[mysql][internet_connected]" id="product_resources_form_mysql_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="backup-prepare-label">Backup Prepare Node</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[backup-prepare][instances]" id="product_resources_form_backup-prepare_instances"><option value="">Automatic: 1</option>
+<option selected="selected" value="0">0</option>
+<option value="1">1</option></select>
+</td>
+<td class="disk-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[backup-prepare][disk_type_id]" id="product_resources_form_backup-prepare_disk_type_id"><option value="">Automatic: 200 GB</option>
+<option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[backup-prepare][vm_type_id]" id="product_resources_form_backup-prepare_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[backup-prepare][elb_names]" id="product_resources_form_backup-prepare_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[backup-prepare][floating_ips]" id="product_resources_form_backup-prepare_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[backup-prepare][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[backup-prepare][internet_connected]" id="product_resources_form_backup-prepare_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="ccdb-label">Cloud Controller Database (Postgres)</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[ccdb][instances]" id="product_resources_form_ccdb_instances"><option value="">Automatic: 0</option>
+<option value="0">0</option>
+<option value="1">1</option></select>
+</td>
+<td class="disk-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[ccdb][disk_type_id]" id="product_resources_form_ccdb_disk_type_id"><option value="">Automatic: 2 GB</option>
+<option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[ccdb][vm_type_id]" id="product_resources_form_ccdb_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[ccdb][elb_names]" id="product_resources_form_ccdb_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[ccdb][floating_ips]" id="product_resources_form_ccdb_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[ccdb][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[ccdb][internet_connected]" id="product_resources_form_ccdb_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="diego_database-label">Diego BBS</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[diego_database][instances]" id="product_resources_form_diego_database_instances"><option value="">Automatic: 1</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[diego_database][vm_type_id]" id="product_resources_form_diego_database_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[diego_database][elb_names]" id="product_resources_form_diego_database_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[diego_database][floating_ips]" id="product_resources_form_diego_database_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[diego_database][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[diego_database][internet_connected]" id="product_resources_form_diego_database_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="uaadb-label">UAA Database (Postgres)</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[uaadb][instances]" id="product_resources_form_uaadb_instances"><option value="">Automatic: 0</option>
+<option value="0">0</option>
+<option value="1">1</option></select>
+</td>
+<td class="disk-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[uaadb][disk_type_id]" id="product_resources_form_uaadb_disk_type_id"><option value="">Automatic: 10 GB</option>
+<option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[uaadb][vm_type_id]" id="product_resources_form_uaadb_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[uaadb][elb_names]" id="product_resources_form_uaadb_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[uaadb][floating_ips]" id="product_resources_form_uaadb_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[uaadb][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[uaadb][internet_connected]" id="product_resources_form_uaadb_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="uaa-label">UAA</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[uaa][instances]" id="product_resources_form_uaa_instances"><option value="">Automatic: 1</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[uaa][vm_type_id]" id="product_resources_form_uaa_vm_type_id"><option value="">Automatic: Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[uaa][elb_names]" id="product_resources_form_uaa_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[uaa][floating_ips]" id="product_resources_form_uaa_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[uaa][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[uaa][internet_connected]" id="product_resources_form_uaa_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="cloud_controller-label">Cloud Controller</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[cloud_controller][instances]" id="product_resources_form_cloud_controller_instances"><option value="">Automatic: 1</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[cloud_controller][disk_type_id]" id="product_resources_form_cloud_controller_disk_type_id"><option value="">Automatic: 1 GB</option>
+<option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[cloud_controller][vm_type_id]" id="product_resources_form_cloud_controller_vm_type_id"><option value="">Automatic: Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[cloud_controller][elb_names]" id="product_resources_form_cloud_controller_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[cloud_controller][floating_ips]" id="product_resources_form_cloud_controller_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[cloud_controller][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[cloud_controller][internet_connected]" id="product_resources_form_cloud_controller_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="ha_proxy-label">HAProxy</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[ha_proxy][instances]" id="product_resources_form_ha_proxy_instances"><option value="">Automatic: 1</option>
+<option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[ha_proxy][vm_type_id]" id="product_resources_form_ha_proxy_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[ha_proxy][elb_names]" id="product_resources_form_ha_proxy_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[ha_proxy][floating_ips]" id="product_resources_form_ha_proxy_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[ha_proxy][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[ha_proxy][internet_connected]" id="product_resources_form_ha_proxy_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="router-label">Router</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[router][instances]" id="product_resources_form_router_instances"><option value="">Automatic: 1</option>
+<option selected="selected" value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[router][vm_type_id]" id="product_resources_form_router_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="pcf-lb" name="product_resources_form[router][elb_names]" id="product_resources_form_router_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[router][floating_ips]" id="product_resources_form_router_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[router][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[router][internet_connected]" id="product_resources_form_router_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="mysql_monitor-label">MySQL Monitor</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[mysql_monitor][instances]" id="product_resources_form_mysql_monitor_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[mysql_monitor][vm_type_id]" id="product_resources_form_mysql_monitor_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[mysql_monitor][elb_names]" id="product_resources_form_mysql_monitor_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[mysql_monitor][floating_ips]" id="product_resources_form_mysql_monitor_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[mysql_monitor][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[mysql_monitor][internet_connected]" id="product_resources_form_mysql_monitor_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="clock_global-label">Clock Global</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[clock_global][instances]" id="product_resources_form_clock_global_instances"><option value="">Automatic: 1</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[clock_global][vm_type_id]" id="product_resources_form_clock_global_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[clock_global][elb_names]" id="product_resources_form_clock_global_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[clock_global][floating_ips]" id="product_resources_form_clock_global_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[clock_global][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[clock_global][internet_connected]" id="product_resources_form_clock_global_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="cloud_controller_worker-label">Cloud Controller Worker</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[cloud_controller_worker][instances]" id="product_resources_form_cloud_controller_worker_instances"><option value="">Automatic: 1</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[cloud_controller_worker][vm_type_id]" id="product_resources_form_cloud_controller_worker_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[cloud_controller_worker][elb_names]" id="product_resources_form_cloud_controller_worker_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[cloud_controller_worker][floating_ips]" id="product_resources_form_cloud_controller_worker_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[cloud_controller_worker][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[cloud_controller_worker][internet_connected]" id="product_resources_form_cloud_controller_worker_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="diego_brain-label">Diego Brain</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[diego_brain][instances]" id="product_resources_form_diego_brain_instances"><option value="">Automatic: 1</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[diego_brain][disk_type_id]" id="product_resources_form_diego_brain_disk_type_id"><option value="">Automatic: 1 GB</option>
+<option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[diego_brain][vm_type_id]" id="product_resources_form_diego_brain_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[diego_brain][elb_names]" id="product_resources_form_diego_brain_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[diego_brain][floating_ips]" id="product_resources_form_diego_brain_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[diego_brain][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[diego_brain][internet_connected]" id="product_resources_form_diego_brain_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="diego_cell-label">Diego Cell</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[diego_cell][instances]" id="product_resources_form_diego_cell_instances"><option value="">Automatic: 3</option>
+<option selected="selected" value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[diego_cell][vm_type_id]" id="product_resources_form_diego_cell_vm_type_id"><option value="">Automatic: Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[diego_cell][elb_names]" id="product_resources_form_diego_cell_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[diego_cell][floating_ips]" id="product_resources_form_diego_cell_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[diego_cell][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[diego_cell][internet_connected]" id="product_resources_form_diego_cell_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="doppler-label">Doppler Server</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[doppler][instances]" id="product_resources_form_doppler_instances"><option value="">Automatic: 1</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[doppler][vm_type_id]" id="product_resources_form_doppler_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[doppler][elb_names]" id="product_resources_form_doppler_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[doppler][floating_ips]" id="product_resources_form_doppler_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[doppler][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[doppler][internet_connected]" id="product_resources_form_doppler_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="loggregator_trafficcontroller-label">Loggregator Trafficcontroller</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" name="product_resources_form[loggregator_trafficcontroller][instances]" id="product_resources_form_loggregator_trafficcontroller_instances"><option value="">Automatic: 1</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[loggregator_trafficcontroller][vm_type_id]" id="product_resources_form_loggregator_trafficcontroller_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[loggregator_trafficcontroller][elb_names]" id="product_resources_form_loggregator_trafficcontroller_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[loggregator_trafficcontroller][floating_ips]" id="product_resources_form_loggregator_trafficcontroller_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[loggregator_trafficcontroller][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[loggregator_trafficcontroller][internet_connected]" id="product_resources_form_loggregator_trafficcontroller_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="tcp_router-label">TCP Router</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[tcp_router][instances]" id="product_resources_form_tcp_router_instances"><option value="">Automatic: 1</option>
+<option selected="selected" value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[tcp_router][disk_type_id]" id="product_resources_form_tcp_router_disk_type_id"><option value="">Automatic: 1 GB</option>
+<option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[tcp_router][vm_type_id]" id="product_resources_form_tcp_router_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[tcp_router][elb_names]" id="product_resources_form_tcp_router_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[tcp_router][floating_ips]" id="product_resources_form_tcp_router_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[tcp_router][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[tcp_router][internet_connected]" id="product_resources_form_tcp_router_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="smoke-tests-label">Smoke Test Errand</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[smoke-tests][instances]" id="product_resources_form_smoke-tests_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[smoke-tests][vm_type_id]" id="product_resources_form_smoke-tests_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[smoke-tests][elb_names]" id="product_resources_form_smoke-tests_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[smoke-tests][floating_ips]" id="product_resources_form_smoke-tests_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[smoke-tests][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[smoke-tests][internet_connected]" id="product_resources_form_smoke-tests_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="push-apps-manager-label">Apps Manager Errand</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[push-apps-manager][instances]" id="product_resources_form_push-apps-manager_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[push-apps-manager][vm_type_id]" id="product_resources_form_push-apps-manager_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[push-apps-manager][elb_names]" id="product_resources_form_push-apps-manager_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[push-apps-manager][floating_ips]" id="product_resources_form_push-apps-manager_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[push-apps-manager][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[push-apps-manager][internet_connected]" id="product_resources_form_push-apps-manager_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="notifications-label">Notifications Errand</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[notifications][instances]" id="product_resources_form_notifications_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[notifications][vm_type_id]" id="product_resources_form_notifications_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[notifications][elb_names]" id="product_resources_form_notifications_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[notifications][floating_ips]" id="product_resources_form_notifications_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[notifications][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[notifications][internet_connected]" id="product_resources_form_notifications_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="notifications-ui-label">Notifications UI Errand</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[notifications-ui][instances]" id="product_resources_form_notifications-ui_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[notifications-ui][vm_type_id]" id="product_resources_form_notifications-ui_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[notifications-ui][elb_names]" id="product_resources_form_notifications-ui_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[notifications-ui][floating_ips]" id="product_resources_form_notifications-ui_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[notifications-ui][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[notifications-ui][internet_connected]" id="product_resources_form_notifications-ui_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="push-pivotal-account-label">Pivotal Account Errand</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[push-pivotal-account][instances]" id="product_resources_form_push-pivotal-account_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[push-pivotal-account][vm_type_id]" id="product_resources_form_push-pivotal-account_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[push-pivotal-account][elb_names]" id="product_resources_form_push-pivotal-account_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[push-pivotal-account][floating_ips]" id="product_resources_form_push-pivotal-account_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[push-pivotal-account][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[push-pivotal-account][internet_connected]" id="product_resources_form_push-pivotal-account_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="autoscaling-label">Autoscaling Errand</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[autoscaling][instances]" id="product_resources_form_autoscaling_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[autoscaling][vm_type_id]" id="product_resources_form_autoscaling_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[autoscaling][elb_names]" id="product_resources_form_autoscaling_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[autoscaling][floating_ips]" id="product_resources_form_autoscaling_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[autoscaling][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[autoscaling][internet_connected]" id="product_resources_form_autoscaling_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="autoscaling-register-broker-label">Autoscaling Registration Errand</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[autoscaling-register-broker][instances]" id="product_resources_form_autoscaling-register-broker_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[autoscaling-register-broker][vm_type_id]" id="product_resources_form_autoscaling-register-broker_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[autoscaling-register-broker][elb_names]" id="product_resources_form_autoscaling-register-broker_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[autoscaling-register-broker][floating_ips]" id="product_resources_form_autoscaling-register-broker_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[autoscaling-register-broker][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[autoscaling-register-broker][internet_connected]" id="product_resources_form_autoscaling-register-broker_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="nfsbrokerpush-label">NFS Broker Errand</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[nfsbrokerpush][instances]" id="product_resources_form_nfsbrokerpush_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[nfsbrokerpush][vm_type_id]" id="product_resources_form_nfsbrokerpush_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[nfsbrokerpush][elb_names]" id="product_resources_form_nfsbrokerpush_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[nfsbrokerpush][floating_ips]" id="product_resources_form_nfsbrokerpush_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[nfsbrokerpush][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[nfsbrokerpush][internet_connected]" id="product_resources_form_nfsbrokerpush_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="bootstrap-label">MySQL Bootstrap Errand</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[bootstrap][instances]" id="product_resources_form_bootstrap_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[bootstrap][vm_type_id]" id="product_resources_form_bootstrap_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[bootstrap][elb_names]" id="product_resources_form_bootstrap_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[bootstrap][floating_ips]" id="product_resources_form_bootstrap_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[bootstrap][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[bootstrap][internet_connected]" id="product_resources_form_bootstrap_internet_connected" type="checkbox">
+</td>
+</tr>
+<tr>
+<td class="row-title" id="mysql-rejoin-unsafe-label">MySQL Rejoin Unsafe Errand</td>
+<td class="instances-col">
+<select class="input-mini input-right with-custom-textbox-replacement" disabled="disabled" name="product_resources_form[mysql-rejoin-unsafe][instances]" id="product_resources_form_mysql-rejoin-unsafe_instances"><option value="">Automatic: 1</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="custom">Custom...</option></select>
+</td>
+<td class="disk-type-col contains-select no-disk">
+None
+</td>
+<td class="instance-type-col contains-select">
+<select class="input-mini input-right" name="product_resources_form[mysql-rejoin-unsafe][vm_type_id]" id="product_resources_form_mysql-rejoin-unsafe_vm_type_id"><option value="">Automatic: Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</td>
+<td class="elb-names-col contains-select">
+<input class="input-mini input-right" value="" name="product_resources_form[mysql-rejoin-unsafe][elb_names]" id="product_resources_form_mysql-rejoin-unsafe_elb_names" autocomplete="off" type="text">
+</td>
+<td class="floating-ips-col">
+<input class="input-mini input-right" name="product_resources_form[mysql-rejoin-unsafe][floating_ips]" id="product_resources_form_mysql-rejoin-unsafe_floating_ips" autocomplete="off" value="" type="text">
+</td>
+<td class="internet-connected-col">
+<input name="product_resources_form[mysql-rejoin-unsafe][internet_connected]" value="0" type="hidden"><input class="input-mini input-right" value="1" checked="checked" name="product_resources_form[mysql-rejoin-unsafe][internet_connected]" id="product_resources_form_mysql-rejoin-unsafe_internet_connected" type="checkbox">
+</td>
+</tr>
+</tbody>
+
+</table>
+<div class="control-group save-row">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+</div>
+</div>
+</form>
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

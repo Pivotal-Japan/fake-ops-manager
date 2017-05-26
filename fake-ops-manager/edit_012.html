@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="i2h/+XYcd+4Wbebn3PpYpiSI15u9+VQSNJqMs0HZaIdyxDwkZ+veUaa+PH/OMXC3lOl12Kmspz1dtS4MSLChwA==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_012.css" type="text/css" rel="stylesheet">
+</head>
+<body class="director_configurations-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Ops Manager Director</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_001.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="status.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials.html" indepth="true">Credentials</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-iaas_configuration-action" href="edit_001.html" indepth="true"><i class="fa fa-check-circle"></i>
+Azure Config
+</a></li>
+<li class="active status">
+<a id="show-director_configuration-action" href="edit_012.html" indepth="true"><i class="fa fa-check-circle"></i>
+Director Config
+</a></li>
+<li class="status">
+<a id="show-network-action" href="edit_013.html" indepth="true"><i class="fa fa-check-circle"></i>
+Create Networks
+</a></li>
+<li class="status">
+<a id="show-director-az-and-network-assignment-action" href="edit_014.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-security_tokens-action" href="edit_015.html" indepth="true"><i class="fa fa-check-circle"></i>
+Security
+</a></li>
+<li class="status">
+<a id="show-p-bosh-resource-sizes-action" href="edit_016.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="show-loading-indicator" id="new_director_configuration" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/infrastructure/director_configuration" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="i2h/+XYcd+4Wbebn3PpYpiSI15u9+VQSNJqMs0HZaIdyxDwkZ+veUaa+PH/OMXC3lOl12Kmspz1dtS4MSLChwA==" type="hidden"><h2 class="content-title">Director Config</h2>
+
+<div class="control-group required reverse-hereditary-focus network_address_list">
+<label class="control-label" for="director_configuration_ntp_servers_string">NTP Servers (comma delimited)</label>
+<div class="controls">
+<input value="ntp1.jst.mfeed.ad.jp, ntp2.jst.mfeed.ad.jp, ntp3.jst.mfeed.ad.jp" name="director_configuration[ntp_servers_string]" id="director_configuration_ntp_servers_string" autocomplete="off" type="text">
+</div>
+<div class="hint">One or more NTP server addresses for consistent and valid time stamps used in syslog, etc.</div>
+</div>
+<div class="control-group reverse-hereditary-focus ip_address">
+<label class="control-label" for="director_configuration_metrics_ip">Metrics IP Address</label>
+<div class="controls">
+<input name="director_configuration[metrics_ip]" id="director_configuration_metrics_ip" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">IP address of Pivotal Ops Metrics if installed</div>
+</div>
+<div class="control-group reverse-hereditary-focus checkbox">
+<div class="controls">
+<label class="control-label-inline" for="director_configuration_resurrector_enabled"><input name="director_configuration[resurrector_enabled]" value="0" type="hidden"><input value="1" checked="checked" name="director_configuration[resurrector_enabled]" id="director_configuration_resurrector_enabled" type="checkbox">
+Enable VM Resurrector Plugin
+</label></div>
+</div>
+<div class="control-group reverse-hereditary-focus checkbox">
+<div class="controls">
+<label class="control-label-inline" for="director_configuration_post_deploy_enabled"><input name="director_configuration[post_deploy_enabled]" value="0" type="hidden"><input value="1" name="director_configuration[post_deploy_enabled]" id="director_configuration_post_deploy_enabled" type="checkbox">
+Enable Post Deploy Scripts
+</label></div>
+</div>
+<div class="control-group reverse-hereditary-focus checkbox">
+<div class="controls input">
+<label class="control-label-inline" for="director_configuration_bosh_recreate_on_next_deploy"><input name="director_configuration[bosh_recreate_on_next_deploy]" value="0" type="hidden"><input value="1" name="director_configuration[bosh_recreate_on_next_deploy]" id="director_configuration_bosh_recreate_on_next_deploy" type="checkbox">
+Recreate all VMs
+</label></div>
+<p>This will force BOSH to recreate all VMs on the next deploy. Persistent disk will be preserved.</p>
+</div>
+<div class="control-group reverse-hereditary-focus checkbox">
+<div class="controls input">
+<label class="control-label-inline" for="director_configuration_retry_bosh_deploys"><input name="director_configuration[retry_bosh_deploys]" value="0" type="hidden"><input value="1" name="director_configuration[retry_bosh_deploys]" id="director_configuration_retry_bosh_deploys" type="checkbox">
+Enable bosh deploy retries
+</label></div>
+<p>This will attempt to re-deploy a failed deployment up to 5 times.</p>
+</div>
+<div class="control-group reverse-hereditary-focus checkbox">
+<div class="controls input">
+<label class="control-label-inline" for="director_configuration_keep_unreachable_vms"><input name="director_configuration[keep_unreachable_vms]" value="0" type="hidden"><input value="1" name="director_configuration[keep_unreachable_vms]" id="director_configuration_keep_unreachable_vms" type="checkbox">
+Keep Unreachable Director VMs
+</label></div>
+</div>
+<div class="control-group reverse-hereditary-focus checkbox">
+<div class="controls input" data-toggle-disabled-fields="">
+<label class="control-label-inline" for="pager_duty_enabled"><input name="director_configuration[hm_pager_duty_options][enabled]" value="0" type="hidden"><input id="pager_duty_enabled" value="1" name="director_configuration[hm_pager_duty_options][enabled]" type="checkbox">
+HM Pager Duty Plugin
+</label><div data-fields-enabled-by="pager_duty_enabled" class="disabled">
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_hm_pager_duty_options_service_key">Service Key</label>
+<div class="controls">
+<input name="director_configuration[hm_pager_duty_options][service_key]" id="director_configuration_hm_pager_duty_options_service_key" autocomplete="off" disabled="" value="" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string">
+<label class="control-label" for="director_configuration_hm_pager_duty_options_http_proxy">HTTP Proxy</label>
+<div class="controls">
+<input name="director_configuration[hm_pager_duty_options][http_proxy]" id="director_configuration_hm_pager_duty_options_http_proxy" autocomplete="off" disabled="" value="" type="text">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus checkbox">
+<div class="controls input" data-toggle-disabled-fields="">
+<label class="control-label-inline" for="email_enabled"><input name="director_configuration[hm_emailer_options][enabled]" value="0" type="hidden"><input id="email_enabled" value="1" checked="checked" name="director_configuration[hm_emailer_options][enabled]" type="checkbox">
+HM Email Plugin
+</label><div data-fields-enabled-by="email_enabled">
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_hm_emailer_options_host">Host</label>
+<div class="controls">
+<input value="smtp.gmail.com" name="director_configuration[hm_emailer_options][host]" id="director_configuration_hm_emailer_options_host" autocomplete="off" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_hm_emailer_options_port">Port</label>
+<div class="controls">
+<input value="587" name="director_configuration[hm_emailer_options][port]" id="director_configuration_hm_emailer_options_port" autocomplete="off" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_hm_emailer_options_domain">Domain</label>
+<div class="controls">
+<input value="cloudfoundry.example.com" name="director_configuration[hm_emailer_options][domain]" id="director_configuration_hm_emailer_options_domain" autocomplete="off" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_hm_emailer_options_from">From</label>
+<div class="controls">
+<input value="noreploy@ik.am" name="director_configuration[hm_emailer_options][from]" id="director_configuration_hm_emailer_options_from" autocomplete="off" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_hm_emailer_options_recipients_recipients_list">Recipients</label>
+<div class="controls">
+<input value="tmaki@pivotal.io" name="director_configuration[hm_emailer_options][recipients][value]" id="director_configuration_hm_emailer_options_recipients_value" autocomplete="off" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string">
+<label class="control-label" for="director_configuration_hm_emailer_options_smtp_user">Username</label>
+<div class="controls">
+<input value="alert@ik.am" name="director_configuration[hm_emailer_options][smtp_user]" id="director_configuration_hm_emailer_options_smtp_user" autocomplete="off" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string">
+<label class="control-label" for="director_configuration_hm_emailer_options_smtp_password">Password</label>
+<div class="controls">
+<input data-masked-field-with-change-link="true" data-bosh-credential="true" name="director_configuration[hm_emailer_options][smtp_password]" id="director_configuration_hm_emailer_options_smtp_password" autocomplete="off" disabled="" class="disabled" type="password">
+</div><a href="#" data-masked-input-name="director_configuration[hm_emailer_options][smtp_password]">Change</a>
+</div>
+<div class="control-group reverse-hereditary-focus checkbox">
+<div class="controls">
+<label class="control-label" for="director_configuration_hm_emailer_options_tls"><input name="director_configuration[hm_emailer_options][tls]" value="0" type="hidden"><input value="1" checked="checked" name="director_configuration[hm_emailer_options][tls]" id="director_configuration_hm_emailer_options_tls" type="checkbox">
+Enable TLS
+</label></div>
+</div>
+</div>
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus radio" id="blobstore_location">
+<label class="control-label">Blobstore Location</label>
+<div class="controls input">
+<label for="director_configuration_blobstore_type_local"><input disabled="disabled" value="local" checked="checked" name="director_configuration[blobstore_type]" id="director_configuration_blobstore_type_local" type="radio">
+Internal
+</label><label for="s3_radio_button"><input id="s3_radio_button" disabled="disabled" value="s3" name="director_configuration[blobstore_type]" type="radio">
+S3 Compatible Blobstore
+</label><div class="disabled" data-fields-enabled-by="s3_radio_button" id="s3-blobstore-options">
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_s3_blobstore_options_endpoint">S3 Endpoint</label>
+<div class="controls">
+<input disabled="disabled" name="director_configuration[s3_blobstore_options][endpoint]" id="director_configuration_s3_blobstore_options_endpoint" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">Use the S3 endpoint in which your bucket was deployed (example: http://s3.amazonaws.com/ for buckets in AWS's us-east-1)</div>
+</div>
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_s3_blobstore_options_bucket_name">Bucket Name</label>
+<div class="controls">
+<input disabled="disabled" name="director_configuration[s3_blobstore_options][bucket_name]" id="director_configuration_s3_blobstore_options_bucket_name" autocomplete="off" value="" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_s3_blobstore_options_access_key">Access Key</label>
+<div class="controls">
+<input disabled="disabled" name="director_configuration[s3_blobstore_options][access_key]" id="director_configuration_s3_blobstore_options_access_key" autocomplete="off" value="" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_s3_blobstore_options_secret_key">Secret Key</label>
+<div class="controls">
+<input data-masked-field-with-change-link="false" data-bosh-credential="true" disabled="disabled" name="director_configuration[s3_blobstore_options][secret_key]" id="director_configuration_s3_blobstore_options_secret_key" autocomplete="off" type="password">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string">
+<div class="controls input">
+<label for="director_configuration_s3_blobstore_options_signature_version_2"><input disabled="disabled" value="2" checked="checked" name="director_configuration[s3_blobstore_options][signature_version]" id="director_configuration_s3_blobstore_options_signature_version_2" type="radio">
+V2 Signature
+</label><label for="signature_version_4"><input id="signature_version_4" disabled="disabled" value="4" name="director_configuration[s3_blobstore_options][signature_version]" type="radio">
+V4 Signature
+</label><div class="control-group reverse-hereditary-focus string required" data-fields-enabled-by="signature_version_4">
+<label class="control-label" for="director_configuration_s3_blobstore_options_region">Region</label>
+<div class="controls">
+<input disabled="disabled" name="director_configuration[s3_blobstore_options][region]" id="director_configuration_s3_blobstore_options_region" autocomplete="off" value="" type="text">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus radio" id="database_location">
+<label class="control-label">Database Location</label>
+<div class="controls input">
+<label for="director_configuration_database_type_internal"><input disabled="disabled" value="internal" checked="checked" name="director_configuration[database_type]" id="director_configuration_database_type_internal" type="radio">
+Internal
+</label><label for="external_db_radio_button"><input id="external_db_radio_button" disabled="disabled" value="external" name="director_configuration[database_type]" type="radio">
+External MySQL Database
+</label><div class="disabled" data-fields-enabled-by="external_db_radio_button" id="external-database-options">
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_external_database_options_host">Host</label>
+<div class="controls">
+<input disabled="disabled" name="director_configuration[external_database_options][host]" id="director_configuration_external_database_options_host" autocomplete="off" value="" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_external_database_options_port">Port</label>
+<div class="controls">
+<input disabled="disabled" name="director_configuration[external_database_options][port]" id="director_configuration_external_database_options_port" autocomplete="off" value="" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_external_database_options_user">Username</label>
+<div class="controls">
+<input disabled="disabled" name="director_configuration[external_database_options][user]" id="director_configuration_external_database_options_user" autocomplete="off" value="" type="text">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_external_database_options_password">Password</label>
+<div class="controls">
+<input data-masked-field-with-change-link="false" data-bosh-credential="true" disabled="disabled" name="director_configuration[external_database_options][password]" id="director_configuration_external_database_options_password" autocomplete="off" type="password">
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus string required">
+<label class="control-label" for="director_configuration_external_database_options_database">Database</label>
+<div class="controls">
+<input disabled="disabled" name="director_configuration[external_database_options][database]" id="director_configuration_external_database_options_database" autocomplete="off" value="" type="text">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus">
+<label class="control-label" for="director_configuration_max_threads">Max Threads</label>
+<div class="controls">
+<input name="director_configuration[max_threads]" id="director_configuration_max_threads" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">The Max Threads Setting controls how many operations the Ops Manager Director can perform simultaneously.</div>
+</div>
+<div class="control-group reverse-hereditary-focus">
+<label class="control-label" for="director_configuration_max_threads">Director Hostname</label>
+<div class="controls">
+<input name="director_configuration[director_hostname]" id="director_configuration_director_hostname" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">The externally accessible hostname for the BOSH Director</div>
+</div>
+<div class="control-group">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+</div>
+</div>
+
+</form>
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

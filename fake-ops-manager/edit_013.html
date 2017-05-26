@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="KOfWSQLxNgdJRxBwfhbnmwkbI2+Dipe7Rykc05Srof/RS5WUEwafuPmUyuhs3c+KuXqBLJffZJQuBr5sncJouA==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_013.css" type="text/css" rel="stylesheet">
+</head>
+<body class="networks-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Ops Manager Director</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_001.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="status.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials.html" indepth="true">Credentials</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-iaas_configuration-action" href="edit_001.html" indepth="true"><i class="fa fa-check-circle"></i>
+Azure Config
+</a></li>
+<li class="status">
+<a id="show-director_configuration-action" href="edit_012.html" indepth="true"><i class="fa fa-check-circle"></i>
+Director Config
+</a></li>
+<li class="active status">
+<a id="show-network-action" href="edit_013.html" indepth="true"><i class="fa fa-check-circle"></i>
+Create Networks
+</a></li>
+<li class="status">
+<a id="show-director-az-and-network-assignment-action" href="edit_014.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-security_tokens-action" href="edit_015.html" indepth="true"><i class="fa fa-check-circle"></i>
+Security
+</a></li>
+<li class="status">
+<a id="show-p-bosh-resource-sizes-action" href="edit_016.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<h2 class="content-title">Create Networks</h2>
+<div>
+Warning: Pivotal recommends keeping the IP settings throughout the life of your installation. Ops Manager may prevent you from changing them in the future. Contact Pivotal support for help completing such a change.
+</div>
+
+
+<div class="control-group collection required">
+<form class="new_network_collection" id="new_network_collection" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/infrastructure/networks/update" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="KOfWSQLxNgdJRxBwfhbnmwkbI2+Dipe7Rykc05Srof/RS5WUEwafuPmUyuhs3c+KuXqBLJffZJQuBr5sncJouA==" type="hidden"><h3>Verification Settings</h3>
+<div class="control-group reverse-hereditary-focus checkbox" id="icmp_checks">
+<label class="control-label">
+<input name="infrastructure[icmp_checks_enabled]" value="0" type="hidden"><input value="1" name="infrastructure[icmp_checks_enabled]" id="infrastructure_icmp_checks_enabled" type="checkbox">
+Enable ICMP checks
+</label>
+</div>
+<div style="float: left;">
+<h3>Networks</h3>
+</div>
+<div style="float: right;">
+<a class="with-remote-content btn btn-mini btn-secondary with-collection" data-url="/infrastructure/networks/new" data-append-to="#networks-list" data-remote-collection-index="0" href="#">Add Network</a>
+</div>
+<div class="clearfix"></div>
+<div class="subtext">One or many IP ranges upon which your products will be deployed</div>
+<ul class="index-list nobullets zebra with-collection" id="networks-list">
+<li class="collection-item with-text-update" data-input-selector=".name" data-output-selector=".title">
+<div class="expandable">
+<div class="action-icons">
+<a>
+<i class="fa fa-trash-o with-delete-record delete-record-action"></i>
+</a>
+</div>
+<button class="btn btn-tertiary btn-small title" type="button">default</button>
+<div class="content" id="dd73fa612cf4c41cebb7">
+<input value="dd73fa612cf4c41cebb7" name="network_collection[networks_attributes][dd73fa612cf4c41cebb7][guid]" id="network_collection_networks_attributes_dd73fa612cf4c41cebb7_guid" type="hidden">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label" for="network_collection_networks_attributes_dd73fa612cf4c41cebb7_name">Name</label>
+<div class="controls">
+<input class="name" value="default" name="network_collection[networks_attributes][dd73fa612cf4c41cebb7][name]" id="network_collection_networks_attributes_dd73fa612cf4c41cebb7_name" autocomplete="off" type="text">
+</div>
+<div class="hint">A unique name for this network</div>
+</div>
+<div class="control-group reverse-hereditary-focus checkbox">
+<div class="controls">
+<label class="control-label-inline" for="network_collection_networks_attributes_dd73fa612cf4c41cebb7_service_network"><input name="network_collection[networks_attributes][dd73fa612cf4c41cebb7][service_network]" value="0" type="hidden"><input value="1" name="network_collection[networks_attributes][dd73fa612cf4c41cebb7][service_network]" id="network_collection_networks_attributes_dd73fa612cf4c41cebb7_service_network" type="checkbox">
+Service Network
+<div class="hint">Flag to identify if this network is for dynamic service service provisioning.  It cannot be used by other products in OpsManager.</div>
+</label></div>
+</div>
+<div style="float: left;">
+<label class="control-label">Subnets</label>
+</div>
+<div style="float: right;">
+</div>
+<div class="clearfix"></div>
+<ul class="index-list nobullets zebra with-collection" id="dd73fa612cf4c41cebb7-subnet-list">
+<li>
+<div class="action-icons">
+</div>
+<div class="content">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label" for="network_collection_networks_attributes_dd73fa612cf4c41cebb7_subnets_e7d269076fc11efd8fa4_iaas_identifier">Azure Network Name</label>
+<div class="controls">
+<input value="pcf-net/pcf" name="network_collection[networks_attributes][dd73fa612cf4c41cebb7][subnets][e7d269076fc11efd8fa4][iaas_identifier]" id="network_collection_networks_attributes_dd73fa612cf4c41cebb7_subnets_e7d269076fc11efd8fa4_iaas_identifier" autocomplete="off" type="text">
+</div>
+<div class="hint">Should be of the format "&lt;network-name&gt;/&lt;subnet-name&gt;" or "&lt;resource-group&gt;/&lt;network-name&gt;/&lt;subnet-name&gt;"</div>
+</div>
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label" for="network_collection_networks_attributes_dd73fa612cf4c41cebb7_subnets_e7d269076fc11efd8fa4_cidr">CIDR</label>
+<div class="controls">
+<input value="10.0.0.0/24" name="network_collection[networks_attributes][dd73fa612cf4c41cebb7][subnets][e7d269076fc11efd8fa4][cidr]" id="network_collection_networks_attributes_dd73fa612cf4c41cebb7_subnets_e7d269076fc11efd8fa4_cidr" autocomplete="off" type="text">
+</div>
+<div class="hint">A valid CIDR block in which to deploy VMs, e.g. '10.9.9.0/24'</div>
+</div>
+<div class="control-group reverse-hereditary-focus ip_ranges">
+<label class="control-label" for="network_collection_networks_attributes_dd73fa612cf4c41cebb7_subnets_e7d269076fc11efd8fa4_reserved_ip_ranges">Reserved IP Ranges</label>
+<div class="controls">
+<input value="10.0.0.1-10.0.0.9" name="network_collection[networks_attributes][dd73fa612cf4c41cebb7][subnets][e7d269076fc11efd8fa4][reserved_ip_ranges]" id="network_collection_networks_attributes_dd73fa612cf4c41cebb7_subnets_e7d269076fc11efd8fa4_reserved_ip_ranges" autocomplete="off" type="text">
+</div>
+<div class="hint">Ops Manager will not deploy VMs to any IP in this range, e.g. '10.9.9.0-10.9.9.100, 10.9.9.200-10.9.9.255'</div>
+</div>
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label" for="network_collection_networks_attributes_dd73fa612cf4c41cebb7_subnets_e7d269076fc11efd8fa4_dns">DNS</label>
+<div class="controls">
+<input value="168.63.129.16" name="network_collection[networks_attributes][dd73fa612cf4c41cebb7][subnets][e7d269076fc11efd8fa4][dns]" id="network_collection_networks_attributes_dd73fa612cf4c41cebb7_subnets_e7d269076fc11efd8fa4_dns" autocomplete="off" type="text">
+</div>
+<div class="hint">One or more Domain Name Servers used by VMs</div>
+</div>
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label" for="network_collection_networks_attributes_dd73fa612cf4c41cebb7_subnets_e7d269076fc11efd8fa4_gateway">Gateway</label>
+<div class="controls">
+<input value="10.0.0.1" name="network_collection[networks_attributes][dd73fa612cf4c41cebb7][subnets][e7d269076fc11efd8fa4][gateway]" id="network_collection_networks_attributes_dd73fa612cf4c41cebb7_subnets_e7d269076fc11efd8fa4_gateway" autocomplete="off" type="text">
+</div>
+<div class="hint">The network gateway IP to be used by VMs</div>
+</div>
+<input multiple="multiple" value="null-az" name="network_collection[networks_attributes][dd73fa612cf4c41cebb7][subnets][e7d269076fc11efd8fa4][availability_zone_references][]" id="network_collection_networks_attributes_dd73fa612cf4c41cebb7_subnets_e7d269076fc11efd8fa4_availability_zone_references" type="hidden">
+</div>
+</li>
+
+</ul>
+</div>
+</div>
+</li>
+
+<li class="collection-item with-text-update" data-input-selector=".name" data-output-selector=".title">
+<div class="expandable">
+<div class="action-icons">
+<a>
+<i class="fa fa-trash-o with-delete-record delete-record-action"></i>
+</a>
+</div>
+<button class="btn btn-tertiary btn-small title" type="button">services</button>
+<div class="content" id="1441e2358167dd58a1ab">
+<input value="1441e2358167dd58a1ab" name="network_collection[networks_attributes][1441e2358167dd58a1ab][guid]" id="network_collection_networks_attributes_1441e2358167dd58a1ab_guid" type="hidden">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label" for="network_collection_networks_attributes_1441e2358167dd58a1ab_name">Name</label>
+<div class="controls">
+<input class="name" value="services" name="network_collection[networks_attributes][1441e2358167dd58a1ab][name]" id="network_collection_networks_attributes_1441e2358167dd58a1ab_name" autocomplete="off" type="text">
+</div>
+<div class="hint">A unique name for this network</div>
+</div>
+<div class="control-group reverse-hereditary-focus checkbox">
+<div class="controls">
+<label class="control-label-inline" for="network_collection_networks_attributes_1441e2358167dd58a1ab_service_network"><input name="network_collection[networks_attributes][1441e2358167dd58a1ab][service_network]" value="0" type="hidden"><input value="1" checked="checked" name="network_collection[networks_attributes][1441e2358167dd58a1ab][service_network]" id="network_collection_networks_attributes_1441e2358167dd58a1ab_service_network" type="checkbox">
+Service Network
+<div class="hint">Flag to identify if this network is for dynamic service service provisioning.  It cannot be used by other products in OpsManager.</div>
+</label></div>
+</div>
+<div style="float: left;">
+<label class="control-label">Subnets</label>
+</div>
+<div style="float: right;">
+</div>
+<div class="clearfix"></div>
+<ul class="index-list nobullets zebra with-collection" id="1441e2358167dd58a1ab-subnet-list">
+<li>
+<div class="action-icons">
+</div>
+<div class="content">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label" for="network_collection_networks_attributes_1441e2358167dd58a1ab_subnets_bb2246d266cd27265141_iaas_identifier">Azure Network Name</label>
+<div class="controls">
+<input value="pcf-net/services" name="network_collection[networks_attributes][1441e2358167dd58a1ab][subnets][bb2246d266cd27265141][iaas_identifier]" id="network_collection_networks_attributes_1441e2358167dd58a1ab_subnets_bb2246d266cd27265141_iaas_identifier" autocomplete="off" type="text">
+</div>
+<div class="hint">Should be of the format "&lt;network-name&gt;/&lt;subnet-name&gt;" or "&lt;resource-group&gt;/&lt;network-name&gt;/&lt;subnet-name&gt;"</div>
+</div>
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label" for="network_collection_networks_attributes_1441e2358167dd58a1ab_subnets_bb2246d266cd27265141_cidr">CIDR</label>
+<div class="controls">
+<input value="10.0.1.0/24" name="network_collection[networks_attributes][1441e2358167dd58a1ab][subnets][bb2246d266cd27265141][cidr]" id="network_collection_networks_attributes_1441e2358167dd58a1ab_subnets_bb2246d266cd27265141_cidr" autocomplete="off" type="text">
+</div>
+<div class="hint">A valid CIDR block in which to deploy VMs, e.g. '10.9.9.0/24'</div>
+</div>
+<div class="control-group reverse-hereditary-focus ip_ranges">
+<label class="control-label" for="network_collection_networks_attributes_1441e2358167dd58a1ab_subnets_bb2246d266cd27265141_reserved_ip_ranges">Reserved IP Ranges</label>
+<div class="controls">
+<input value="10.0.1.1-10.0.1.9" name="network_collection[networks_attributes][1441e2358167dd58a1ab][subnets][bb2246d266cd27265141][reserved_ip_ranges]" id="network_collection_networks_attributes_1441e2358167dd58a1ab_subnets_bb2246d266cd27265141_reserved_ip_ranges" autocomplete="off" type="text">
+</div>
+<div class="hint">Ops Manager will not deploy VMs to any IP in this range, e.g. '10.9.9.0-10.9.9.100, 10.9.9.200-10.9.9.255'</div>
+</div>
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label" for="network_collection_networks_attributes_1441e2358167dd58a1ab_subnets_bb2246d266cd27265141_dns">DNS</label>
+<div class="controls">
+<input value="168.63.129.16" name="network_collection[networks_attributes][1441e2358167dd58a1ab][subnets][bb2246d266cd27265141][dns]" id="network_collection_networks_attributes_1441e2358167dd58a1ab_subnets_bb2246d266cd27265141_dns" autocomplete="off" type="text">
+</div>
+<div class="hint">One or more Domain Name Servers used by VMs</div>
+</div>
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label" for="network_collection_networks_attributes_1441e2358167dd58a1ab_subnets_bb2246d266cd27265141_gateway">Gateway</label>
+<div class="controls">
+<input value="10.0.1.1" name="network_collection[networks_attributes][1441e2358167dd58a1ab][subnets][bb2246d266cd27265141][gateway]" id="network_collection_networks_attributes_1441e2358167dd58a1ab_subnets_bb2246d266cd27265141_gateway" autocomplete="off" type="text">
+</div>
+<div class="hint">The network gateway IP to be used by VMs</div>
+</div>
+<input multiple="multiple" value="null-az" name="network_collection[networks_attributes][1441e2358167dd58a1ab][subnets][bb2246d266cd27265141][availability_zone_references][]" id="network_collection_networks_attributes_1441e2358167dd58a1ab_subnets_bb2246d266cd27265141_availability_zone_references" type="hidden">
+</div>
+</li>
+
+</ul>
+</div>
+</div>
+</li>
+
+<li class="collection-item with-text-update" data-input-selector=".name" data-output-selector=".title">
+<div class="expandable">
+<div class="action-icons">
+<a>
+<i class="fa fa-trash-o with-delete-record delete-record-action"></i>
+</a>
+</div>
+<button class="btn btn-tertiary btn-small title" type="button">bosh</button>
+<div class="content" id="2f94c26f23844f6d9567">
+<input value="2f94c26f23844f6d9567" name="network_collection[networks_attributes][2f94c26f23844f6d9567][guid]" id="network_collection_networks_attributes_2f94c26f23844f6d9567_guid" type="hidden">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label" for="network_collection_networks_attributes_2f94c26f23844f6d9567_name">Name</label>
+<div class="controls">
+<input class="name" value="bosh" name="network_collection[networks_attributes][2f94c26f23844f6d9567][name]" id="network_collection_networks_attributes_2f94c26f23844f6d9567_name" autocomplete="off" type="text">
+</div>
+<div class="hint">A unique name for this network</div>
+</div>
+<div class="control-group reverse-hereditary-focus checkbox">
+<div class="controls">
+<label class="control-label-inline" for="network_collection_networks_attributes_2f94c26f23844f6d9567_service_network"><input name="network_collection[networks_attributes][2f94c26f23844f6d9567][service_network]" value="0" type="hidden"><input value="1" checked="checked" name="network_collection[networks_attributes][2f94c26f23844f6d9567][service_network]" id="network_collection_networks_attributes_2f94c26f23844f6d9567_service_network" type="checkbox">
+Service Network
+<div class="hint">Flag to identify if this network is for dynamic service service provisioning.  It cannot be used by other products in OpsManager.</div>
+</label></div>
+</div>
+<div style="float: left;">
+<label class="control-label">Subnets</label>
+</div>
+<div style="float: right;">
+</div>
+<div class="clearfix"></div>
+<ul class="index-list nobullets zebra with-collection" id="2f94c26f23844f6d9567-subnet-list">
+<li>
+<div class="action-icons">
+</div>
+<div class="content">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label" for="network_collection_networks_attributes_2f94c26f23844f6d9567_subnets_9a0c5d0294f6cc87908b_iaas_identifier">Azure Network Name</label>
+<div class="controls">
+<input value="pcf-net/bosh" name="network_collection[networks_attributes][2f94c26f23844f6d9567][subnets][9a0c5d0294f6cc87908b][iaas_identifier]" id="network_collection_networks_attributes_2f94c26f23844f6d9567_subnets_9a0c5d0294f6cc87908b_iaas_identifier" autocomplete="off" type="text">
+</div>
+<div class="hint">Should be of the format "&lt;network-name&gt;/&lt;subnet-name&gt;" or "&lt;resource-group&gt;/&lt;network-name&gt;/&lt;subnet-name&gt;"</div>
+</div>
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label" for="network_collection_networks_attributes_2f94c26f23844f6d9567_subnets_9a0c5d0294f6cc87908b_cidr">CIDR</label>
+<div class="controls">
+<input value="10.0.2.0/24" name="network_collection[networks_attributes][2f94c26f23844f6d9567][subnets][9a0c5d0294f6cc87908b][cidr]" id="network_collection_networks_attributes_2f94c26f23844f6d9567_subnets_9a0c5d0294f6cc87908b_cidr" autocomplete="off" type="text">
+</div>
+<div class="hint">A valid CIDR block in which to deploy VMs, e.g. '10.9.9.0/24'</div>
+</div>
+<div class="control-group reverse-hereditary-focus ip_ranges">
+<label class="control-label" for="network_collection_networks_attributes_2f94c26f23844f6d9567_subnets_9a0c5d0294f6cc87908b_reserved_ip_ranges">Reserved IP Ranges</label>
+<div class="controls">
+<input value="10.0.2.1-10.0.2.9" name="network_collection[networks_attributes][2f94c26f23844f6d9567][subnets][9a0c5d0294f6cc87908b][reserved_ip_ranges]" id="network_collection_networks_attributes_2f94c26f23844f6d9567_subnets_9a0c5d0294f6cc87908b_reserved_ip_ranges" autocomplete="off" type="text">
+</div>
+<div class="hint">Ops Manager will not deploy VMs to any IP in this range, e.g. '10.9.9.0-10.9.9.100, 10.9.9.200-10.9.9.255'</div>
+</div>
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label" for="network_collection_networks_attributes_2f94c26f23844f6d9567_subnets_9a0c5d0294f6cc87908b_dns">DNS</label>
+<div class="controls">
+<input value="168.63.129.16" name="network_collection[networks_attributes][2f94c26f23844f6d9567][subnets][9a0c5d0294f6cc87908b][dns]" id="network_collection_networks_attributes_2f94c26f23844f6d9567_subnets_9a0c5d0294f6cc87908b_dns" autocomplete="off" type="text">
+</div>
+<div class="hint">One or more Domain Name Servers used by VMs</div>
+</div>
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label" for="network_collection_networks_attributes_2f94c26f23844f6d9567_subnets_9a0c5d0294f6cc87908b_gateway">Gateway</label>
+<div class="controls">
+<input value="10.0.2.1" name="network_collection[networks_attributes][2f94c26f23844f6d9567][subnets][9a0c5d0294f6cc87908b][gateway]" id="network_collection_networks_attributes_2f94c26f23844f6d9567_subnets_9a0c5d0294f6cc87908b_gateway" autocomplete="off" type="text">
+</div>
+<div class="hint">The network gateway IP to be used by VMs</div>
+</div>
+<input multiple="multiple" value="null-az" name="network_collection[networks_attributes][2f94c26f23844f6d9567][subnets][9a0c5d0294f6cc87908b][availability_zone_references][]" id="network_collection_networks_attributes_2f94c26f23844f6d9567_subnets_9a0c5d0294f6cc87908b_availability_zone_references" type="hidden">
+</div>
+</li>
+
+</ul>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="control-group">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+</div>
+</div>
+</form>
+</div>
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

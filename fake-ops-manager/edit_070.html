@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="jfuwAfivYZd5tu59Pfa/SokMuGOWZAAmYsZT+fXkDZh0V/Pc6VjIKMllNOUvPZdbOW0aIIIx8wkL6fFG/I3E3w==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_070.css" type="text/css" rel="stylesheet">
+</head>
+<body class="forms-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>MySQL</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_008.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="statuses_006.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials_007.html" indepth="true">Credentials</a>
+</li>
+<li>
+<a id="show-logs-action" href="jobs_logs_006.html" indepth="true">Logs</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-p-mysql-azs-and-network-assignment-action" href="edit_008.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-service_plan_collection-action" href="edit_068.html" indepth="true"><i class="fa fa-check-circle"></i>
+Service Plans
+</a></li>
+<li class="status">
+<a id="show-proxy-action" href="edit_069.html" indepth="true"><i class="fa fa-check-circle"></i>
+Proxy
+</a></li>
+<li class="active status">
+<a id="show-advanced_options-action" href="edit_070.html" indepth="true"><i class="fa fa-check-circle"></i>
+Advanced Options
+</a></li>
+<li class="status">
+<a id="show-backups-action" href="edit_071.html" indepth="true"><i class="fa fa-check-circle"></i>
+Backups
+</a></li>
+<li class="status">
+<a id="show-product-errands-action" href="edit_072.html" indepth="true"><i class="fa fa-check-circle"></i>
+Errands
+</a></li>
+<li class="status">
+<a id="show-p-mysql-resource-sizes-action" href="edit_073.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+<li class="status">
+<a id="show-p-mysql-stemcell-assignment-action" href="edit_074.html" indepth="true"><i class="fa fa-check-circle"></i>
+Stemcell
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="new_tempest_form_renderers_form" id="new_tempest_form_renderers_form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/products/p-mysql-1777a4c6fb7a72e28fda/forms/advanced_options" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="jfuwAfivYZd5tu59Pfa/SokMuGOWZAAmYsZT+fXkDZh0V/Pc6VjIKMllNOUvPZdbOW0aIIIx8wkL6fFG/I3E3w==" type="hidden"><h2 class="content-title">Configure MySQL Service Behaviors</h2>
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="advanced_options[.mysql.skip_name_resolve]" value="0" type="hidden">
+<input checked="checked" id="__mysql__skip_name_resolve_e0f5a53a-8b84-4fce-bae6-eb680115053b" name="advanced_options[.mysql.skip_name_resolve]" value="1" type="checkbox">
+Disable reverse DNS lookups
+</label>
+</div>
+<div class="hint">Only un-check when controlling access to the database from outside of Cloud Foundry and limiting access by hostname.</div>
+</div>
+
+<div class="control-group reverse-hereditary-focus secret">
+<label class="control-label">
+Read-Only User Password
+</label>
+<div class="controls">
+<input autocomplete="off" data-masked-field-with-change-link="false" data-product-credential="true" name="advanced_options[.mysql.roadmin_password][secret]" placeholder="Secret" value="" type="password">
+</div>
+<div class="hint">Enter a password to automatically provision a `roadmin` user with access to read all databases in the system, but permission to write to none. Leave blank to disable the read-only user.</div>
+</div>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>Optional Protections</label>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="advanced_options[.properties.optional_protections][value]" id="option_disable_4ffd388e-2a0e-4b25-af61-8293a1854505" value="disable" class="accordion-group-radio" type="radio">
+Disable optional protections (Must also set: Resource Config &gt; Monitoring &gt; Instances to 0)
+
+</label>
+<label>
+<input name="advanced_options[.properties.optional_protections][value]" id="option_enable_d234ddd9-3ea1-4db6-a2e1-c1e67204ab1c" value="enable" class="accordion-group-radio" checked="checked" type="radio">
+Enable optional protections
+</label>
+<div class="accordion-group-section control-group" data-accordion-target-of-id="option_enable_d234ddd9-3ea1-4db6-a2e1-c1e67204ab1c" data-fields-enabled-by="option_enable_d234ddd9-3ea1-4db6-a2e1-c1e67204ab1c" style="display: block;">
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="advanced_options[.properties.optional_protections][enable][.properties.optional_protections.enable.prevent_auto_rejoin]" value="0" type="hidden">
+<input checked="checked" id="__properties__optional_protections__enable__prevent_auto_rejoin_4b872393-9e69-4b4f-ae4d-f00549ecb3f6" name="advanced_options[.properties.optional_protections][enable][.properties.optional_protections.enable.prevent_auto_rejoin]" value="1" type="checkbox">
+Prevent node auto re-join
+</label>
+</div>
+<div class="hint">While in clustered mode, there is a danger that a node automatically re-joining a cluster may cause data loss. To guard against data loss, the MySQL service blocks nodes from automatically re-joining. Nodes must be manually checked before they re-join the cluster. Please see the documentation for more details.</div>
+</div>
+
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="advanced_options[.properties.optional_protections][enable][.properties.optional_protections.enable.replication_canary]" value="0" type="hidden">
+<input checked="checked" id="__properties__optional_protections__enable__replication_canary_4eb5a66e-e24d-47ab-9283-dedd99e2e3a3" name="advanced_options[.properties.optional_protections][enable][.properties.optional_protections.enable.replication_canary]" value="1" type="checkbox">
+Enable replication canary
+</label>
+</div>
+<div class="hint">If Disabled, you must set MySQL Monitor Node Instances to 0 in the "Resource Config" pane at left.</div>
+</div>
+
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="advanced_options[.properties.optional_protections][enable][.properties.optional_protections.enable.notify_only]" value="0" type="hidden">
+<input id="__properties__optional_protections__enable__notify_only_56944dab-96ba-4d5d-9bb3-8595ee6fb1f6" name="advanced_options[.properties.optional_protections][enable][.properties.optional_protections.enable.notify_only]" value="1" type="checkbox">
+Notify only
+</label>
+</div>
+<div class="hint">When selected, replication failure will not shut traffic off at the proxy - notifications will still be sent. Replication canary must be enabled for this to take effect.</div>
+</div>
+
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Replication canary time period
+</label>
+<div class="controls">
+<input id="__properties__optional_protections__enable__canary_poll_frequency_1372cabf-c693-45db-aaa5-63f6b9be0904" name="advanced_options[.properties.optional_protections][enable][.properties.optional_protections.enable.canary_poll_frequency]" value="30" autocomplete="off" type="text">
+</div>
+<div class="hint">How frequently the canary checks for replication failure, in seconds. Lower numbers will cause the canary to run more frequently, adding load to the database.</div>
+</div>
+
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Replication canary read delay
+</label>
+<div class="controls">
+<input id="__properties__optional_protections__enable__canary_write_read_delay_8085a475-9f3e-4038-9b56-132e73278597" name="advanced_options[.properties.optional_protections][enable][.properties.optional_protections.enable.canary_write_read_delay]" value="20" autocomplete="off" type="text">
+</div>
+<div class="hint">How long the canary waits to verify data is replicating across each MySQL node, in seconds. Clusters under heavily load will experience some small replication lag as writesets are committed across the nodes.</div>
+</div>
+
+
+<div class="control-group email required reverse-hereditary-focus">
+<label class="control-label">
+E-mail address
+</label>
+<div class="controls">
+<input id="__properties__optional_protections__enable__recipient_email_39bba986-a782-4dec-96d4-881e684ae275" name="advanced_options[.properties.optional_protections][enable][.properties.optional_protections.enable.recipient_email]" value="tmaki@pivotal.io" autocomplete="off" type="text">
+</div>
+<div class="hint">The MySQL service will send alerts when the cluster experiences a replication issue or a node is not allowed to auto-rejoin the cluster.</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Quota Enforcer Frequency
+</label>
+<div class="controls">
+<input id="__cf-mysql-broker__quota_enforcer_pause_5e712e96-91e5-4e9a-8140-13a4781fd212" name="advanced_options[.cf-mysql-broker.quota_enforcer_pause]" value="30" autocomplete="off" type="text">
+</div>
+<div class="hint">Configure how many seconds the Quota Enforcer pauses between polls. Advanced configuration, please read the documentation before modifying.</div>
+</div>
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+MySQL Start Timeout
+<span class="integer-constraints">
+min: 1, max: 1200
+</span>
+</label>
+<div class="controls">
+<input id="__mysql__mysql_start_timeout_68eb69bd-f2cb-4b4c-a992-b3737d3d9e12" name="advanced_options[.mysql.mysql_start_timeout]" value="60" autocomplete="off" type="text">
+</div>
+<div class="hint">The minimum amount of time necessary for the MySQL process to start, in seconds. Advanced configuration, please read the documentation before modifying.</div>
+</div>
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="advanced_options[.mysql.innodb_large_prefix_enabled]" value="0" type="hidden">
+<input checked="checked" id="__mysql__innodb_large_prefix_enabled_3ae05528-1c00-4e30-84c5-01fa29431f96" name="advanced_options[.mysql.innodb_large_prefix_enabled]" value="1" type="checkbox">
+Enable large indices
+</label>
+</div>
+<div class="hint">Disable if index creation is failing. Advanced configuration. Please read the documentation before disabling.</div>
+</div>
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="advanced_options[.mysql.wsrep_debug]" value="0" type="hidden">
+<input checked="checked" id="__mysql__wsrep_debug_a715b7de-bb9a-43f3-81f8-f02cd48c10ca" name="advanced_options[.mysql.wsrep_debug]" value="1" type="checkbox">
+Enable replication debug logging
+</label>
+</div>
+<div class="hint">Advanced configuration, please read the documentation before modifying.</div>
+</div>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>Server Activity Logging</label>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="advanced_options[.properties.server_activity_logging][value]" id="option_disable_a71d69ab-b21f-44d1-82ab-59c230b52e9a" value="disable" class="accordion-group-radio" type="radio">
+Disable server activity logging
+</label>
+<label>
+<input name="advanced_options[.properties.server_activity_logging][value]" id="option_enable_adf9089f-44b3-49ca-bf27-458a57259af1" value="enable" class="accordion-group-radio" checked="checked" type="radio">
+Enable server activity logging
+</label>
+<div class="accordion-group-section control-group" data-accordion-target-of-id="option_enable_adf9089f-44b3-49ca-bf27-458a57259af1" data-fields-enabled-by="option_enable_adf9089f-44b3-49ca-bf27-458a57259af1" style="display: block;">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Event types
+</label>
+<div class="controls">
+<input id="__properties__server_activity_logging__enable__audit_logging_events_65a95269-a52b-4808-bbe5-cb55e547b968" name="advanced_options[.properties.server_activity_logging][enable][.properties.server_activity_logging.enable.audit_logging_events]" value="connect,query" autocomplete="off" type="text">
+</div>
+<div class="hint">The MySQL service will keep a record of server activity. The default setting tracks who connected to the system and what queries were processed. For more information, see: https://mariadb.com/kb/en/mariadb/about-the-mariadb-audit-plugin/</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+
+</div>
+</div>
+</form>
+<form class="modal fade" style="display: none;" id="rsa-certificate-form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/rsa_certificates" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden"><div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<i class="fa fa-times-circle"></i>
+</button>
+<h2>
+<i class="fa fa-check"></i>
+Generate RSA Certificate
+</h2>
+</div>
+
+<div class="modal-body">
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label">Example: *.app.domain.com, *.system.domain.com, my.webapp.com, *.domain.com</label>
+<div class="controls">
+<input name="rsa_certificate[domains]" id="rsa_certificate_domains" autocomplete="off" value="" type="text">
+
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn-tertiary btn" data-dismiss="modal">Cancel</button>
+<button class="btn btn-primary" id="save-rsa-certificate-action" type="submit">
+Generate
+</button>
+
+
+</div>
+</div>
+</div>
+</form>
+
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

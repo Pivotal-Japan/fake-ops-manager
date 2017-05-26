@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Z+hK2CGFRmFW0US+B5yaUhcWXBYmdMvJJAuVyiftxG+eRAkFMHLv3uYCniYVV7JDp3f+VTIhOOZNJDd1LoQNKA==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_038.css" type="text/css" rel="stylesheet">
+</head>
+<body class="forms-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Redis</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_003.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="statuses_001.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials_002.html" indepth="true">Credentials</a>
+</li>
+<li>
+<a id="show-logs-action" href="jobs_logs_001.html" indepth="true">Logs</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-p-redis-azs-and-network-assignment-action" href="edit_003.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-cf-redis-broker-action" href="edit_036.html" indepth="true"><i class="fa fa-check-circle"></i>
+Shared-VM Plan
+</a></li>
+<li class="status">
+<a id="show-redis-metrics-action" href="edit_037.html" indepth="true"><i class="fa fa-check-circle"></i>
+Metrics
+</a></li>
+<li class="active status">
+<a id="show-backups_selector-action" href="edit_038.html" indepth="true"><i class="fa fa-check-circle"></i>
+Backups
+</a></li>
+<li class="status">
+<a id="show-syslog-action" href="edit_039.html" indepth="true"><i class="fa fa-check-circle"></i>
+Syslog
+</a></li>
+<li class="status">
+<a id="show-product-errands-action" href="edit_040.html" indepth="true"><i class="fa fa-check-circle"></i>
+Errands
+</a></li>
+<li class="status">
+<a id="show-p-redis-resource-sizes-action" href="edit_041.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+<li class="status">
+<a id="show-p-redis-stemcell-assignment-action" href="edit_042.html" indepth="true"><i class="fa fa-check-circle"></i>
+Stemcell
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="new_tempest_form_renderers_form" id="new_tempest_form_renderers_form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/products/p-redis-4c6e59df6990932be221/forms/backups_selector" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="Z+hK2CGFRmFW0US+B5yaUhcWXBYmdMvJJAuVyiftxG+eRAkFMHLv3uYCniYVV7JDp3f+VTIhOOZNJDd1LoQNKA==" type="hidden"><h2 class="content-title">Configure blob store for Redis backups</h2>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>Backup configuration</label>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="backups_selector[.properties.backups_selector][value]" id="option_disabled_bd3a278d-c0ca-4e43-9fe3-c1ea7b345dc1" value="No Backups" class="accordion-group-radio" checked="checked" type="radio">
+Disable Backups
+</label>
+<label>
+<input name="backups_selector[.properties.backups_selector][value]" id="option_s3_7c9266ce-5401-4211-81a5-51629fccf573" value="S3 Backups" class="accordion-group-radio" type="radio">
+AWS S3
+</label>
+<div class="accordion-group-section control-group hidden disabled" data-accordion-target-of-id="option_s3_7c9266ce-5401-4211-81a5-51629fccf573" data-fields-enabled-by="option_s3_7c9266ce-5401-4211-81a5-51629fccf573" style="display: none;">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Access Key ID
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__s3__access_key_id_bcbc5bad-8167-4244-9724-5705368d56b6" name="backups_selector[.properties.backups_selector][s3][.properties.backups_selector.s3.access_key_id]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Optional field dependent upon your blobstore configuration</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Secret Access Key
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__s3__secret_access_key_8cce8a34-9626-46f0-ba29-391d4bc478f5" name="backups_selector[.properties.backups_selector][s3][.properties.backups_selector.s3.secret_access_key]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Optional field dependent upon your blobstore configuration</div>
+</div>
+
+
+<div class="control-group http_url reverse-hereditary-focus">
+<label class="control-label">
+Endpoint URL
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__s3__endpoint_url_71d28039-b89e-436c-a82d-3c2363827f8b" name="backups_selector[.properties.backups_selector][s3][.properties.backups_selector.s3.endpoint_url]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Leave blank for Amazon S3, otherwise URL should start with https:// or http://</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Bucket Name
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__s3__bucket_name_10befc12-c1bd-40f2-85e7-b6a699e4ca64" name="backups_selector[.properties.backups_selector][s3][.properties.backups_selector.s3.bucket_name]" autocomplete="off" disabled="" value="" type="text">
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Bucket Path
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__s3__path_15791dc7-f03e-4679-b8bd-5e7a5af2c4f1" name="backups_selector[.properties.backups_selector][s3][.properties.backups_selector.s3.path]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Path to backup destination on S3</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Cron Schedule
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__s3__cron_schedule_cf2bc900-55a5-4651-9519-2648ed895b1f" name="backups_selector[.properties.backups_selector][s3][.properties.backups_selector.s3.cron_schedule]" value="0 0 * * *" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Schedule to trigger backups, using normal cron format</div>
+</div>
+
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Backup timeout
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__s3__bg_save_timeout_2e811723-9bfe-4139-a684-bc0bf2861381" name="backups_selector[.properties.backups_selector][s3][.properties.backups_selector.s3.bg_save_timeout]" value="10" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Period of time to allow for backup to complete (measured in minutes)</div>
+</div>
+
+
+</div>
+<label>
+<input name="backups_selector[.properties.backups_selector][value]" id="option_scp_2cb734b2-1656-40b6-818f-e94e9019c36e" value="SCP Backups" class="accordion-group-radio" type="radio">
+SCP
+</label>
+<div class="accordion-group-section control-group hidden disabled" data-accordion-target-of-id="option_scp_2cb734b2-1656-40b6-818f-e94e9019c36e" data-fields-enabled-by="option_scp_2cb734b2-1656-40b6-818f-e94e9019c36e" style="display: none;">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Username
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__scp__user_353d74e1-26cc-4021-8bc1-9e0c92e723e9" name="backups_selector[.properties.backups_selector][scp][.properties.backups_selector.scp.user]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">SCP username</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus text textarea">
+<label class="control-label">
+Private Key
+</label>
+<div class="controls">
+<textarea name="backups_selector[.properties.backups_selector][scp][.properties.backups_selector.scp.key]" id="backups_selector_.properties.backups_selector_scp_.properties.backups_selector.scp.key" autocomplete="off" disabled=""></textarea>
+</div>
+<div class="hint">SCP private key. Do not password protect</div>
+</div>
+
+
+<div class="control-group network_address required reverse-hereditary-focus">
+<label class="control-label">
+Hostname
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__scp__server_5c902b4f-5e0d-4372-8a13-68491ea705cd" name="backups_selector[.properties.backups_selector][scp][.properties.backups_selector.scp.server]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Hostname of SCP server to back up to</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Destination Directory
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__scp__path_7ec7fd24-6dbc-4dc9-922c-9fcaa429ebf6" name="backups_selector[.properties.backups_selector][scp][.properties.backups_selector.scp.path]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Path to backup destination directory on remote server</div>
+</div>
+
+
+<div class="control-group port required reverse-hereditary-focus">
+<label class="control-label">
+SCP Port
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__scp__port_e301f0b9-b233-4577-b8a6-5d77fb73bbd9" name="backups_selector[.properties.backups_selector][scp][.properties.backups_selector.scp.port]" value="22" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">SCP uses the SSH protocol, so provide the TCP port your server uses for SSH.</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Cron Schedule
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__scp__cron_schedule_9488b760-eca9-4956-8a37-2524d9248875" name="backups_selector[.properties.backups_selector][scp][.properties.backups_selector.scp.cron_schedule]" value="0 0 * * *" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Schedule to trigger backups, using normal cron format</div>
+</div>
+
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Backup timeout
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__scp__bg_save_timeout_66318bb8-6d44-4564-a8ff-f97afc3c08b9" name="backups_selector[.properties.backups_selector][scp][.properties.backups_selector.scp.bg_save_timeout]" value="10" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Period of time to allow for backup to complete (measured in minutes)</div>
+</div>
+
+
+<div class="control-group reverse-hereditary-focus string">
+<label class="control-label">
+Fingerprint
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__scp__fingerprint_ae57a65f-fbf4-46b8-a67c-f7a3ccc1608e" name="backups_selector[.properties.backups_selector][scp][.properties.backups_selector.scp.fingerprint]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Optional fingerprint field. This adds extra security to validate the destination server.</div>
+</div>
+
+
+</div>
+<label>
+<input name="backups_selector[.properties.backups_selector][value]" id="option_azure_93852b03-fc77-4bb3-b890-73c59dad1ce2" value="Azure Backups" class="accordion-group-radio" type="radio">
+Azure
+</label>
+<div class="accordion-group-section control-group hidden disabled" data-accordion-target-of-id="option_azure_93852b03-fc77-4bb3-b890-73c59dad1ce2" data-fields-enabled-by="option_azure_93852b03-fc77-4bb3-b890-73c59dad1ce2" style="display: none;">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Account
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__azure__account_cf1f7253-6e63-4f52-9f33-48514d226e78" name="backups_selector[.properties.backups_selector][azure][.properties.backups_selector.azure.account]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Azure account</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus text textarea">
+<label class="control-label">
+Azure Storage Access Key
+</label>
+<div class="controls">
+<textarea name="backups_selector[.properties.backups_selector][azure][.properties.backups_selector.azure.storage_access_key]" id="backups_selector_.properties.backups_selector_azure_.properties.backups_selector.azure.storage_access_key" autocomplete="off" disabled=""></textarea>
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Container Name
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__azure__container_de8d0da0-63a0-4a2c-ac64-2974fb853cda" name="backups_selector[.properties.backups_selector][azure][.properties.backups_selector.azure.container]" autocomplete="off" disabled="" value="" type="text">
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Destination Directory
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__azure__path_abbaaf59-fe36-4c2e-b811-c3732f8f552d" name="backups_selector[.properties.backups_selector][azure][.properties.backups_selector.azure.path]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Path to backup destination directory on Azure storage</div>
+</div>
+
+
+<div class="control-group reverse-hereditary-focus string">
+<label class="control-label">
+Blob Store Base URL
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__azure__blob_store_base_url_88dec8c0-6876-4fbb-9a1c-62aa07ed9314" name="backups_selector[.properties.backups_selector][azure][.properties.backups_selector.azure.blob_store_base_url]" autocomplete="off" disabled="" value="" type="text">
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Cron Schedule
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__azure__cron_schedule_9abe317f-ab0d-45b5-bb07-78927b2df0e4" name="backups_selector[.properties.backups_selector][azure][.properties.backups_selector.azure.cron_schedule]" value="0 0 * * *" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Schedule to trigger backups, using normal cron format</div>
+</div>
+
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Backup timeout
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__azure__bg_save_timeout_fc4b54c2-91ed-4676-bc49-909a0056d80f" name="backups_selector[.properties.backups_selector][azure][.properties.backups_selector.azure.bg_save_timeout]" value="10" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Period of time to allow for backup to complete (measured in minutes)</div>
+</div>
+
+
+</div>
+<label>
+<input name="backups_selector[.properties.backups_selector][value]" id="option_gcs_f49a47b6-c0ad-4960-8761-d0ed28884807" value="Google Cloud Storage Backups" class="accordion-group-radio" type="radio">
+GCS
+</label>
+<div class="accordion-group-section control-group hidden disabled" data-accordion-target-of-id="option_gcs_f49a47b6-c0ad-4960-8761-d0ed28884807" data-fields-enabled-by="option_gcs_f49a47b6-c0ad-4960-8761-d0ed28884807" style="display: none;">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Project ID
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__gcs__project_id_96346098-5772-4062-bd45-41cc7e307165" name="backups_selector[.properties.backups_selector][gcs][.properties.backups_selector.gcs.project_id]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">GCP project ID</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Bucket name
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__gcs__bucket_name_fb688d22-0cd7-4da5-846d-034afcf60631" name="backups_selector[.properties.backups_selector][gcs][.properties.backups_selector.gcs.bucket_name]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Will be created if it doesen't already exist</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus text textarea">
+<label class="control-label">
+Service account private key
+</label>
+<div class="controls">
+<textarea name="backups_selector[.properties.backups_selector][gcs][.properties.backups_selector.gcs.service_account_json]" id="backups_selector_.properties.backups_selector_gcs_.properties.backups_selector.gcs.service_account_json" autocomplete="off" disabled=""></textarea>
+</div>
+<div class="hint">JSON contents</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Cron Schedule
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__gcs__cron_schedule_e42a8ae5-8d18-480e-9408-267bb0e8b758" name="backups_selector[.properties.backups_selector][gcs][.properties.backups_selector.gcs.cron_schedule]" value="0 0 * * *" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Schedule to trigger backups, using normal cron format</div>
+</div>
+
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Backup timeout
+</label>
+<div class="controls">
+<input id="__properties__backups_selector__gcs__bg_save_timeout_cc750a30-4ac9-4889-8a1e-911dfcb79ce3" name="backups_selector[.properties.backups_selector][gcs][.properties.backups_selector.gcs.bg_save_timeout]" value="10" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Period of time to allow for backup to complete (measured in minutes)</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+
+</div>
+</div>
+</form>
+<form class="modal fade" style="display: none;" id="rsa-certificate-form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/rsa_certificates" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden"><div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<i class="fa fa-times-circle"></i>
+</button>
+<h2>
+<i class="fa fa-check"></i>
+Generate RSA Certificate
+</h2>
+</div>
+
+<div class="modal-body">
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label">Example: *.app.domain.com, *.system.domain.com, my.webapp.com, *.domain.com</label>
+<div class="controls">
+<input name="rsa_certificate[domains]" id="rsa_certificate_domains" autocomplete="off" value="" type="text">
+
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn-tertiary btn" data-dismiss="modal">Cancel</button>
+<button class="btn btn-primary" id="save-rsa-certificate-action" type="submit">
+Generate
+</button>
+
+
+</div>
+</div>
+</div>
+</form>
+
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="ehbTvQBcejPvPG4CITIXCYFHSihV3r/JiYKJyY2AGkqDupBgEavTjF/vtJoz+T8YMSboa0GLTObgrSt2hOnTDQ==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_009.css" type="text/css" rel="stylesheet">
+</head>
+<body class="az_and_network_assignments-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Microsoft Azure Service Broker</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_009.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="statuses_007.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials_008.html" indepth="true">Credentials</a>
+</li>
+<li>
+<a id="show-logs-action" href="jobs_logs_007.html" indepth="true">Logs</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="active status">
+<a id="show-azure-service-broker-azs-and-network-assignment-action" href="edit_009.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-azure-config-form-action" href="edit_075.html" indepth="true"><i class="fa fa-check-circle"></i>
+Azure Config
+</a></li>
+<li class="status">
+<a id="show-broker-config-form-action" href="edit_076.html" indepth="true"><i class="fa fa-check-circle"></i>
+Broker Config
+</a></li>
+<li class="status">
+<a id="show-sqldb-config-form-action" href="edit_077.html" indepth="true"><i class="fa fa-check-circle"></i>
+SQL Database Config
+</a></li>
+<li class="status">
+<a id="show-service_access-action" href="edit_078.html" indepth="true"><i class="fa fa-check-circle"></i>
+Service Access
+</a></li>
+<li class="status">
+<a id="show-product-errands-action" href="edit_079.html" indepth="true"><i class="fa fa-check-circle"></i>
+Errands
+</a></li>
+<li class="status">
+<a id="show-azure-service-broker-resource-sizes-action" href="edit_080.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+<li class="status">
+<a id="show-azure-service-broker-stemcell-assignment-action" href="edit_081.html" indepth="true"><i class="fa fa-check-circle"></i>
+Stemcell
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="show-loading-indicator" id="edit_product" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/products/azure-service-broker-f02c42592ba2d8d4da55/az_and_network_assignments" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="patch" type="hidden"><input name="authenticity_token" value="ehbTvQBcejPvPG4CITIXCYFHSihV3r/JiYKJyY2AGkqDupBgEavTjF/vtJoz+T8YMSboa0GLTObgrSt2hOnTDQ==" type="hidden"><h2 class="content-title">Network Assignments</h2>
+<label for="product_network_reference">Network</label>
+<select name="product[network_reference]" id="product_network_reference"><option value=""></option>
+<option selected="selected" value="dd73fa612cf4c41cebb7">default</option></select>
+<div class="control-group">
+<div class="controls">
+<button class="btn btn-primary" type="submit">
+Save
+</button>
+
+</div>
+</div>
+</form>
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

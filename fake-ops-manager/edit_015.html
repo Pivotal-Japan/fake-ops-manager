@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="jkgMsetpThxv6OZ8lVRUI+JMKfA4oUmn70rOR+pKdip35E9s+p7no987POSHn3wyUi2Lsyz0uoiGZWz44yO/bQ==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_015.css" type="text/css" rel="stylesheet">
+</head>
+<body class="security_tokens-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Ops Manager Director</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_001.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="status.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials.html" indepth="true">Credentials</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-iaas_configuration-action" href="edit_001.html" indepth="true"><i class="fa fa-check-circle"></i>
+Azure Config
+</a></li>
+<li class="status">
+<a id="show-director_configuration-action" href="edit_012.html" indepth="true"><i class="fa fa-check-circle"></i>
+Director Config
+</a></li>
+<li class="status">
+<a id="show-network-action" href="edit_013.html" indepth="true"><i class="fa fa-check-circle"></i>
+Create Networks
+</a></li>
+<li class="status">
+<a id="show-director-az-and-network-assignment-action" href="edit_014.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="active status">
+<a id="show-security_tokens-action" href="edit_015.html" indepth="true"><i class="fa fa-check-circle"></i>
+Security
+</a></li>
+<li class="status">
+<a id="show-p-bosh-resource-sizes-action" href="edit_016.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="show-loading-indicator" id="new_security_tokens" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/infrastructure/security_tokens" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="jkgMsetpThxv6OZ8lVRUI+JMKfA4oUmn70rOR+pKdip35E9s+p7no987POSHn3wyUi2Lsyz0uoiGZWz44yO/bQ==" type="hidden"><h2 class="content-title">Security</h2>
+<div class="control-group reverse-hereditary-focus textarea" id="trusted_certificates">
+<label class="control-label">Trusted Certificates</label>
+<div class="controls input">
+<textarea name="security_tokens[trusted_certificates]" id="security_tokens_trusted_certificates" autocomplete="off"></textarea>
+<p>These certificates enable BOSH-deployed components to trust a custom root certificate.</p>
+</div>
+</div>
+<div class="control-group reverse-hereditary-focus radio" id="vm_password">
+<label class="control-label">Generate VM passwords or use single password for all VMs</label>
+<div class="controls input">
+<label for="security_tokens_vm_password_type_generate"><input value="generate" checked="checked" name="security_tokens[vm_password_type]" id="security_tokens_vm_password_type_generate" type="radio">
+Generate passwords
+</label><label for="security_tokens_vm_password_type_bosh_default"><input value="bosh_default" name="security_tokens[vm_password_type]" id="security_tokens_vm_password_type_bosh_default" type="radio">
+Use default BOSH password
+</label></div>
+</div>
+<div class="control-group">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+</div>
+</div>
+</form>
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

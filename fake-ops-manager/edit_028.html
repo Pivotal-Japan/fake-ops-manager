@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="7rakcwY9PD/LYuOOLGcOdkNbfhIn9us9qZvUSI6jFaIXGueuF8qVgHuxORY+rCZn8zrcUTOjGBLAtHb3h8rc5Q==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_028.css" type="text/css" rel="stylesheet">
+</head>
+<body class="forms-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Pivotal Elastic Runtime</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_002.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="statuses.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials_001.html" indepth="true">Credentials</a>
+</li>
+<li>
+<a id="show-logs-action" href="jobs_logs.html" indepth="true">Logs</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-cf-azs-and-network-assignment-action" href="edit_002.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-domains-action" href="edit_017.html" indepth="true"><i class="fa fa-check-circle"></i>
+Domains
+</a></li>
+<li class="status">
+<a id="show-networking-action" href="edit_018.html" indepth="true"><i class="fa fa-check-circle"></i>
+Networking
+</a></li>
+<li class="status">
+<a id="show-app_containers-action" href="edit_019.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Containers
+</a></li>
+<li class="status">
+<a id="show-application_dev_controls-action" href="edit_020.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Developer Controls
+</a></li>
+<li class="status">
+<a id="show-application_security_groups-action" href="edit_021.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Security Groups
+</a></li>
+<li class="status">
+<a id="show-uaa-action" href="edit_022.html" indepth="true"><i class="fa fa-check-circle"></i>
+Authentication and Enterprise SSO
+</a></li>
+<li class="status">
+<a id="show-system_database-action" href="edit_023.html" indepth="true"><i class="fa fa-check-circle"></i>
+Databases
+</a></li>
+<li class="status">
+<a id="show-mysql_config-action" href="edit_024.html" indepth="true"><i class="fa fa-check-circle"></i>
+Internal MySQL
+</a></li>
+<li class="status">
+<a id="show-system_blobstore-action" href="edit_025.html" indepth="true"><i class="fa fa-check-circle"></i>
+File Storage
+</a></li>
+<li class="status">
+<a id="show-syslog_aggregator-action" href="edit_026.html" indepth="true"><i class="fa fa-check-circle"></i>
+System Logging
+</a></li>
+<li class="status">
+<a id="show-generic_white_label_config-action" href="edit_027.html" indepth="true"><i class="fa fa-check-circle"></i>
+Custom Branding
+</a></li>
+<li class="active status">
+<a id="show-apps_manager_config-action" href="edit_028.html" indepth="true"><i class="fa fa-check-circle"></i>
+Apps Manager
+</a></li>
+<li class="status">
+<a id="show-smtp_config-action" href="edit_029.html" indepth="true"><i class="fa fa-check-circle"></i>
+Email Notifications
+</a></li>
+<li class="status">
+<a id="show-cloud_controller-action" href="edit_030.html" indepth="true"><i class="fa fa-check-circle"></i>
+Restore CCDB Encryption Key
+</a></li>
+<li class="status">
+<a id="show-smoke_tests-action" href="edit_031.html" indepth="true"><i class="fa fa-check-circle"></i>
+Smoke Tests
+</a></li>
+<li class="status">
+<a id="show-experimental_features-action" href="edit_032.html" indepth="true"><i class="fa fa-check-circle"></i>
+Advanced Features
+</a></li>
+<li class="status">
+<a id="show-product-errands-action" href="edit_033.html" indepth="true"><i class="fa fa-check-circle"></i>
+Errands
+</a></li>
+<li class="status">
+<a id="show-cf-resource-sizes-action" href="edit_034.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+<li class="status">
+<a id="show-cf-stemcell-assignment-action" href="edit_035.html" indepth="true"><i class="fa fa-check-circle"></i>
+Stemcell
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="new_tempest_form_renderers_form" id="new_tempest_form_renderers_form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/products/cf-236816a17dff00ecc296/forms/apps_manager_config" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="7rakcwY9PD/LYuOOLGcOdkNbfhIn9us9qZvUSI6jFaIXGueuF8qVgHuxORY+rCZn8zrcUTOjGBLAtHb3h8rc5Q==" type="hidden"><h2 class="content-title">Configure Apps Manager</h2>
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="apps_manager_config[.push-apps-manager.enable_invitations]" value="0" type="hidden">
+<input checked="checked" id="__push-apps-manager__enable_invitations_47806928-6739-4bfa-944d-3592aa2f0789" name="apps_manager_config[.push-apps-manager.enable_invitations]" value="1" type="checkbox">
+Enable Invitations
+</label>
+</div>
+</div>
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="apps_manager_config[.push-apps-manager.display_plan_prices]" value="0" type="hidden">
+<input id="__push-apps-manager__display_plan_prices_ef1badcd-0a1a-47f1-9741-fb3b32c60318" name="apps_manager_config[.push-apps-manager.display_plan_prices]" value="1" type="checkbox">
+Display Marketplace Service Plan Prices
+</label>
+</div>
+</div>
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Supported currencies as json
+</label>
+<div class="controls">
+<input id="__push-apps-manager__currency_lookup_d55b9ff9-0abd-47e1-8fbd-f4e98a62bae0" name="apps_manager_config[.push-apps-manager.currency_lookup]" value="{ &quot;usd&quot;: &quot;$&quot;, &quot;eur&quot;: &quot;€&quot; }" autocomplete="off" type="text">
+</div>
+<div class="hint">Define the currency codes and associated symbols (defaults to "{ "usd": "$", "eur": "€" }" if blank)</div>
+</div>
+
+<div class="control-group reverse-hereditary-focus string">
+<label class="control-label">
+Product Name
+</label>
+<div class="controls">
+<input id="__push-apps-manager__product_name_fe0e50c3-d08b-44b3-86ff-42e6e60bf22b" name="apps_manager_config[.push-apps-manager.product_name]" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">Replace "Apps Manager" in the header with a custom product name (defaults to "Apps Manager" if blank)</div>
+</div>
+
+<div class="control-group reverse-hereditary-focus string">
+<label class="control-label">
+Marketplace Name
+</label>
+<div class="controls">
+<input id="__push-apps-manager__marketplace_name_d14bdcc0-35be-4234-8471-3cc2a49fd441" name="apps_manager_config[.push-apps-manager.marketplace_name]" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">Replaces "Marketplace" on the Apps Manager Marketplace Pages.</div>
+</div>
+
+<div class="collection control-group required">
+<div style="float: left;">
+<label class="control-label">
+Customize Sidebar Links
+</label>
+</div>
+<script id="template-for-__push-apps-manager__nav_links_b01a69e5-8559-4aca-9b5a-0ea5a4f3d0b6" type="text/html">
+<li class='collection-item with-text-update' data-input-selector='#name_a79e673d-bc3f-4354-b76f-bb94837dce41' data-output-selector='.title'>
+<div class='expandable expanded'>
+<div class='action-icons'>
+<a>
+<i class='fa fa-trash-o with-delete-record delete-record-action'></i>
+</a>
+</div>
+<div class='title'></div>
+<div class='content'>
+<div class='control-group required reverse-hereditary-focus string'>
+<label class='control-label'>
+Link text
+</label>
+<div class='controls'>
+<input id='name_a79e673d-bc3f-4354-b76f-bb94837dce41' name='apps_manager_config[collections][.push-apps-manager.nav_links][REPLACE_WITH_REAL_INDEX][name]' type='text'>
+</div>
+</div>
+
+
+<div class='control-group required reverse-hereditary-focus string'>
+<label class='control-label'>
+URL
+</label>
+<div class='controls'>
+<input id='href_a48c7315-0db8-4397-8ca5-e54359dab565' name='apps_manager_config[collections][.push-apps-manager.nav_links][REPLACE_WITH_REAL_INDEX][href]' type='text'>
+</div>
+</div>
+
+
+</div>
+</div>
+</li>
+
+</script>
+<div style="float: right;">
+<a class="with-copies-template btn btn-mini btn-secondary with-collection" data-template-id="template-for-__push-apps-manager__nav_links_b01a69e5-8559-4aca-9b5a-0ea5a4f3d0b6" data-append-to="__push-apps-manager__nav_links_b01a69e5-8559-4aca-9b5a-0ea5a4f3d0b6" data-index-replacement-string="REPLACE_WITH_REAL_INDEX" data-start-index="3" href="#">Add</a>
+</div>
+<div class="clearfix"></div>
+<div class="subtext">You may configure up to 10 links in the Apps Manager sidebar</div>
+<ul class="index-list nobullets zebra with-collection" id="__push-apps-manager__nav_links_b01a69e5-8559-4aca-9b5a-0ea5a4f3d0b6">
+<li class="collection-item with-text-update" data-input-selector="#name_aae04883-4309-4aae-96e7-1cde383be076" data-output-selector=".title">
+<div class="expandable">
+<div class="action-icons">
+<a>
+<i class="fa fa-trash-o with-delete-record delete-record-action"></i>
+</a>
+</div>
+<div class="title">Marketplace</div>
+<div class="content">
+<input name="apps_manager_config[collections][.push-apps-manager.nav_links][0][guid]" value="b659942a-a4f5-42a8-b25b-8efb4ea1b6ae" type="hidden">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Link text
+</label>
+<div class="controls">
+<input id="name_aae04883-4309-4aae-96e7-1cde383be076" name="apps_manager_config[collections][.push-apps-manager.nav_links][0][name]" value="Marketplace" autocomplete="off" type="text">
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+URL
+</label>
+<div class="controls">
+<input id="href_8203c33d-3a43-478f-9a40-08ffc2f40a3a" name="apps_manager_config[collections][.push-apps-manager.nav_links][0][href]" value="/marketplace" autocomplete="off" type="text">
+</div>
+</div>
+
+
+</div>
+</div>
+</li>
+
+<li class="collection-item with-text-update" data-input-selector="#name_13ec7008-7239-49cc-9bad-9f25e81f8b0d" data-output-selector=".title">
+<div class="expandable">
+<div class="action-icons">
+<a>
+<i class="fa fa-trash-o with-delete-record delete-record-action"></i>
+</a>
+</div>
+<div class="title">Docs</div>
+<div class="content">
+<input name="apps_manager_config[collections][.push-apps-manager.nav_links][1][guid]" value="6997f4f2-b8a5-4267-9607-2b1739cc4e03" type="hidden">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Link text
+</label>
+<div class="controls">
+<input id="name_13ec7008-7239-49cc-9bad-9f25e81f8b0d" name="apps_manager_config[collections][.push-apps-manager.nav_links][1][name]" value="Docs" autocomplete="off" type="text">
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+URL
+</label>
+<div class="controls">
+<input id="href_7ffb5aee-d4e4-4cd7-a359-90f63becb1a7" name="apps_manager_config[collections][.push-apps-manager.nav_links][1][href]" value="http://docs.pivotal.io/pivotalcf/getstarted/pcf-docs.html" autocomplete="off" type="text">
+</div>
+</div>
+
+
+</div>
+</div>
+</li>
+
+<li class="collection-item with-text-update" data-input-selector="#name_e5fda751-faba-474c-9a4d-00738ebeb760" data-output-selector=".title">
+<div class="expandable">
+<div class="action-icons">
+<a>
+<i class="fa fa-trash-o with-delete-record delete-record-action"></i>
+</a>
+</div>
+<div class="title">Tools</div>
+<div class="content">
+<input name="apps_manager_config[collections][.push-apps-manager.nav_links][2][guid]" value="28222079-55fc-48a9-ac96-3d8f56bbf82c" type="hidden">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Link text
+</label>
+<div class="controls">
+<input id="name_e5fda751-faba-474c-9a4d-00738ebeb760" name="apps_manager_config[collections][.push-apps-manager.nav_links][2][name]" value="Tools" autocomplete="off" type="text">
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+URL
+</label>
+<div class="controls">
+<input id="href_e6678baf-dec5-4ced-874a-303db44b12f9" name="apps_manager_config[collections][.push-apps-manager.nav_links][2][href]" value="/tools" autocomplete="off" type="text">
+</div>
+</div>
+
+
+</div>
+</div>
+</li>
+
+</ul>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+
+</div>
+</div>
+</form>
+<form class="modal fade" style="display: none;" id="rsa-certificate-form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/rsa_certificates" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden"><div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<i class="fa fa-times-circle"></i>
+</button>
+<h2>
+<i class="fa fa-check"></i>
+Generate RSA Certificate
+</h2>
+</div>
+
+<div class="modal-body">
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label">Example: *.app.domain.com, *.system.domain.com, my.webapp.com, *.domain.com</label>
+<div class="controls">
+<input name="rsa_certificate[domains]" id="rsa_certificate_domains" autocomplete="off" value="" type="text">
+
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn-tertiary btn" data-dismiss="modal">Cancel</button>
+<button class="btn btn-primary" id="save-rsa-certificate-action" type="submit">
+Generate
+</button>
+
+
+</div>
+</div>
+</div>
+</form>
+
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="1CjfleS/qzas0clloodVgkXaFVUePxg0isyr8cyEvnMthJxI9UgCiRwCE/2wTH2T9bu3Fgpq6xvj4wlOxe13NA==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_063.css" type="text/css" rel="stylesheet">
+</head>
+<body class="forms-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Pivotal CloudCache</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_007.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="statuses_005.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials_006.html" indepth="true">Credentials</a>
+</li>
+<li>
+<a id="show-logs-action" href="jobs_logs_005.html" indepth="true">Logs</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-p-cloudcache-azs-and-network-assignment-action" href="edit_007.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-settings-action" href="edit_059.html" indepth="true"><i class="fa fa-check-circle"></i>
+Settings
+</a></li>
+<li class="status">
+<a id="show-caching-plan1-action" href="edit_060.html" indepth="true"><i class="fa fa-check-circle"></i>
+Plan 1
+</a></li>
+<li class="status">
+<a id="show-caching-plan2-action" href="edit_061.html" indepth="true"><i class="fa fa-check-circle"></i>
+Plan 2
+</a></li>
+<li class="status">
+<a id="show-caching-plan3-action" href="edit_062.html" indepth="true"><i class="fa fa-check-circle"></i>
+Plan 3
+</a></li>
+<li class="active status">
+<a id="show-caching-plan4-action" href="edit_063.html" indepth="true"><i class="fa fa-check-circle"></i>
+Plan 4
+</a></li>
+<li class="status">
+<a id="show-caching-plan5-action" href="edit_064.html" indepth="true"><i class="fa fa-check-circle"></i>
+Plan 5
+</a></li>
+<li class="status">
+<a id="show-product-errands-action" href="edit_065.html" indepth="true"><i class="fa fa-check-circle"></i>
+Errands
+</a></li>
+<li class="status">
+<a id="show-p-cloudcache-resource-sizes-action" href="edit_066.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+<li class="status">
+<a id="show-p-cloudcache-stemcell-assignment-action" href="edit_067.html" indepth="true"><i class="fa fa-check-circle"></i>
+Stemcell
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="new_tempest_form_renderers_form" id="new_tempest_form_renderers_form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/products/p-cloudcache-7a1a66acf0ca1e292c73/forms/caching-plan4" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="1CjfleS/qzas0clloodVgkXaFVUePxg0isyr8cyEvnMthJxI9UgCiRwCE/2wTH2T9bu3Fgpq6xvj4wlOxe13NA==" type="hidden"><h2 class="content-title">Configure service properties for Plan 4</h2>
+
+<div class="markdown">
+<p>Use this page to configure how Plan 4 appears to end-users and how each Service Instance behaves.</p>
+
+</div>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>Enable/Disable Service Plan</label>
+<div class="hint">Enable the service plan to be displayed on marketplace</div>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="caching-plan4[.properties.plan4_enable_service_plan][value]" id="option_disable_d37c91e0-6c25-4e69-9358-6377aa0f35ce" value="disable" class="accordion-group-radio" checked="checked" type="radio">
+Disable
+</label>
+<label>
+<input name="caching-plan4[.properties.plan4_enable_service_plan][value]" id="option_enable_a6520c0b-1897-4004-acd6-654aeaaf56ba" value="enable" class="accordion-group-radio" type="radio">
+Enable
+</label>
+<div class="accordion-group-section control-group hidden disabled" data-accordion-target-of-id="option_enable_a6520c0b-1897-4004-acd6-654aeaaf56ba" data-fields-enabled-by="option_enable_a6520c0b-1897-4004-acd6-654aeaaf56ba" style="display: none;">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Plan Name
+</label>
+<div class="controls">
+<input id="__properties__plan4_enable_service_plan__enable__plan_name_52232561-a028-421c-8afd-19fb6c94ef5d" name="caching-plan4[.properties.plan4_enable_service_plan][enable][.properties.plan4_enable_service_plan.enable.plan_name]" value="large" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Plan name which shows up on PCF marketplace</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus text textarea">
+<label class="control-label">
+Plan Description
+</label>
+<div class="controls">
+<textarea name="caching-plan4[.properties.plan4_enable_service_plan][enable][.properties.plan4_enable_service_plan.enable.plan_description]" id="caching-plan4_.properties.plan4_enable_service_plan_enable_.properties.plan4_enable_service_plan.enable.plan_description" autocomplete="off" disabled="">Plan Description</textarea>
+</div>
+</div>
+
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Maximum service instances
+</label>
+<div class="controls">
+<input id="__properties__plan4_enable_service_plan__enable__service_instance_quota_beebccd5-dd97-4a04-b455-0a1279f19e69" name="caching-plan4[.properties.plan4_enable_service_plan][enable][.properties.plan4_enable_service_plan.enable.service_instance_quota]" value="10" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Maximum allowed Pivotal Cloud Cache service instances</div>
+</div>
+
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Maximum servers per cluster
+<span class="integer-constraints">
+min: 4, max: 32
+</span>
+</label>
+<div class="controls">
+<input id="__properties__plan4_enable_service_plan__enable__max_servers_per_cluster_03f9b336-5b70-4bb7-88c4-ae1eb48cc53a" name="caching-plan4[.properties.plan4_enable_service_plan][enable][.properties.plan4_enable_service_plan.enable.max_servers_per_cluster]" value="32" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Maximum allowed servers per service instance</div>
+</div>
+
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Default Number of Servers
+<span class="integer-constraints">
+min: 4, max: 32
+</span>
+</label>
+<div class="controls">
+<input id="__properties__plan4_enable_service_plan__enable__default_num_servers_6e85e282-c9eb-47d1-9693-56c850210a22" name="caching-plan4[.properties.plan4_enable_service_plan][enable][.properties.plan4_enable_service_plan.enable.default_num_servers]" value="4" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Default number of server instances to spin up as part this plan. Can be overriden by developer using arbitrary parameter "num_servers". Needs to be less than "Maximum allowed servers per service instance"</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus service_network_az_multi_select">
+<label class="control-label">
+Availability zones for service instances
+</label>
+<div class="controls">
+<label class="checkbox">
+<input name="caching-plan4[.properties.plan4_enable_service_plan][enable][.properties.plan4_enable_service_plan.enable.service_instance_azs][]" value="null" disabled="" type="checkbox">
+<div>null</div>
+</label>
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus vm_type_dropdown">
+<label>VM type for the Locator VMs</label>
+<div class="controls">
+<select name="caching-plan4[.properties.plan4_enable_service_plan][enable][.properties.plan4_enable_service_plan.enable.locator_vm_type]" id="caching-plan4_.properties.plan4_enable_service_plan_enable_.properties.plan4_enable_service_plan.enable.locator_vm_type" disabled=""><option value=""></option><option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</div>
+</div>
+
+
+<div class="control-group disk_type_dropdown required reverse-hereditary-focus">
+<label>Persistent disk type for the Locator VMs</label>
+<div class="controls">
+<select name="caching-plan4[.properties.plan4_enable_service_plan][enable][.properties.plan4_enable_service_plan.enable.locator_persistent_disk_type]" id="caching-plan4_.properties.plan4_enable_service_plan_enable_.properties.plan4_enable_service_plan.enable.locator_persistent_disk_type" disabled=""><option value=""></option><option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus vm_type_dropdown">
+<label>VM type for the Server VMs</label>
+<div class="controls">
+<select name="caching-plan4[.properties.plan4_enable_service_plan][enable][.properties.plan4_enable_service_plan.enable.server_vm_type]" id="caching-plan4_.properties.plan4_enable_service_plan_enable_.properties.plan4_enable_service_plan.enable.server_vm_type" disabled=""><option value=""></option><option value="Standard_DS1_v2">Standard_DS1_v2 (cpu: 1, ram: 3.5 GB, disk: 50 GB)</option>
+<option value="Standard_DS2_v2">Standard_DS2_v2 (cpu: 2, ram: 7 GB, disk: 100 GB)</option>
+<option value="Standard_DS3_v2">Standard_DS3_v2 (cpu: 4, ram: 14 GB, disk: 200 GB)</option>
+<option value="Standard_DS4_v2">Standard_DS4_v2 (cpu: 8, ram: 28 GB, disk: 400 GB)</option>
+<option value="Standard_DS5_v2">Standard_DS5_v2 (cpu: 8, ram: 56 GB, disk: 800 GB)</option>
+<option value="Standard_DS11_v2">Standard_DS11_v2 (cpu: 2, ram: 14 GB, disk: 100 GB)</option>
+<option value="Standard_DS12_v2">Standard_DS12_v2 (cpu: 4, ram: 28 GB, disk: 200 GB)</option>
+<option value="Standard_DS13_v2">Standard_DS13_v2 (cpu: 8, ram: 56 GB, disk: 400 GB)</option>
+<option value="Standard_DS14_v2">Standard_DS14_v2 (cpu: 16, ram: 112 GB, disk: 800 GB)</option>
+<option value="Standard_F1s">Standard_F1s (cpu: 1, ram: 2 GB, disk: 16 GB)</option>
+<option value="Standard_F2s">Standard_F2s (cpu: 2, ram: 4 GB, disk: 32 GB)</option>
+<option value="Standard_F4s">Standard_F4s (cpu: 4, ram: 8 GB, disk: 64 GB)</option>
+<option value="Standard_F8s">Standard_F8s (cpu: 8, ram: 16 GB, disk: 128 GB)</option></select>
+</div>
+</div>
+
+
+<div class="control-group disk_type_dropdown required reverse-hereditary-focus">
+<label>Persistent disk type for the Server VMs</label>
+<div class="controls">
+<select name="caching-plan4[.properties.plan4_enable_service_plan][enable][.properties.plan4_enable_service_plan.enable.server_persistent_disk_type]" id="caching-plan4_.properties.plan4_enable_service_plan_enable_.properties.plan4_enable_service_plan.enable.server_persistent_disk_type" disabled=""><option value=""></option><option value="1024">1 GB</option>
+<option value="2048">2 GB</option>
+<option value="5120">5 GB</option>
+<option value="10240">10 GB</option>
+<option value="20480">20 GB</option>
+<option value="30720">30 GB</option>
+<option value="51200">50 GB</option>
+<option value="76800">75 GB</option>
+<option value="102400">100 GB</option>
+<option value="153600">150 GB</option>
+<option value="204800">200 GB</option>
+<option value="307200">300 GB</option>
+<option value="512000">500 GB</option>
+<option value="768000">750 GB</option>
+<option value="1048576">1 TB</option>
+<option value="2097152">2 TB</option>
+<option value="5242880">5 TB</option>
+<option value="10485760">10 TB</option>
+<option value="16777216">16 TB</option></select>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+
+</div>
+</div>
+</form>
+<form class="modal fade" style="display: none;" id="rsa-certificate-form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/rsa_certificates" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden"><div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<i class="fa fa-times-circle"></i>
+</button>
+<h2>
+<i class="fa fa-check"></i>
+Generate RSA Certificate
+</h2>
+</div>
+
+<div class="modal-body">
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label">Example: *.app.domain.com, *.system.domain.com, my.webapp.com, *.domain.com</label>
+<div class="controls">
+<input name="rsa_certificate[domains]" id="rsa_certificate_domains" autocomplete="off" value="" type="text">
+
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn-tertiary btn" data-dismiss="modal">Cancel</button>
+<button class="btn btn-primary" id="save-rsa-certificate-action" type="submit">
+Generate
+</button>
+
+
+</div>
+</div>
+</div>
+</form>
+
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

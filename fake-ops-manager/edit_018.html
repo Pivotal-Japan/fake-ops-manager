@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="PRff+ZaMMzIAZl6T3x+hTY11wfSkcAXc/gfC2yLJF7fEu5wkh3uajbC1hAvN1IlcPRRjt7Al9vOXKGBkK6De8A==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_018.css" type="text/css" rel="stylesheet">
+</head>
+<body class="forms-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Pivotal Elastic Runtime</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_002.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="statuses.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials_001.html" indepth="true">Credentials</a>
+</li>
+<li>
+<a id="show-logs-action" href="jobs_logs.html" indepth="true">Logs</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-cf-azs-and-network-assignment-action" href="edit_002.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-domains-action" href="edit_017.html" indepth="true"><i class="fa fa-check-circle"></i>
+Domains
+</a></li>
+<li class="active status">
+<a id="show-networking-action" href="edit_018.html" indepth="true"><i class="fa fa-check-circle"></i>
+Networking
+</a></li>
+<li class="status">
+<a id="show-app_containers-action" href="edit_019.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Containers
+</a></li>
+<li class="status">
+<a id="show-application_dev_controls-action" href="edit_020.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Developer Controls
+</a></li>
+<li class="status">
+<a id="show-application_security_groups-action" href="edit_021.html" indepth="true"><i class="fa fa-check-circle"></i>
+Application Security Groups
+</a></li>
+<li class="status">
+<a id="show-uaa-action" href="edit_022.html" indepth="true"><i class="fa fa-check-circle"></i>
+Authentication and Enterprise SSO
+</a></li>
+<li class="status">
+<a id="show-system_database-action" href="edit_023.html" indepth="true"><i class="fa fa-check-circle"></i>
+Databases
+</a></li>
+<li class="status">
+<a id="show-mysql_config-action" href="edit_024.html" indepth="true"><i class="fa fa-check-circle"></i>
+Internal MySQL
+</a></li>
+<li class="status">
+<a id="show-system_blobstore-action" href="edit_025.html" indepth="true"><i class="fa fa-check-circle"></i>
+File Storage
+</a></li>
+<li class="status">
+<a id="show-syslog_aggregator-action" href="edit_026.html" indepth="true"><i class="fa fa-check-circle"></i>
+System Logging
+</a></li>
+<li class="status">
+<a id="show-generic_white_label_config-action" href="edit_027.html" indepth="true"><i class="fa fa-check-circle"></i>
+Custom Branding
+</a></li>
+<li class="status">
+<a id="show-apps_manager_config-action" href="edit_028.html" indepth="true"><i class="fa fa-check-circle"></i>
+Apps Manager
+</a></li>
+<li class="status">
+<a id="show-smtp_config-action" href="edit_029.html" indepth="true"><i class="fa fa-check-circle"></i>
+Email Notifications
+</a></li>
+<li class="status">
+<a id="show-cloud_controller-action" href="edit_030.html" indepth="true"><i class="fa fa-check-circle"></i>
+Restore CCDB Encryption Key
+</a></li>
+<li class="status">
+<a id="show-smoke_tests-action" href="edit_031.html" indepth="true"><i class="fa fa-check-circle"></i>
+Smoke Tests
+</a></li>
+<li class="status">
+<a id="show-experimental_features-action" href="edit_032.html" indepth="true"><i class="fa fa-check-circle"></i>
+Advanced Features
+</a></li>
+<li class="status">
+<a id="show-product-errands-action" href="edit_033.html" indepth="true"><i class="fa fa-check-circle"></i>
+Errands
+</a></li>
+<li class="status">
+<a id="show-cf-resource-sizes-action" href="edit_034.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+<li class="status">
+<a id="show-cf-stemcell-assignment-action" href="edit_035.html" indepth="true"><i class="fa fa-check-circle"></i>
+Stemcell
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="new_tempest_form_renderers_form" id="new_tempest_form_renderers_form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/products/cf-236816a17dff00ecc296/forms/networking" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="PRff+ZaMMzIAZl6T3x+hTY11wfSkcAXc/gfC2yLJF7fEu5wkh3uajbC1hAvN1IlcPRRjt7Al9vOXKGBkK6De8A==" type="hidden"><h2 class="content-title">Configure security and routing services for your platform. It is usually preferable to use your own load balancer instead of an HAProxy instance as your point-of-entry to the platform.</h2>
+
+<div class="control-group ip_ranges reverse-hereditary-focus">
+<label class="control-label">
+Router IPs
+</label>
+<div class="controls">
+<input id="__router__static_ips_b49e0ccc-c066-4461-af9f-7cb4c2e20e32" name="networking[.router.static_ips]" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">If you are not using HAProxy, enter static IP address(es) for the Router(s), which must be within the subnet CIDR block  that you defined in the Ops Manager network configuration. If you have a load balancer, configure it to point to these IPs. If deploying PCF to AWS with an ELB, do not enter IP addresses here. Instead, add the name of your ELB in the Resource Config section, in the ELB Name column for Router.</div>
+</div>
+
+<div class="control-group ip_ranges reverse-hereditary-focus">
+<label class="control-label">
+SSH Proxy IPs
+</label>
+<div class="controls">
+<input id="__diego_brain__static_ips_4184c92a-8769-4fa3-8c1d-3154d437f789" name="networking[.diego_brain.static_ips]" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">Enter static IPs for the Diego Brain(s), which will accept requests to SSH into application containers on port 2222, and register a load balancer with these IPs. If deploying PCF to AWS with an ELB, do not enter IP addresses here. Instead, add the name of your ELB in the Resource Config section, in the ELB Name column for Diego Brain.</div>
+</div>
+
+<div class="control-group ip_ranges reverse-hereditary-focus">
+<label class="control-label">
+HAProxy IPs
+</label>
+<div class="controls">
+<input id="__ha_proxy__static_ips_e5a8e8bf-c5be-42dc-a9b5-8775b4a22a19" name="networking[.ha_proxy.static_ips]" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">If you are using HAProxy, enter its IP address(es). The addresses must be within your subnet CIDR block. Point your DNS to this IP address unless you are using your own load balancer.</div>
+</div>
+
+<div class="control-group ip_ranges reverse-hereditary-focus">
+<label class="control-label">
+TCP Router IPs
+</label>
+<div class="controls">
+<input id="__tcp_router__static_ips_48f22481-f92a-4ddf-8ef1-5e681a2cc763" name="networking[.tcp_router.static_ips]" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">Enter the IP address(es) you would like to designate for the TCP Routers, and point your load balancer to these addresses. If deploying to AWS with an ELB, do not enter IP addresses here. Instead, in the Resource Config section, add your ELB by name to the ELB Name column for TCP Router.</div>
+</div>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>Select one of the following point-of-entry options:</label>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="networking[.properties.networking_point_of_entry][value]" id="option_external_ssl_b68b0a14-d63d-47cc-8b06-4b3b7bf92657" value="external_ssl" class="accordion-group-radio" checked="checked" type="radio">
+Forward SSL to Elastic Runtime Router. Assumes an external load balancer is configured to forward encrypted traffic.
+</label>
+<div class="accordion-group-section control-group" data-accordion-target-of-id="option_external_ssl_b68b0a14-d63d-47cc-8b06-4b3b7bf92657" data-fields-enabled-by="option_external_ssl_b68b0a14-d63d-47cc-8b06-4b3b7bf92657" style="display: block;">
+<div class="control-group required reverse-hereditary-focus rsa_cert_credentials textarea">
+<label class="control-label">
+Router SSL Termination Certificate and Private Key
+</label>
+<div class="controls">
+<textarea name="networking[.properties.networking_point_of_entry][external_ssl][.properties.networking_point_of_entry.external_ssl.ssl_rsa_certificate][cert_pem]" id="rsa-cert-credentials-0ca95c4d8693-cert-pem" placeholder="Certificate PEM" autocomplete="off">-----BEGIN CERTIFICATE-----
+MIIDgDCCAmigAwIBAgIJALtZ40BHlOMjMA0GCSqGSIb3DQEBCwUAMEUxCzAJBgNV
+BAYTAkFVMRMwEQYDVQQIEwpTb21lLVN0YXRlMSEwHwYDVQQKExhJbnRlcm5ldCBX
+aWRnaXRzIFB0eSBMdGQwIBcNMTcwMzI3MTY0NDM0WhgPMjI5MTAxMDkxNjQ0MzRa
+MBwxCzAJBgNVBAYTAkpQMQ0wCwYDVQQKEwRCT1NIMIIBIjANBgkqhkiG9w0BAQEF
+AAOCAQ8AMIIBCgKCAQEA6368233iXXuhz877S9wK1nMKTje9YqLcHCkeQE9CNIjV
+tucwyL20mLFOdRrp44agToBZicq+9hox7exDAZ3OLOYpw2fDWeiY8H6GU4lpVeGh
+j48xEUP5GQ7OXralB6bbY5/kMBGuAhF2yMkCKGpmmlCJ4FRVo6xEYzCvNFjNuoVy
+ylYjv53kE/pGOlgHtGL8HpgC6vy96yzmyfK0NF+QZXKzXeF2peB8dqRB8UxMEMS8
+Mrp3LzwLT6MTtTfz9dYTO6lV6LfGNWmZPV8yDxA9RbWCL9aQ+P3As8cNgMFKksP0
+LQZ1IAXkCWEdbv31klKv+EM2QMWzJ2B3eWDKF4wwHQIDAQABo4GZMIGWMIGTBgNV
+HREEgYswgYiCHiouc3lzdGVtLjEzLTc4LTQ5LTE2Ni5zc2xpcC5pb4IkKi5sb2dp
+bi5zeXN0ZW0uMTMtNzgtNDktMTY2LnNzbGlwLmlvgiIqLnVhYS5zeXN0ZW0uMTMt
+NzgtNDktMTY2LnNzbGlwLmlvghwqLmFwcHMuMTMtNzgtNDktMTY2LnNzbGlwLmlv
+MA0GCSqGSIb3DQEBCwUAA4IBAQA73CzfG26s4ZPjSLA/beaqm878mDVEULnD+D/r
+78xBbMPYf4VlekwimdtCq9POawByZZpVSUu6nFcA9680IMft/8dTFJULAwcvIYuq
+jpWwk3xs3RbYH00CQN2tHOPRyX6/v+HcIjszobIRnbiNPeHxtXPs0QDvfJViCpN/
+Sh1EWdCGTZv75J8cKLTjYhpRdvDng2wz06VYZ7JbRd2T1QAI9QkBrJRpCh4qNY7I
+jvmiq1CimcxYQTkY3mxokgHz+wv9H5xFZ9g1KS6MIpvb/agyQYJ7hpgxOjWYjo+S
+UGKGbSGLIkbkkcrm/YuPEmUjqL+9ZpnGpqXoxQ85smUjFcsi
+-----END CERTIFICATE-----
+</textarea>
+<input value="true" name="networking[.properties.networking_point_of_entry][external_ssl][.properties.networking_point_of_entry.external_ssl.ssl_rsa_certificate][private_key_pem][unchanged]" type="hidden"><textarea name="networking[.properties.networking_point_of_entry][external_ssl][.properties.networking_point_of_entry.external_ssl.ssl_rsa_certificate][private_key_pem]" id="rsa-cert-credentials-0ca95c4d8693-private-key-pem" placeholder="Private Key PEM" data-masked-field-with-change-link="true" data-product-credential="true" autocomplete="off" disabled="" class="disabled"></textarea>
+<a class="with-rsa-certificate-link" data-cert-pem-id="rsa-cert-credentials-0ca95c4d8693-cert-pem" data-private-key-pem-id="rsa-cert-credentials-0ca95c4d8693-private-key-pem" href="#" id="networking[.properties.networking_point_of_entry][external_ssl]-.properties.networking_point_of_entry.external_ssl.ssl_rsa_certificate-generate-action" style="display: none;">
+Generate RSA Certificate
+</a>
+</div><a href="#" data-masked-input-name="networking[.properties.networking_point_of_entry][external_ssl][.properties.networking_point_of_entry.external_ssl.ssl_rsa_certificate][private_key_pem]">Change</a>
+<div class="hint">Required for SSL encryption between the load balancer and router(s).</div>
+</div>
+
+
+<div class="control-group reverse-hereditary-focus text textarea">
+<label class="control-label">
+Router SSL Ciphers
+</label>
+<div class="controls">
+<textarea name="networking[.properties.networking_point_of_entry][external_ssl][.properties.networking_point_of_entry.external_ssl.ssl_ciphers]" id="networking_.properties.networking_point_of_entry_external_ssl_.properties.networking_point_of_entry.external_ssl.ssl_ciphers" autocomplete="off"></textarea>
+</div>
+<div class="hint">Router ciphers are read in Golang and should use underscores instead of dashes in their names e.g. TLS_RSA_WITH_RC4_128_SHA:TLS_RSA_WITH_AES_128_CBC_SHA</div>
+</div>
+
+
+</div>
+<label>
+<input name="networking[.properties.networking_point_of_entry][value]" id="option_external_non_ssl_33a90f2d-2412-41b7-9278-32edc38f9935" value="external_non_ssl" class="accordion-group-radio" type="radio">
+Forward unencrypted traffic to Elastic Runtime Router. Assumes an external load balancer is configured to forward unencrypted traffic.
+</label>
+<label>
+<input name="networking[.properties.networking_point_of_entry][value]" id="option_haproxy_e0a9f72c-9369-4fec-a97f-3b6dbd139d5b" value="haproxy" class="accordion-group-radio" type="radio">
+Forward SSL to HA Proxy. Like first option - Assumes an external load balancer is configured to forward encrypted traffic.
+</label>
+<div class="accordion-group-section control-group hidden disabled" data-accordion-target-of-id="option_haproxy_e0a9f72c-9369-4fec-a97f-3b6dbd139d5b" data-fields-enabled-by="option_haproxy_e0a9f72c-9369-4fec-a97f-3b6dbd139d5b" style="display: none;">
+<div class="control-group required reverse-hereditary-focus rsa_cert_credentials textarea">
+<label class="control-label">
+SSL Certificate and Private Key
+</label>
+<div class="controls">
+<textarea name="networking[.properties.networking_point_of_entry][haproxy][.properties.networking_point_of_entry.haproxy.ssl_rsa_certificate][cert_pem]" id="rsa-cert-credentials-4af53cdd4861-cert-pem" placeholder="Certificate PEM" autocomplete="off" disabled=""></textarea>
+<textarea name="networking[.properties.networking_point_of_entry][haproxy][.properties.networking_point_of_entry.haproxy.ssl_rsa_certificate][private_key_pem]" id="rsa-cert-credentials-4af53cdd4861-private-key-pem" placeholder="Private Key PEM" data-masked-field-with-change-link="false" data-product-credential="true" autocomplete="off" disabled=""></textarea>
+<a class="with-rsa-certificate-link" data-cert-pem-id="rsa-cert-credentials-4af53cdd4861-cert-pem" data-private-key-pem-id="rsa-cert-credentials-4af53cdd4861-private-key-pem" href="#" id="networking[.properties.networking_point_of_entry][haproxy]-.properties.networking_point_of_entry.haproxy.ssl_rsa_certificate-generate-action">
+Generate RSA Certificate
+</a>
+</div>
+<div class="hint">This certificate and key are used to terminate SSL traffic at HAProxy. The certificate can have multiple domains attributed to it, for example if you have separate system and application domains. You can also generate a self-signed certificate here with your wildcard system domain.</div>
+</div>
+
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="networking[.properties.networking_point_of_entry][haproxy][.properties.networking_point_of_entry.haproxy.disable_http]" value="0" disabled="" type="hidden">
+<input id="__properties__networking_point_of_entry__haproxy__disable_http_3eb7a935-e891-42e5-95a5-1b8af9de2f4b" name="networking[.properties.networking_point_of_entry][haproxy][.properties.networking_point_of_entry.haproxy.disable_http]" value="1" disabled="" type="checkbox">
+Disable HTTP traffic to HAProxy
+</label>
+</div>
+<div class="hint">If checked, HAProxy will only allow HTTPS traffic.</div>
+</div>
+
+
+<div class="control-group reverse-hereditary-focus text textarea">
+<label class="control-label">
+HAProxy SSL Ciphers
+</label>
+<div class="controls">
+<textarea name="networking[.properties.networking_point_of_entry][haproxy][.properties.networking_point_of_entry.haproxy.ssl_ciphers]" id="networking_.properties.networking_point_of_entry_haproxy_.properties.networking_point_of_entry.haproxy.ssl_ciphers" autocomplete="off" disabled=""></textarea>
+</div>
+<div class="hint">These ciphers should use dashes in their names, e.g. `ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384`</div>
+</div>
+
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Request Max Buffer Size
+</label>
+<div class="controls">
+<input id="__properties__networking_point_of_entry__haproxy__max_buffer_size_7a2caf21-e8e0-4a10-944d-e082c2293cd9" name="networking[.properties.networking_point_of_entry][haproxy][.properties.networking_point_of_entry.haproxy.max_buffer_size]" value="16384" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">Buffer size (in bytes) to use for requests, any requests larger than this (large cookies or query strings) will result in a gateway error. The default value is 16384.</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="networking[.ha_proxy.skip_cert_verify]" value="0" type="hidden">
+<input checked="checked" id="__ha_proxy__skip_cert_verify_3d584f60-5f66-4c20-9571-3a94d09ead18" name="networking[.ha_proxy.skip_cert_verify]" value="1" type="checkbox">
+Disable SSL certificate verification for this environment
+</label>
+</div>
+<div class="hint">You can disable SSL verification if you are using your own self-signed certificates that are not from a trusted CA.</div>
+</div>
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="networking[.router.disable_insecure_cookies]" value="0" type="hidden">
+<input id="__router__disable_insecure_cookies_bdb4cbb0-24d7-4bdd-ad60-276198847cf0" name="networking[.router.disable_insecure_cookies]" value="1" type="checkbox">
+Disable insecure cookies on the Router
+</label>
+</div>
+<div class="hint">If checked, this turns on the secure flag for cookies generated by router.</div>
+</div>
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="networking[.router.enable_zipkin]" value="0" type="hidden">
+<input checked="checked" id="__router__enable_zipkin_ef135ef8-8eb1-4c6f-a79c-0c47ba5dd14c" name="networking[.router.enable_zipkin]" value="1" type="checkbox">
+Enable Zipkin tracing headers on the router
+</label>
+</div>
+<div class="hint">If checked, the router will include Zipkin tracing headers on all incoming requests.</div>
+</div>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>Choose whether to enable route services. Route services enable you to proxy requests to your app over TLS to arbitrary URLs before hitting your app.</label>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="networking[.properties.route_services][value]" id="option_enable_1bc7efc8-3edf-4c09-a781-a03d0b6513cc" value="enable" class="accordion-group-radio" checked="checked" type="radio">
+Enable route services
+</label>
+<label>
+<input name="networking[.properties.route_services][value]" id="option_disable_1332a194-cc68-4881-b0a9-19166ae31a91" value="disable" class="accordion-group-radio" type="radio">
+Disable route services
+</label>
+</div>
+</div>
+
+<div class="control-group port reverse-hereditary-focus">
+<label class="control-label">
+Loggregator Port
+</label>
+<div class="controls">
+<input id="__properties__logger_endpoint_port_868c6cb2-caa9-4bf4-bdd1-a12b987eb782" name="networking[.properties.logger_endpoint_port]" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">Default is 443. Enter a new value to override the default, for instance if port 443 on your load balancer is used for other traffic.</div>
+</div>
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Applications Subnet (Only change this if you need to avoid address collision with a third-party service on the same subnet.)
+</label>
+<div class="controls">
+<input id="__diego_cell__garden_network_pool_52992f99-1b53-4b1f-a84a-0eb236300810" name="networking[.diego_cell.garden_network_pool]" value="10.254.0.0/22" autocomplete="off" type="text">
+</div>
+<div class="hint">Enter a CIDR subnet mask specifying the range of available IP addresses to be assigned to your app containers. This must be different from the network used by the system VMs.</div>
+</div>
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Applications Network Maximum Transmission Unit (MTU) (in bytes)
+</label>
+<div class="controls">
+<input id="__diego_cell__garden_network_mtu_952a36b5-1861-49b0-b2ee-e5a97ad6a514" name="networking[.diego_cell.garden_network_mtu]" value="1454" autocomplete="off" type="text">
+</div>
+<div class="hint">The default 1454 bytes is fine for most cases, but you might need less, such as for networks that use GRE tunnels.</div>
+</div>
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Router Timeout to Backends (in seconds)
+<span class="integer-constraints">
+min: 1
+</span>
+</label>
+<div class="controls">
+<input id="__router__request_timeout_in_seconds_456ae02f-57aa-457d-b960-b3b83bf09a9a" name="networking[.router.request_timeout_in_seconds]" value="900" autocomplete="off" type="text">
+</div>
+<div class="hint">Timeout for connections from Router (and HAProxy, if you use it) to applications and system components. Increase this to accommodate larger uploads over connections with high latency.</div>
+</div>
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Load Balancer Unhealthy Threshold
+</label>
+<div class="controls">
+<input id="__router__drain_wait_d23cb107-2dab-4eee-b990-a3d8cd04dbaf" name="networking[.router.drain_wait]" value="0" autocomplete="off" type="text">
+</div>
+<div class="hint">Specifies the amount of time, in seconds, that the Router will continue to accept connections before shutting down. During this period the healthcheck will report unhealthy to cause load balancers to fail over to other Routers. This value should be greater than or equal to the max time it could take your load balancer to consider a Router instance unhealthy, given contiguous failed healthchecks.</div>
+</div>
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Load Balancer Healthy Threshold
+</label>
+<div class="controls">
+<input id="__router__lb_healthy_threshold_1eabad71-3b6d-4ed1-8029-5b5bc05b73c1" name="networking[.router.lb_healthy_threshold]" value="20" autocomplete="off" type="text">
+</div>
+<div class="hint">Specifies the amount of time, in seconds, to wait until declaring the router instance started. This allows an external load balancer time to register the instance as healthy.</div>
+</div>
+
+<div class="control-group integer required reverse-hereditary-focus">
+<label class="control-label">
+Router Max Idle Keepalive Connections
+<span class="integer-constraints">
+min: 0, max: 50000
+</span>
+</label>
+<div class="controls">
+<input id="__router__max_idle_connections_91d773de-2caf-4c5a-91f7-767b22acaba5" name="networking[.router.max_idle_connections]" value="0" autocomplete="off" type="text">
+</div>
+<div class="hint">Max number of idle keepalive connections maintained by Gorouter to all backends. The default value of 0 disables keepalive support. The max number of idle connections per backend is 100; this limit takes precedent if concurrent requests per backend is greater than 100 and total concurrent requests is less than Max Idle Keepalive Connections.</div>
+</div>
+
+<div class="control-group reverse-hereditary-focus string_list">
+<label class="control-label">
+HTTP Headers to Log
+</label>
+<div class="controls">
+<input id="__router__extra_headers_to_log_9cf45157-4b4a-431b-bd43-eb1154df4f00" name="networking[.router.extra_headers_to_log]" autocomplete="off" value="" type="text">
+</div>
+<div class="hint">A comma-separated list of HTTP headers that will annotate access log events on the GoRouter.</div>
+</div>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>Enable TCP requests to your apps via specific ports on the TCP router. You will want to configure a load balancer to forward these TCP requests to the TCP routers. If you do not have a load balancer, then you can also send traffic directly to the TCP router.</label>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="networking[.properties.tcp_routing][value]" id="option_disable_397a52d0-9463-4698-bff0-4d7287d8400d" value="disable" class="accordion-group-radio" checked="checked" type="radio">
+Select this option if you prefer to enable TCP Routing at a later time
+</label>
+<label>
+<input name="networking[.properties.tcp_routing][value]" id="option_enable_8e664f5b-48b2-4883-b7ca-31ddb50b16ba" value="enable" class="accordion-group-radio" type="radio">
+Enable TCP Routing
+</label>
+<div class="accordion-group-section control-group hidden disabled" data-accordion-target-of-id="option_enable_8e664f5b-48b2-4883-b7ca-31ddb50b16ba" data-fields-enabled-by="option_enable_8e664f5b-48b2-4883-b7ca-31ddb50b16ba" style="display: none;">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+TCP Routing Ports (one-time configuration, if you want to update this value you can via the CF CLI)
+</label>
+<div class="controls">
+<input id="__properties__tcp_routing__enable__reservable_ports_0837fcc2-d40b-470e-ac72-2c1decf3ff30" name="networking[.properties.tcp_routing][enable][.properties.tcp_routing.enable.reservable_ports]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Enter the range of ports reserved for TCP routes. These ports must be available on your load balancer. You can specify a list of ports with commas between each port number and specify ranges of ports with dashes between the first and last port number. This configuration only applies the first time you specify it here, if you later want to update the ports you must do so with the CF CLI.</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+
+</div>
+</div>
+</form>
+<form class="modal fade" style="display: none;" id="rsa-certificate-form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/rsa_certificates" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden"><div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<i class="fa fa-times-circle"></i>
+</button>
+<h2>
+<i class="fa fa-check"></i>
+Generate RSA Certificate
+</h2>
+</div>
+
+<div class="modal-body">
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label">Example: *.app.domain.com, *.system.domain.com, my.webapp.com, *.domain.com</label>
+<div class="controls">
+<input name="rsa_certificate[domains]" id="rsa_certificate_domains" autocomplete="off" value="" type="text">
+
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn-tertiary btn" data-dismiss="modal">Cancel</button>
+<button class="btn btn-primary" id="save-rsa-certificate-action" type="submit">
+Generate
+</button>
+
+
+</div>
+</div>
+</div>
+</form>
+
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

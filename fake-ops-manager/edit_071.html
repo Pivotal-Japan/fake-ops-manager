@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="FkcM5ixsiCK/MFmnt1eDH1oFPZ/SIlSKLujRJlPBoZDv6087PZshnQ/jgz+lnKsO6mSf3MZ3p6VHx3OZWqho1w==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_071.css" type="text/css" rel="stylesheet">
+</head>
+<body class="forms-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>MySQL</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_008.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="statuses_006.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials_007.html" indepth="true">Credentials</a>
+</li>
+<li>
+<a id="show-logs-action" href="jobs_logs_006.html" indepth="true">Logs</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-p-mysql-azs-and-network-assignment-action" href="edit_008.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="status">
+<a id="show-service_plan_collection-action" href="edit_068.html" indepth="true"><i class="fa fa-check-circle"></i>
+Service Plans
+</a></li>
+<li class="status">
+<a id="show-proxy-action" href="edit_069.html" indepth="true"><i class="fa fa-check-circle"></i>
+Proxy
+</a></li>
+<li class="status">
+<a id="show-advanced_options-action" href="edit_070.html" indepth="true"><i class="fa fa-check-circle"></i>
+Advanced Options
+</a></li>
+<li class="active status">
+<a id="show-backups-action" href="edit_071.html" indepth="true"><i class="fa fa-check-circle"></i>
+Backups
+</a></li>
+<li class="status">
+<a id="show-product-errands-action" href="edit_072.html" indepth="true"><i class="fa fa-check-circle"></i>
+Errands
+</a></li>
+<li class="status">
+<a id="show-p-mysql-resource-sizes-action" href="edit_073.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+<li class="status">
+<a id="show-p-mysql-stemcell-assignment-action" href="edit_074.html" indepth="true"><i class="fa fa-check-circle"></i>
+Stemcell
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="new_tempest_form_renderers_form" id="new_tempest_form_renderers_form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/products/p-mysql-1777a4c6fb7a72e28fda/forms/backups" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="FkcM5ixsiCK/MFmnt1eDH1oFPZ/SIlSKLujRJlPBoZDv6087PZshnQ/jgz+lnKsO6mSf3MZ3p6VHx3OZWqho1w==" type="hidden"><h2 class="content-title">Automated Database Backups</h2>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>Backups</label>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="backups[.properties.backup_options][value]" id="option_disable_e95824f3-e3cb-41ce-be6d-6dc3bbf7cf03" value="disable" class="accordion-group-radio" checked="checked" type="radio">
+Disable Backups (Must also choose "No Backups" below, and set Backup Prepare Node Instances to 0 in the "Resource Config" pane at left.)
+
+</label>
+<label>
+<input name="backups[.properties.backup_options][value]" id="option_enable_861787f8-c764-46ca-b164-23c8331042cd" value="enable" class="accordion-group-radio" type="radio">
+Enable Backups (Must also choose a destination below.)
+</label>
+<div class="accordion-group-section control-group hidden disabled" data-accordion-target-of-id="option_enable_861787f8-c764-46ca-b164-23c8331042cd" data-fields-enabled-by="option_enable_861787f8-c764-46ca-b164-23c8331042cd" style="display: none;">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Cron Schedule (See http://godoc.org/github.com/robfig/cron)
+</label>
+<div class="controls">
+<input id="__properties__backup_options__enable__cron_schedule_6e855580-87c1-4c9f-801e-006b13615b1e" name="backups[.properties.backup_options][enable][.properties.backup_options.enable.cron_schedule]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Specify when backups are to occur. Schedule uses the machine's local time zone.</div>
+</div>
+
+
+<div class="boolean control-group required reverse-hereditary-focus">
+<div class="controls">
+<label class="checkbox inline">
+<input name="backups[.properties.backup_options][enable][.properties.backup_options.enable.backup_all_masters]" value="0" disabled="" type="hidden">
+<input checked="checked" id="__properties__backup_options__enable__backup_all_masters_e72627a7-dd81-4294-805f-e05894d907c9" name="backups[.properties.backup_options][enable][.properties.backup_options.enable.backup_all_masters]" value="1" disabled="" type="checkbox">
+Back up all nodes
+</label>
+</div>
+<div class="hint">Each node is a duplicate master. This option makes unique backups from each master, rather than from a single instance.</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>Backup Destination</label>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="backups[.properties.backups][value]" id="option_disable_097589b6-a8a3-4c1a-958d-7b38f8ae4eaa" value="disable" class="accordion-group-radio" checked="checked" type="radio">
+No Backups
+</label>
+<label>
+<input name="backups[.properties.backups][value]" id="option_enable_bc40825f-7cba-4f1b-bea7-14e430ddc06b" value="enable" class="accordion-group-radio" type="radio">
+Ceph or Amazon S3
+</label>
+<div class="accordion-group-section control-group hidden disabled" data-accordion-target-of-id="option_enable_bc40825f-7cba-4f1b-bea7-14e430ddc06b" data-fields-enabled-by="option_enable_bc40825f-7cba-4f1b-bea7-14e430ddc06b" style="display: none;">
+<div class="control-group reverse-hereditary-focus string">
+<label class="control-label">
+S3 Endpoint URL
+</label>
+<div class="controls">
+<input id="__properties__backups__enable__endpoint_url_542d9073-649a-429d-969e-5512a30e0fa2" name="backups[.properties.backups][enable][.properties.backups.enable.endpoint_url]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Specify the endpoint that matches the region the bucket is hosted in. Defaults to https://s3.amazonaws.com for us-east-1 if no url is provided.</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+S3 Bucket Name
+</label>
+<div class="controls">
+<input id="__properties__backups__enable__bucket_name_659814c0-3c3a-4561-bc10-5c92bc10cc6a" name="backups[.properties.backups][enable][.properties.backups.enable.bucket_name]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Do not include 's3://' prefix, trailing '/', or underscores. The bucket will be created automatically if it does not already exist.</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Bucket Path
+</label>
+<div class="controls">
+<input id="__properties__backups__enable__bucket_path_e3420a58-e66f-4a19-8e21-7e4f70a1f936" name="backups[.properties.backups][enable][.properties.backups.enable.bucket_path]" autocomplete="off" disabled="" value="" type="text">
+</div>
+<div class="hint">Specify a folder within the bucket which will hold the backups. Do not include a trailing slash.</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+AWS Access Key ID
+</label>
+<div class="controls">
+<input id="__properties__backups__enable__access_key_id_a9b8a12f-8f3b-4d88-95b3-01fb51e4a2da" name="backups[.properties.backups][enable][.properties.backups.enable.access_key_id]" autocomplete="off" disabled="" value="" type="text">
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus secret">
+<label class="control-label">
+AWS Secret Access Key
+</label>
+<div class="controls">
+<input autocomplete="off" data-masked-field-with-change-link="false" data-product-credential="true" name="backups[.properties.backups][enable][.properties.backups.enable.secret_access_key][secret]" placeholder="Secret" value="" disabled="" type="password">
+</div>
+</div>
+
+
+</div>
+<label>
+<input name="backups[.properties.backups][value]" id="option_scp_a16571e7-650e-43e5-b4be-4fea91b4c55d" value="scp" class="accordion-group-radio" type="radio">
+SCP to a Remote Host
+</label>
+<div class="accordion-group-section control-group hidden disabled" data-accordion-target-of-id="option_scp_a16571e7-650e-43e5-b4be-4fea91b4c55d" data-fields-enabled-by="option_scp_a16571e7-650e-43e5-b4be-4fea91b4c55d" style="display: none;">
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Username
+</label>
+<div class="controls">
+<input id="__properties__backups__scp__user_7405ccb3-ad1d-4a47-b1c7-e988c9c75c27" name="backups[.properties.backups][scp][.properties.backups.scp.user]" autocomplete="off" disabled="" value="" type="text">
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Hostname
+</label>
+<div class="controls">
+<input id="__properties__backups__scp__server_3f0309f4-4425-4f0f-98ac-08234cb65a4b" name="backups[.properties.backups][scp][.properties.backups.scp.server]" autocomplete="off" disabled="" value="" type="text">
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus string">
+<label class="control-label">
+Destination Directory
+</label>
+<div class="controls">
+<input id="__properties__backups__scp__destination_f3a5be3d-584b-4eb7-8f00-09c0c2343976" name="backups[.properties.backups][scp][.properties.backups.scp.destination]" autocomplete="off" disabled="" value="" type="text">
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus text textarea">
+<label class="control-label">
+Private Key
+</label>
+<div class="controls">
+<textarea name="backups[.properties.backups][scp][.properties.backups.scp.scp_key]" id="backups_.properties.backups_scp_.properties.backups.scp.scp_key" autocomplete="off" disabled=""></textarea>
+</div>
+<div class="hint">Do not password protect</div>
+</div>
+
+
+<div class="control-group integer reverse-hereditary-focus">
+<label class="control-label">
+SCP Port
+</label>
+<div class="controls">
+<input id="__properties__backups__scp__port_15314e3b-3b35-4bcc-8271-c6d0ce770bd0" name="backups[.properties.backups][scp][.properties.backups.scp.port]" value="22" autocomplete="off" disabled="" type="text">
+</div>
+<div class="hint">SCP uses the SSH protocol, so provide the TCP port that your server uses for the SSH protocol.</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+
+</div>
+</div>
+</form>
+<form class="modal fade" style="display: none;" id="rsa-certificate-form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/rsa_certificates" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden"><div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<i class="fa fa-times-circle"></i>
+</button>
+<h2>
+<i class="fa fa-check"></i>
+Generate RSA Certificate
+</h2>
+</div>
+
+<div class="modal-body">
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label">Example: *.app.domain.com, *.system.domain.com, my.webapp.com, *.domain.com</label>
+<div class="controls">
+<input name="rsa_certificate[domains]" id="rsa_certificate_domains" autocomplete="off" value="" type="text">
+
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn-tertiary btn" data-dismiss="modal">Cancel</button>
+<button class="btn btn-primary" id="save-rsa-certificate-action" type="submit">
+Generate
+</button>
+
+
+</div>
+</div>
+</div>
+</form>
+
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

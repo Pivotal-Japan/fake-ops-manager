@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="o6YQoBYauOXemTy5x/zWQwoRKzpa4hgXQNR+ZboSuRBaClN9B+0RWm5K5iHVN/5SunCJeU636zgp+9zas3twVw==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit_059.css" type="text/css" rel="stylesheet">
+</head>
+<body class="forms-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<div class="page-content twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>Pivotal CloudCache</h1>
+</header>
+<ul class="tabs">
+<li class="active">
+<a id="show-configure-action" href="edit_007.html" indepth="true">Settings</a>
+</li>
+<li>
+<a id="show-status-action" href="statuses_005.html" indepth="true">Status</a>
+</li>
+<li>
+<a id="show-credentials-action" href="credentials_006.html" indepth="true">Credentials</a>
+</li>
+<li>
+<a id="show-logs-action" href="jobs_logs_005.html" indepth="true">Logs</a>
+</li>
+</ul>
+
+<section class="three columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="status">
+<a id="show-p-cloudcache-azs-and-network-assignment-action" href="edit_007.html" indepth="true"><i class="fa fa-check-circle"></i>
+Assign Networks
+</a></li>
+<li class="active status">
+<a id="show-settings-action" href="edit_059.html" indepth="true"><i class="fa fa-check-circle"></i>
+Settings
+</a></li>
+<li class="status">
+<a id="show-caching-plan1-action" href="edit_060.html" indepth="true"><i class="fa fa-check-circle"></i>
+Plan 1
+</a></li>
+<li class="status">
+<a id="show-caching-plan2-action" href="edit_061.html" indepth="true"><i class="fa fa-check-circle"></i>
+Plan 2
+</a></li>
+<li class="status">
+<a id="show-caching-plan3-action" href="edit_062.html" indepth="true"><i class="fa fa-check-circle"></i>
+Plan 3
+</a></li>
+<li class="status">
+<a id="show-caching-plan4-action" href="edit_063.html" indepth="true"><i class="fa fa-check-circle"></i>
+Plan 4
+</a></li>
+<li class="status">
+<a id="show-caching-plan5-action" href="edit_064.html" indepth="true"><i class="fa fa-check-circle"></i>
+Plan 5
+</a></li>
+<li class="status">
+<a id="show-product-errands-action" href="edit_065.html" indepth="true"><i class="fa fa-check-circle"></i>
+Errands
+</a></li>
+<li class="status">
+<a id="show-p-cloudcache-resource-sizes-action" href="edit_066.html" indepth="true"><i class="fa fa-check-circle"></i>
+Resource Config
+</a></li>
+<li class="status">
+<a id="show-p-cloudcache-stemcell-assignment-action" href="edit_067.html" indepth="true"><i class="fa fa-check-circle"></i>
+Stemcell
+</a></li>
+</ul>
+</section>
+<section class="content nine columns">
+<form class="new_tempest_form_renderers_form" id="new_tempest_form_renderers_form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/products/p-cloudcache-7a1a66acf0ca1e292c73/forms/settings" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="o6YQoBYauOXemTy5x/zWQwoRKzpa4hgXQNR+ZboSuRBaClN9B+0RWm5K5iHVN/5SunCJeU636zgp+9zas3twVw==" type="hidden"><h2 class="content-title">Configure properties for Pivotal Cloud Cache tile</h2>
+
+<div class="control-group" data-toggle-disabled-fields="">
+<div class="control-group required reverse-hereditary-focus selector">
+<label>Plan to use for smoke test</label>
+<div class="hint">The selected plan will be used to run a smoke test to verify the tile works correctly after installation. You must make sure this plan is enabled, or the errand will fail.</div>
+</div>
+<div class="accordion-group selector-options">
+<label>
+<input name="settings[.properties.errand_plan][value]" id="option_plan1_8ab0126b-b3d6-485d-81d7-e68ee21ada9c" value="plan1" class="accordion-group-radio" checked="checked" type="radio">
+Plan 1
+</label>
+<label>
+<input name="settings[.properties.errand_plan][value]" id="option_plan2_6f211c0b-a634-4f03-892f-3eb4ea42b45b" value="plan2" class="accordion-group-radio" type="radio">
+Plan 2
+</label>
+<label>
+<input name="settings[.properties.errand_plan][value]" id="option_plan3_ce3574c4-1de8-45b0-9395-bf08395056f1" value="plan3" class="accordion-group-radio" type="radio">
+Plan 3
+</label>
+<label>
+<input name="settings[.properties.errand_plan][value]" id="option_plan4_911e3732-13a8-48fc-b07f-7c550b88193c" value="plan4" class="accordion-group-radio" type="radio">
+Plan 4
+</label>
+<label>
+<input name="settings[.properties.errand_plan][value]" id="option_plan5_2015c4ce-de59-4ce2-837e-4480cab08681" value="plan5" class="accordion-group-radio" type="radio">
+Plan 5
+</label>
+</div>
+</div>
+
+
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn btn-primary" id="save-action" type="submit">
+Save
+</button>
+
+
+</div>
+</div>
+</form>
+<form class="modal fade" style="display: none;" id="rsa-certificate-form" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/rsa_certificates" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" value="✓" type="hidden"><div class="modal-header">
+<button class="close" data-dismiss="modal" type="button">
+<i class="fa fa-times-circle"></i>
+</button>
+<h2>
+<i class="fa fa-check"></i>
+Generate RSA Certificate
+</h2>
+</div>
+
+<div class="modal-body">
+<div class="control-group required reverse-hereditary-focus">
+<label class="control-label">Example: *.app.domain.com, *.system.domain.com, my.webapp.com, *.domain.com</label>
+<div class="controls">
+<input name="rsa_certificate[domains]" id="rsa_certificate_domains" autocomplete="off" value="" type="text">
+
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<div class="control-group required reverse-hereditary-focus">
+<div class="controls">
+<button class="btn-tertiary btn" data-dismiss="modal">Cancel</button>
+<button class="btn btn-primary" id="save-rsa-certificate-action" type="submit">
+Generate
+</button>
+
+
+</div>
+</div>
+</div>
+</form>
+
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

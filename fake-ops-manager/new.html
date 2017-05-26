@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="rGr4Yz6r8CrvJBesAnQUvmUlh3gyi/R842rXht4hZdNVxru+L1xZlV/3zTQQvzyv1UQlOybeB1OKRXU510islA==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="new.css" type="text/css" rel="stylesheet">
+</head>
+<body class="saml_identity_providers-page new-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>
+<i class="fa fa-lock fa-fw"></i>
+Settings
+</h1>
+</header>
+<div class="page-content twelve columns">
+<section class="two columns with-sidebar">
+<ul class="sidebar nobullets">
+<li>
+<a href="edit.html" indepth="true">Decryption Passphrase</a>
+</li>
+<li class="active">
+<a href="new.html" indepth="true">Authentication Method</a>
+</li>
+<li>
+<a href="edit_010.html" indepth="true">External API Access</a>
+</li>
+<li>
+<a href="edit_011.html" indepth="true">Proxy Settings</a>
+</li>
+<li>
+<a href="export.html" indepth="true">Export Installation Settings</a>
+</li>
+<li>
+<a href="advanced_tools.html" indepth="true">Advanced</a>
+</li>
+</ul>
+</section>
+<section class="content ten columns">
+<h2>Authentication Settings</h2>
+<p>You are currently using Internal Auth as your Identity Provider.  To switch to SAML, fill in the following form.</p>
+<form class="new_saml_identity_provider" id="new_saml_identity_provider" data-confirm="Saving this form will delete any internal users and switch your identity provider. Some BOSH functionality will not be available until changes are applied. Are you sure you want to proceed?" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/saml_identity_provider" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="rGr4Yz6r8CrvJBesAnQUvmUlh3gyi/R842rXht4hZdNVxru+L1xZlV/3zTQQvzyv1UQlOybeB1OKRXU510islA==" type="hidden">
+<div class="control-group required">
+<label for="saml_identity_provider_decryption_passphrase">Decryption passphrase</label>
+<input name="saml_identity_provider[decryption_passphrase]" id="saml_identity_provider_decryption_passphrase" autocomplete="off" type="password">
+</div>
+<div class="control-group required">
+<label for="saml_identity_provider_saml_idp_metadata">Saml idp metadata</label>
+<textarea placeholder="IDP Metadata (Full URL or XML)" name="saml_identity_provider[saml_idp_metadata]" id="saml_identity_provider_saml_idp_metadata" autocomplete="off"></textarea>
+</div>
+<div class="control-group">
+<label for="saml_identity_provider_bosh_idp_metadata">Bosh idp metadata</label>
+<textarea placeholder="Bosh IDP Metadata (Full URL or XML) - will use same metadata as above if left blank." name="saml_identity_provider[bosh_idp_metadata]" id="saml_identity_provider_bosh_idp_metadata" autocomplete="off"></textarea>
+</div>
+<div class="control-group">
+<label for="saml_identity_provider_create_bosh_admin_client"><input name="saml_identity_provider[create_bosh_admin_client]" value="0" type="hidden"><input value="1" name="saml_identity_provider[create_bosh_admin_client]" id="saml_identity_provider_create_bosh_admin_client" type="checkbox">
+Provision an admin client in the Bosh UAA
+</label></div>
+<div class="control-group">
+<button class="btn btn-primary" id="update-auth-service-action" type="submit">
+Setup SAML
+</button>
+
+</div>
+</form>
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

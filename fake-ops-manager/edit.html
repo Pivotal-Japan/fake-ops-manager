@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta content="0" http-equiv="expires">
+<meta content="text/javascript" http-equiv="Content-Script-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<meta content="IE=Edge,chrome=1" http-equiv="X-UA-Compatible">
+<link href="favicon.png" rel="icon" type="image/png">
+<title>Ops Manager</title>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="pgQMHHxUkj3Q1bIk/1XuygSOq2B9LuFlvXuo/omKQwlfqE/BbaM7gmAGaLztnsbbtO8JI2l7EkrUVApBgOOKTg==">
+
+<script src="application-3f515a698587bf8a738bf1f5f944a2c08fed10676595d017d6de9b2eb2cbd9fb.js"></script>
+
+
+
+<link media="all" href="edit.css" type="text/css" rel="stylesheet">
+</head>
+<body class="encryption_passphrases-page edit-action rails-env-production infrastructure-azure">
+<div class="container">
+<nav class="site-header">
+<a class="logo float-left" href="index.html" id="pivotal_cf_logo" indepth="true">
+<div class="pivotal-logo"></div>
+<div class="operations-manager-logo"></div>
+</a>
+<nav class="nav user-nav float-right">
+<div class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#" id="toggle-account-dropdown">admin</a>
+<ul class="dropdown-menu right-align">
+<li><a id="change-settings-action" href="edit.html" indepth="true">Settings</a></li>
+<li><a href="profile.html" indepth="true">My Account</a></li>
+<li><a id="logout-action" href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/logout">Log out</a></li>
+</ul>
+</div>
+</nav>
+</nav>
+
+
+
+<section class="content-container twelve columns">
+<header class="page-header">
+<a class="link-back" href="index.html" indepth="true"><i class="fa fa-chevron-left"></i>
+Installation Dashboard
+</a><h1>
+<i class="fa fa-lock fa-fw"></i>
+Settings
+</h1>
+</header>
+<div class="page-content twelve columns">
+<section class="two columns with-sidebar">
+<ul class="sidebar nobullets">
+<li class="active">
+<a href="edit.html" indepth="true">Decryption Passphrase</a>
+</li>
+<li>
+<a href="new.html" indepth="true">Authentication Method</a>
+</li>
+<li>
+<a href="edit_010.html" indepth="true">External API Access</a>
+</li>
+<li>
+<a href="edit_011.html" indepth="true">Proxy Settings</a>
+</li>
+<li>
+<a href="export.html" indepth="true">Export Installation Settings</a>
+</li>
+<li>
+<a href="advanced_tools.html" indepth="true">Advanced</a>
+</li>
+</ul>
+</section>
+<section class="content ten columns">
+<h2>Update Decryption Passphrase</h2>
+<form class="new_change_passphrase" id="new_change_passphrase" action="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/encryption_passphrase" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="_method" value="put" type="hidden"><input name="authenticity_token" value="pgQMHHxUkj3Q1bIk/1XuygSOq2B9LuFlvXuo/omKQwlfqE/BbaM7gmAGaLztnsbbtO8JI2l7EkrUVApBgOOKTg==" type="hidden">
+<div class="control-group required">
+<label for="change_passphrase_current_passphrase">Current decryption passphrase</label>
+<input name="change_passphrase[current_passphrase]" id="change_passphrase_current_passphrase" autocomplete="off" type="password">
+</div>
+<div class="control-group required">
+<label for="change_passphrase_new_passphrase">New decryption passphrase</label>
+<input name="change_passphrase[new_passphrase]" id="change_passphrase_new_passphrase" autocomplete="off" type="password">
+</div>
+<div class="control-group required">
+<label for="change_passphrase_new_passphrase_confirmation">New decryption passphrase confirmation</label>
+<input name="change_passphrase[new_passphrase_confirmation]" id="change_passphrase_new_passphrase_confirmation" autocomplete="off" type="password">
+</div>
+<div class="control-group">
+<button class="btn btn-primary" id="update-passphrase-action" type="submit">
+Update
+</button>
+
+</div>
+</form>
+
+</section>
+</div>
+</section>
+
+<footer class="site-footer">
+<span class="version">PCF Ops Manager v1.10.0.0;</span>
+<span>©2013-2017 Pivotal Software, Inc; All Rights Reserved.</span>
+<span class="float-right"><a href="https://pcf-opsman-oph7lhgru7et4.japaneast.cloudapp.azure.com/eula">End User License Agreement</a></span>
+<span class="float-right">&nbsp;|&nbsp;</span>
+<span class="float-right"><a href="docs.html" indepth="true">API Docs</a></span>
+</footer>
+
+
+</div>
+
+
+
+
+
+</body></html>

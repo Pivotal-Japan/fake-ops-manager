@@ -1,0 +1,2331 @@
+<!DOCTYPE html>
+<html class="list-style-none">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+  <meta charset="utf-8">
+  <!-- Always force latest IE rendering engine or request Chrome Frame -->
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  
+  <!-- Use title if it's in the page YAML frontmatter -->
+  <title>
+      Preparing to Deploy PCF on Azure |
+    Pivotal Docs
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link href="favicon.ico" rel="shortcut icon">
+
+  <script src="file://script.crazyegg.com/pages/scripts/0055/2990.js?415109" async="" type="text/javascript"></script><script type="text/javascript" async="" src="munchkin.js"></script><script src="2990.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="ga.js"></script><script src="all_001.js"></script>
+  
+<script type="text/javascript">
+  if (window.location.host === 'docs.pivotal.io') {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39702075-1']);
+    _gaq.push(['_setDomainName', 'pivotal.io']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  }
+</script>
+
+<script type="text/javascript">
+  var blackList = ['acceptance'];
+
+  blackList.forEach(function(blackListedEnv) {
+    if (document.URL.indexOf(blackListedEnv) > -1 && blackListedEnv != "") {
+      $('head').append('<meta name="hashtag" content="PivotalMoment">');
+    }
+  });
+</script>
+
+<!-- CrazyEgg Tracking Script -->
+  <script type="text/javascript">
+  setTimeout(function(){var a=document.createElement("script");
+  var b=document.getElementsByTagName("script")[0];
+  a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0055/2990.js?"+Math.floor(new Date().getTime()/3600000);
+  a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+  </script>
+
+<!-- Munchkin Marketo Script -->
+<script type="text/javascript">
+  (function() {
+    var didInit = false;
+
+    function initMunchkin() {
+      if (didInit === false) {
+        didInit = true;
+        Munchkin.init('625-IUJ-009');
+      }
+    }
+
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = document.location.protocol + '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script><script type="text/javascript" async="" src="file://munchkin.marketo.net/munchkin.js"></script><script type="text/javascript" async="" src="munchkin_001.js"></script>
+
+
+<link media="all" href="azure-prepare-env.css" type="text/css" rel="stylesheet">
+</head>
+<body class="pivotalcf pivotalcf_1-10 pivotalcf_1-10_customizing pivotalcf_1-10_customizing_azure-prepare-env has-subnav">
+
+<div class="viewport">
+  <div class="wrap">
+    <script type="text/javascript">
+      document.domain = "pivotal.io";
+    </script>
+
+      <header class="global-header header header-layout js-bar-links">
+    <a class="pivotal-logo" href="default_001.html" indepth="true">
+    </a>
+    <a href="default_001.html" class="global-header-title" indepth="true">
+      <span class="title-deemph">Pivotal</span> Documentation
+    </a>
+    <div class="btn-menu" data-behavior="MenuMobile"></div>
+    <div class="header-links">
+      <div class="header-item">
+        <a href="https://network.pivotal.io/">Downloads</a>
+      </div>
+      <div class="header-item">
+        <a href="https://support.pivotal.io/" target="_top">Support</a>
+      </div>
+
+      <div class="header-item embedded-searchbar">
+          <form method="get" action="http://docs.pivotal.io/search">
+            <input name="q" placeholder="Search PCF 1.10" class="search-box" value="">
+            <input name="product_name" value="Pivotal Cloud Foundry" type="hidden">
+              <input name="product_version" value="1.10" type="hidden">
+          </form>
+      </div>
+      
+    </div>
+  </header>
+
+
+
+    <div class="container">
+
+      <!--googleoff: index-->
+      <div id="sub-nav" class="nav-container js-sidenav" role="navigation">
+  <a class="sidenav-title" data-behavior="SubMenuMobile">
+    Doc Index
+  </a>
+  <div class="nav-content">
+    
+  <ul>
+    
+      <li class="has_submenu expanded">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/installing/index.html">Installing Pivotal Cloud Foundry</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/config_firewall.html">Preparing Your Firewall for Deploying Pivotal Cloud Foundry</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/iaas-user-roles.html">Pivotal Cloud Foundry IaaS User Role Guidelines</a>
+        
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/cloudform.html">Installing Pivotal Cloud Foundry on AWS</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/cloudform-template.html">Deploying the CloudFormation Template for PCF on AWS</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/cloudform-om-deploy.html">Launching an Ops Manager Director Instance on AWS</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/cloudform-om-config.html">Configuring Ops Manager Director on AWS</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/cloudform-er-config.html">Deploying Elastic Runtime on AWS</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="deleting-aws-install.html" indepth="true">Deleting an AWS Installation from the Console</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="cloudform-iaas-user-roles.html" indepth="true">Guidelines for Creating User Roles on AWS</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="cloudform-om-ebs-config.html" indepth="true">Configuring Amazon EBS Encryption</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/cloudform_elb_ssh_proxy.html">Creating a Proxy ELB for Diego SSH without CloudFormation</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu expanded">
+        <a href="azure.html" indepth="true">Installing Pivotal Cloud Foundry on Azure</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="azure-prepare-env.html" class=" active" indepth="true">Preparing to Deploy PCF on Azure</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/azure-arm-template.html">Launching an Ops Manager Director Instance with an ARM Template</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/azure-om-deploy.html">Launching an Ops Manager Director Instance on Azure without an ARM Template</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/azure-om-config.html">Configuring Ops Manager Director on Azure</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/azure-er-config.html">Deploying Elastic Runtime on Azure</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/azure-gov-cloud.html">Deploying PCF on Azure Government Cloud</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/azure-german-cloud.html">Deploying PCF in Azure Germany</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/azure-troubleshooting.html">Troubleshooting PCF on Azure</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/deleting-azure-install.html">Deleting a PCF on Azure Installation</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/gcp.html">Installing Pivotal Cloud Foundry on GCP</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/gcp-quotas.html">Recommended GCP Quotas</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/gcp-prepare-env.html">Preparing to Deploy PCF on GCP</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/gcp-om-deploy.html">Launching an Ops Manager Director Instance on GCP</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/gcp-om-config.html">Configuring Ops Manager Director on GCP</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/gcp-er-config.html">Deploying Elastic Runtime on GCP</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/deleting-gcp-install.html">Deleting a GCP Installation from the Console</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/gcp-troubleshooting.html">Troubleshooting PCF on GCP</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/openstack.html">Installing Pivotal Cloud Foundry on OpenStack</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/openstack-setup.html">Provisioning the OpenStack Infrastructure</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/openstack-om-config.html">Configuring Ops Manager Director after Deploying PCF on OpenStack</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/openstack-er-config.html">Installing Elastic Runtime after Deploying PCF on OpenStack</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/vsphere.html">Installing Pivotal Cloud Foundry on vSphere</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/deploying-vm.html">Deploying Operations Manager to vSphere</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/vsphere-config.html">Configuring Ops Manager Director for VMware vSphere</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/config-er-vmware.html">Configuring Elastic Runtime for vSphere</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/disk-format.html">Provisioning a Virtual Disk in vSphere</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/nexus-switch.html">Using the Cisco Nexus 1000v Switch with Ops Manager</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/resurrector.html">Using Ops Manager Resurrector on VMware vSphere</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/ssl-term.html">Configuring SSL Termination for vSphere Deployments</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/understand-az.html">Understanding Availability Zones in VMware Installations</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/upgrading-pcf.html">Upgrading Pivotal Cloud Foundry</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/single-component.html">Understanding the Effects of Single Components on a Pivotal Cloud Foundry Upgrade</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/storage_considerations.html">Upgrade Considerations for Selecting Pivotal Cloud Foundry Storage</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/pws_upgrade_load.html">Pivotal Web Services Performance During Upgrade</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/upgrading-products.html">Upgrading Elastic Runtime and Other Pivotal Cloud Foundry Products</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/refarch/index.html">Reference Architecture</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/refarch/aws/aws_ref_arch.html">Pivotal Cloud Foundry on AWS</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/refarch/azure/azure_ref_arch.html">Pivotal Cloud Foundry on Azure</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/refarch/gcp/gcp_ref_arch.html">Pivotal Cloud Foundry on GCP</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/refarch/openstack/openstack_ref_arch.html">Pivotal Cloud Foundry on OpenStack</a>
+        
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/refarch/vsphere/vsphere_ref_arch.html">Pivotal Cloud Foundry on vSphere</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/refarch/vsphere/vsphere_nsx_cookbook.html">NSX Edge Cookbook for Pivotal Cloud Foundry on vSphere</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pcf-dev/index.html">PCF Dev</a>
+        
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/monitoring/index.html">Monitoring Pivotal Cloud Foundry</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/monitoring/kpi.html">Key Performance Indicators</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/monitoring/key-cap-scaling.html">Key Capacity Scaling Indicators</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/monitoring/metrics.html">Configuring a Monitoring System</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/index.html">Using Ops Manager</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/ops-man-api.html">Using Ops Manager API</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/pcf-interface.html">Understanding the Ops Manager Interface</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/add-delete.html">Adding and Deleting Products</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/understanding-stemcells.html">Understanding Floating Stemcells</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/opsmanager-create-bosh-client.html">Creating UAA Clients for BOSH Director</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/custom-load-balancer.html">Using Your Own Load Balancer</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/user-types.html">Understanding Pivotal Cloud Foundry User Types</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/opsman-users.html">Creating and Managing Ops Manager User Accounts</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/creating-account.html">Creating New Elastic Runtime User Accounts</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/console-login.html">Logging in to Apps Manager</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/external-user-management.html">Adding Existing SAML or LDAP Users to a Pivotal Cloud Foundry Deployment</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/modify-ops-man.html">Modifying Your Ops Manager Installation and Product Template Files</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/managing_errands.html">Managing Errands in Ops Manager</a>
+        
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/backup-restore/index.html">Backing Up and Restoring Pivotal Cloud Foundry</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/backup-restore/backup-pcf.html">Backing Up Pivotal Cloud Foundry</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/backup-restore/restore-pcf.html">Restoring Pivotal Cloud Foundry from Backup</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/monitoring.html">Monitoring Virtual Machines in Pivotal Cloud Foundry</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/troubleshooting.html">Pivotal Cloud Foundry Troubleshooting Guide</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/troubleshooting-vsphere.html">Troubleshooting Ops Manager for VMware vSphere</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/mysql_bootstrap_ert.html">Recovering MySQL from Elastic Runtime Downtime</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/trouble-advanced.html">Advanced Troubleshooting with the BOSH CLI</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/index.html">Elastic Runtime Concepts</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/overview.html">Cloud Foundry Overview</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/how-applications-are-staged.html">How Applications are Staged</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/high-availability.html">High Availability in Cloud Foundry</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/roles.html">Orgs, Spaces, Roles, and Permissions</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="security.html" indepth="true">Understanding Cloud Foundry Security</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/container-security.html">Understanding Container Security</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/understand-cf-networking.html">Understanding Container-to-Container Networking</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/asg.html">Understanding Application Security Groups</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/architecture/index.html">Cloud Foundry Components</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="cloud-controller.html" indepth="true">Component: Cloud Controller</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/architecture/messaging-nats.html">Component: Messaging (NATS)</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/architecture/router.html">Component: Gorouter</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/architecture/uaa.html">Component: User Account and Authentication (UAA) Server</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/architecture/garden.html">Component: Garden</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/http-routing.html">Component: HTTP Routing</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/architecture/execution-agent.html">Component: Droplet Execution Agent (for PCF v1.7 and earlier)</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/architecture/dea-algorithm.html">Component: DEA Placement Algorithm (for PCF v1.7 and earlier)</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/architecture/warden.html">Component: Warden (for PCF v1.7 and earlier)</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/diego/diego-architecture.html">Diego Architecture</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/diego/ssh-conceptual.html">Understanding Application SSH</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/concepts/diego/diego-auction.html">How the Diego Auction Allocates Jobs</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/index.html">Operating Elastic Runtime</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/er_network.html">Understanding the Elastic Runtime Network Architecture</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/api-endpoint.html">Identifying the API Endpoint for your Elastic Runtime Instance</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/creating-account.html">Creating New Elastic Runtime User Accounts</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/ssl-term-haproxy.html">Configuring SSL/TLS Termination at HAProxy</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/config-proxy.html">Configuring Proxy Settings for All Applications</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/app-sec-groups.html">Restricting App Access to Internal PCF Components</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/notifications-asg.html">Configuring Application Security Groups for Email Notifications</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/config-ssh.html">Configuring SSH Access for PCF</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/id-jobs.html">Identifying Elastic Runtime Jobs Using vCenter</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/logging-config-opsman.html">Configuring System Logging in Elastic Runtime</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/pw-policy.html">Configuring UAA Password Policy</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/auth-sso.html">Configuring Authentication and Enterprise SSO for Elastic Runtime</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/external-user-management.html">Adding Existing SAML or LDAP Users to a Pivotal Cloud Foundry Deployment</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/switching-domains.html">Switching Application Domains</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/scaling-ert-components.html">Scaling Elastic Runtime</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/scaling-down-mysql.html">Scaling Down Your MySQL Cluster</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/docker-registry.html">Using Docker Registries</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/custom-branding.html">Custom Branding Apps Manager</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/accounting-report.html">Monitoring App and Service Instance Usage</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/accounting-report-apps-man.html">Monitoring Instance Usage with Apps Manager</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/security_config.html">Providing a Certificate for your SSL Termination Point</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/enable-vol-services.html">Enabling NFS Volume Services</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/opsguide/installing-pcf-is.html">Installing PCF Isolation Segment</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/index.html">Administering Elastic Runtime</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/buildpacks.html">Managing Custom Buildpacks</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/custom-stack.html">Adding a Custom Stack</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/docker.html">Using Docker in Cloud Foundry</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/manage-domains-routes.html">Managing Domains and Routes</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/cli-user-management.html">Creating and Managing Users with the cf CLI</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/uaa-user-management.html">Creating and Managing Users with the UAA CLI (UAAC)</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/quota-plans.html">Creating and Modifying Quota Plans</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/notifications.html">Getting Started with the Notifications Service</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/cf-networking.html">Administering Container-to-Container Networking</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="isolation-segments.html" indepth="true">Managing Isolation Segments</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="routing-is.html" indepth="true">Routing Isolation Segments</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="listing-feature-flags.html" indepth="true">Feature Flags</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/start-stop-vms.html">Stopping and Starting Virtual Machines</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/diego-cell-upgrade.html">Managing Diego Cell Limits During Upgrade</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/max-container-starts.html">Setting a Maximum Number of Started Containers</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/enabling_ipv6.html">Enabling IPv6 for Hosted Applications</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/securing-traffic.html">Securing Traffic into Cloud Foundry</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/enabling-tcp-routing.html">Enabling TCP Routing</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/troubleshooting_tcp_routing.html">Troubleshooting TCP Routing</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/supporting-websockets.html">Supporting WebSockets</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/configure-lb-healthcheck.html">Configuring Load Balancer Healthchecks for Cloud Foundry</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/troubleshooting_slow_requests.html">Troubleshooting Slow Requests in Cloud Foundry</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/adminguide/routing-keepalive.html">Router Idle Keepalive Connections</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/windows/index.html">Using PCF Runtime for Windows</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/windows/understand-windows.html">Understanding Windows Cells</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/windows/windows-security.html">Understanding Stemcell Security</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/windows/deploy-windows.html">Deploying PCF Runtime for Windows</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/windows/upgrade-windows.html">Upgrading Windows Cells</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/windows/windows-troubleshooting.html">Troubleshooting Windows Cells</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/windows/push-windows-apps.html">Deploying .NET Apps to Windows Cells</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/console/index.html">Using Apps Manager</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/console/dev-console.html">Getting Started with Apps Manager</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/console/manage-spaces.html">Managing Orgs and Spaces Using Apps Manager</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/console/console-roles.html">Managing User Roles with Apps Manager</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/console/manage-apps.html">Managing Apps and Service Instances Using Apps Manager</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/console/space-asgs.html">Viewing ASGs in Apps Manager</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/console/spring-boot-actuators.html">Configuring Spring Boot Actuator Endpoints for Apps Manager</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/console/using-actuators.html">Using Spring Boot Actuator Endpoints with Apps Manager</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/cf-cli/index.html">Using the Cloud Foundry Command Line Interface (cf CLI)</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/cf-cli/install-go-cli.html">Installing the cf CLI</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/cf-cli/getting-started.html">Getting Started with the cf CLI</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/cf-cli/http-proxy.html">Using the cf CLI with an HTTP Proxy Server</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/cf-cli/self-signed.html">Using the cf CLI with a Self-Signed Certificate</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/cf-cli/use-cli-plugins.html">Using cf CLI Plugins</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/cf-cli/develop-cli-plugins.html">Developing cf CLI Plugins</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/cf-cli/cf-help.html">Cloud Foundry CLI Reference Guide</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/index.html">Deploying Applications</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/prepare-to-deploy.html">Considerations for Designing and Running an Application in the Cloud</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/deploy-app.html">Deploy an Application</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/large-app-deploy.html">Deploy a Large Application</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/start-restart-restage.html">Starting, Restarting, and Restaging Applications</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/app-lifecycle.html">Application Container Lifecycle</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/routes-domains.html">Routes and Domains</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/stacks.html">Changing Stacks</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/manifest.html">Deploying with Application Manifests</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/healthchecks.html">Using Application Health Checks</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/cf-scale.html">Scaling an Application Using cf scale</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/using-tasks.html">Running Tasks</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/environment-variable.html">Cloud Foundry Environment Variables</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/blue-green.html">Using Blue-Green Deployment to Reduce Downtime and Risk</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/troubleshoot-app-health.html">Troubleshooting Application Deployment and Health</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/app-ssh-overview.html">Application SSH Overview</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="ssh-apps.html" indepth="true">Accessing Apps with SSH</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="ssh-services.html" indepth="true">Accessing Services with SSH</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/trusted-system-certificates.html">Trusted System Certificates</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/capi/client-libraries.html">Cloud Controller API Client Libraries</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/services/application-binding.html">Delivering Service Credentials to an Application</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/services/managing-services.html">Managing Service Instances</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/services/service-keys.html">Managing Service Keys</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/services/user-provided.html">User-Provided Service Instances</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/services/log-management.html">Streaming Application Logs to Log Management Services</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/services/log-management-thirdparty-svc.html">Service-Specific Instructions for Streaming Application Logs</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/services/integrate-splunk.html">Streaming Application Logs to Splunk</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/services/fluentd.html">Streaming Application Logs with Fluentd</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/services/play-service-bindings.html">Configuring Play Framework Service Connections</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/services/migrate-db.html">Migrating a Database in Cloud Foundry</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/services/using-vol-services.html">Using an External Filesystem (Volume Services)</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/security/index.html">Security (BETA)</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/security/concepts/index.html">Security Concepts</a>
+        
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/security/process/index.html">PCF Security Processes</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/security/process/pcf-security.html">Pivotal Cloud Foundry Security Overview and Policy</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/security/process/security-lifecycle.html">PCF Testing, Release, and Security Lifecycle</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/security/identity/index.html">Identity Management</a>
+        
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/security/pcf-infrastructure/index.html">PCF Infrastructure Security</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/security/pcf-infrastructure/api-cert-rotation.html">Rotating Non-Configurable TLS/SSL Certificates</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/security/pcf-infrastructure/stemcell-hardening.html">Stemcell Hardening FAQ</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/security/networking/index.html">Network Security</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="tls-info.html" indepth="true">TLS Connections in PCF Deployments</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="">
+        <a href="default_005.html" indepth="true">Security-Related PCF Tiles</a>
+        
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/security/security-adjacent/index.html">Other Security Topics</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="security-guidelines-iaas.html" indepth="true">Security Guidelines for Your IaaS Provider</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="default_006.html" indepth="true">Buildpacks</a>
+        
+  <ul>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/using-buildpacks.html">About Buildpacks</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/detection.html">Buildpack Detection</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/proxy-usage.html">Proxy Usage</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/supported-binary-dependencies.html">Supported Binary Dependencies</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/prod-server.html">Production Server Configuration</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/binary/index.html">Binary</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/go/index.html">Go</a>
+        
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/java/index.html">Java</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/java/gsg-grails.html">Getting Started Deploying Grails Apps</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/java/gsg-ratpack.html">Getting Started Deploying Ratpack Apps</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/java/gsg-spring.html">Getting Started Deploying Spring Apps</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/java/java-tips.html">Tips for Java Developers</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/java/grails-service-bindings.html">Configuring Service Connections for Grails</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/java/play-service-bindings.html">Configuring Service Connections for Play</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/java/spring-service-bindings.html">Configuring Service Connections for Spring</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/java/sts.html">Cloud Foundry Eclipse Plugin</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/java/java-client.html">Cloud Foundry Java Client Library</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/java/bosh_custom_trusted_certs.html">BOSH Configured Custom Trusted Certificate Support</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/dotnet-core/index.html">.NET Core</a>
+        
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/node/index.html">Node.js</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/node/node-tips.html">Tips for Node.js Developers</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/node/node-environment.html">Environment Variables Defined by the Node Buildpack</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/node/node-service-bindings.html">Configuring Service Connections for Node</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/php/index.html">PHP</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/php/gsg-php-composer.html">Composer</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/php/gsg-php-sessions.html">Sessions</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/php/gsg-php-newrelic.html">New Relic</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/php/gsg-php-config.html">Configuration</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/php/gsg-php-usage.html">Deploying and Developing PHP Apps</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/php/gsg-php-tips.html">Tips for PHP Developers</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/python/index.html">Python</a>
+        
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/ruby/index.html">Ruby</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/ruby/gsg-ruby.html">Getting Started Deploying Ruby Apps</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/ruby/gsg-ror.html">Getting Started Deploying Ruby on Rails Apps</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/ruby/sample-ror.html">Deploying a Sample Ruby on Rails App</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/ruby/rake-config.html">Configuring Rake Tasks for Deployed Apps</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/ruby/ruby-tips.html">Tips for Ruby Developers</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/ruby/ruby-environment.html">Environment Variables Defined by the Ruby Buildpack</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/ruby/ruby-service-bindings.html">Configuring Service Connections for Ruby</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/staticfile/index.html">Staticfile</a>
+        
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/developing-buildpacks.html">Developing Buildpacks</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/custom.html">Custom Buildpacks</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/depend-pkg-offline.html">Packaging Dependencies for Offline Buildpacks</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/merging_upstream.html">Merging from Upstream Buildpacks</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/upgrading_dependency_versions.html">Upgrading Dependency Versions</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/buildpack-ci-index.html">CF Buildpack Team CI</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/releasing_a_new_buildpack_version.html">Releasing a New Buildpack Version</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/buildpacks/updating-buildpack-related-gems.html">Updating Buildpack-related Gems</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/services/index.html">Custom Services</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/services/overview.html">Overview</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/services/api.html">Service Broker API</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/services/release-notes.html">Service Broker API Release Notes</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/services/managing-service-brokers.html">Managing Service Brokers</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/services/access-control.html">Access Control</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/services/catalog-metadata.html">Catalog Metadata</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/services/dashboard-sso.html">Dashboard Single Sign-On</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/services/examples.html">Example Service Brokers</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/services/binding-credentials.html">Binding Credentials</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/services/app-log-streaming.html">Application Log Streaming</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="route-services.html" indepth="true">Route Services</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="supporting-multiple-cf-instances.html" indepth="true">Supporting Multiple Cloud Foundry Instances</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/loggregator/index.html">Logging and Metrics</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/loggregator/architecture.html">Overview of the Loggregator System</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/loggregator/log-ops-guide.html">Loggregator Guide for Cloud Foundry Operators</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/devguide/deploy-apps/streaming-logs.html">Application Logging in Cloud Foundry</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/loggregator/cc-uaa-logging.html">Security Event Logging for Cloud Controller and UAA</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/loggregator/nozzle-tutorial.html">Deploying a Nozzle to the Loggregator Firehose</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/loggregator/data-sources.html">Cloud Foundry Data Sources</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/loggregator/cli-plugin.html">Installing the Loggregator Plugin for cf CLI</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+      <li class="has_submenu">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/pcf-release-notes/index.html">Release Notes</a>
+        
+  <ul>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/pcf-release-notes/runtime-rn.html">Pivotal Elastic Runtime Release Notes</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/pcf-release-notes/opsmanager-rn.html">Pivotal Operations Manager Release Notes</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/pcf-release-notes/windows-rn.html">PCF Runtime for Windows Release Notes</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/pcf-release-notes/segment-rn.html">PCF Isolation Segment Release Notes</a>
+        
+
+      </li>
+    
+      <li class="">
+        <a href="http://docs.pivotal.io/pivotalcf/1-10/pcf-release-notes/stemcell-rn.html">Stemcell Release Notes</a>
+        
+
+      </li>
+    
+  </ul>
+
+
+      </li>
+    
+  </ul>
+
+
+  </div>
+</div>
+
+      <!--googleon: index-->
+
+      <main class="content content-layout" id="js-content" role="main">
+        <a id="top"></a>
+          <div class="local-header title-container">
+    <div class="local-header version-info">
+      LATEST VERSION: 1.10 - <a href="default_003.html" indepth="true">CHANGELOG</a>
+    </div>
+    <div class="local-header local-title clearfix">
+      <img src="cloud_rings.png">
+      <span class="local-header-title">Pivotal Cloud Foundry
+      </span>
+      <span class="local-header local-version header-dropdown">
+        <a class="local-header header-dropdown-link">v1.10</a>
+        <span class="local-header header-dropdown-content">
+          <ul>
+                <li>
+                    <a href="https://docs.pivotal.io/pivotalcf/1-9/customizing/azure-prepare-env.html">v1.9</a>
+                </li>
+                <li>
+                    <a href="https://docs.pivotal.io/pivotalcf/1-8/customizing/azure-prepare-env.html">v1.8</a>
+                </li>
+                <li>
+                    <a href="http://docs.pivotal.io/archives/pcf-docs-1.7.pdf">v1.7</a>
+                </li>
+                <li>
+                    <a href="http://docs.pivotal.io/archives/pcf-docs-1.6.pdf">v1.6</a>
+                </li>
+                <li>
+                    <a href="http://docs.pivotal.io/archives/pcf-docs-1.5.pdf">v1.5</a>
+                </li>
+                <li>
+                    <a href="http://docs.pivotal.io/archives/pcf-docs-1.4.pdf">v1.4</a>
+                </li>
+                <li>
+                    <a href="http://docs.pivotal.io/archives/pcf-docs-1.3.pdf">v1.3</a>
+                </li>
+                <li>
+                    <a href="http://docs.pivotal.io/archives/pcf-docs-1.2.pdf">v1.2</a>
+                </li>
+          </ul>
+        </span>
+      </span>
+
+      <!-- search was here -->
+    </div>
+    <div class="local-header local-header-links">
+        <a href="https://network.pivotal.io/">Download</a>
+        <a href="new_001.html" indepth="true">Ask for Help</a>
+        <a href="200072648-pivotal-cf-knowledge-base.html" indepth="true">PCF Knowledge Base</a>
+        <a href="http://docs.pivotal.io/archives/pcf-docs-1.10.pdf">PDF</a>
+    </div>
+  </div>
+
+          <h1 class="title-container">
+    Preparing to Deploy PCF on Azure
+  </h1>
+
+          <div id="js-quick-links">
+            <div class="quick-links"><ul>
+<li><a href="#install">Step 1: Install and Configure the Azure CLI</a></li>
+<li><a href="#default-subscription">Step 2: Set Your Default Subscription</a></li>
+<li><a href="#create-aad">Step 3: Create an Azure Active Directory (AAD) Application</a></li>
+<li><a href="#create-configure">Step 4: Create and Configure a Service Principal</a></li>
+<li><a href="#verify-your-service-principal">Step 5: Verify Your Service Principal</a></li>
+</ul></div>
+          </div>
+        <div class="sticky-wrapper"><div class="sticky-wrapper"><div class="to-top" id="js-to-top">
+          <a href="#top" title="back to top"></a>
+        </div></div></div>
+        <p><strong>Page last updated: <span data-behavior="DisplayModifiedDate" data-modified-date="1487113369000">February 15, 2017</span></strong>
+</p>
+
+<p>This topic describes how to prepare to deploy Pivotal Cloud Foundry (PCF) on Azure by creating a service principal to access resources in your Azure subscription. </p>
+
+<p>After you complete this procedure, follow the instructions in either the <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/azure-arm-template.html">Launching an Ops Manager Director Instance with an ARM Template</a> topic or the <a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/azure-om-deploy.html">Launching an Ops Manager Director Instance on Azure without an ARM Template</a> topic.</p>
+
+<h2><a id="install"></a> Step 1: Install and Configure the Azure CLI</h2>
+
+<ol>
+<li><p>Use the <code>azure --version</code> command to verify you have installed Azure CLI v0.10.5 or higher.
+</p><pre class="terminal">$ azure --version</pre> 
+If you have the correct version of the Azure CLI installed, skip the next step.<p></p></li>
+<li><p>To install a new or updated Azure CLI, follow the instructions for your operating system: </p>
+
+<ul>
+<li><strong>Mac OS X</strong>: <a href="http://aka.ms/mac-azure-cli">Download</a> and run the <strong>Mac OS X Azure CLI</strong> installer.</li>
+<li><strong>Windows</strong>: <a href="http://aka.ms/webpi-azure-cli">Download</a> and run the <strong>Windows Azure CLI</strong> installer. Use the command line, not PowerShell, to run the Azure CLI.</li>
+<li><strong>Linux</strong>: 
+
+<ol>
+<li>If not already installed, install Node.js and npm. </li>
+<li><a href="http://aka.ms/linux-azure-cli">Download</a> the Linux Azure CLI tar file. </li>
+<li>Run <code>sudo npm install -g PATH-TO-TAR-FILE</code>.</li>
+<li>If you encounter the error <code>/usr/bin/env: node: No such file or directory</code> when running <code>azure</code> commands, run <code>sudo ln -s /usr/bin/nodejs /usr/bin/node</code>.</li>
+</ol></li>
+</ul></li>
+<li><p>Set the mode of the Azure CLI to Azure Resource Management:</p>
+
+<pre class="terminal">$ azure config mode arm
+</pre></li>
+<li><p>Log in to your Azure account:</p>
+
+<pre class="terminal">$ azure login --environment AzureCloud
+</pre>
+
+<p class="note"><strong>Note</strong>: To target the Azure China environment, replace <code>AzureCloud</code> with <code>AzureChinaCloud</code>. If logging in to <code>AzureChinaCloud</code> fails with a <code>CERT_UNTRUSTED</code> <a href="https://github.com/Azure/azure-xplat-cli/issues/2725">error</a>, use the latest version of node, 4.x or later.</p></li>
+</ol>
+
+<h2><a id="default-subscription"></a> Step 2: Set Your Default Subscription</h2>
+
+<ol>
+<li><p>Run <code>azure account list --json</code> to list your Azure subscriptions:</p>
+
+<pre class="terminal">$ azure account list --json
+[
+ {
+  "id": "12345678-1234-5678-1234-567891234567",
+  "name": "Sample Subscription",
+  "user": {
+    "name": "Sample Account",
+    "type": "user"
+ },
+  "tenantId": "11111111-1234-5678-1234-678912345678",
+  "state": "Enabled",
+  "isDefault": true,
+  "registeredProviders": [],
+  "environmentName": "AzureCloud"
+},      
+{
+  "id": "87654321-1234-5678-1234-678912345678",
+  "name": "Sample Subscription1",
+  "user": {
+    "name": "Sample Account1",
+    "type": "user"
+ },
+  "tenantId": "22222222-1234-5678-1234-678912345678",
+  "state": "Enabled",
+  "isDefault": false,
+  "registeredProviders": [],
+  "environmentName": "AzureCloud"
+ }
+]
+</pre></li>
+<li><p>Locate your default subscription by finding the subscription with <strong>isDefault</strong> set to <code>true</code>. If your default subscription is not where you want to deploy PCF, run <code>azure account set SUBSCRIPTION_ID</code> to set a new default, where <code>SUBSCRIPTION_ID</code> is the value of the <strong>id</strong> field. For example: <code>"87654321-1234-5678-1234-567891234567"</code>.</p>
+
+<pre class="terminal">$ azure account set SUBSCRIPTION_ID
+info:  Executing command account set
+info:  Setting subscription to "Sample Subscription" with id "SUBSCRIPTION-ID".
+info:  Changes saved
+info:  account set command OK
+</pre></li>
+<li><p>Record the value of the <strong>id</strong> set as the default. You use this value in future configuration steps.</p></li>
+<li><p>Record the value of <strong>tenantID</strong> for your default subscription. This is your <code>TENANT_ID</code> for creating a service principal. If your <strong>tenantID</strong> value is not defined, you may be using a personal account to log in to your Azure subscription.</p></li>
+</ol>
+
+<h2><a id="create-aad"></a> Step 3: Create an Azure Active Directory (AAD) Application</h2>
+
+<ol>
+<li><p>Run the following command to create an AAD application, replacing <code>PASSWORD</code> with a password of your choice. This is your <code>CLIENT_SECRET</code> for creating a service principal. 
+</p><pre class="terminal">$ azure ad app create --name "Service Principal for BOSH" \
+--password "PASSWORD" --home-page "<span>http:</span>//BOSHAzureCPI" \
+--identifier-uris "<span>http</span>://BOSHAzureCPI"
+</pre>
+<p class="note"><strong>Note</strong>: You can provide any string for the <code>home-page</code> and <code>identifier-uris</code> flags, but the value of <code>identifer-uris</code> must be unique within the organization associated with your Azure subscription. For the <code>home-page</code>, Pivotal recommends using <code><span>http:</span>//BOSHAzureCPI</code>, as shown in the example above.
+</p><p></p></li>
+<li><p>Record the value of <strong>AppId</strong> from the output. This is your <code>APPLICATION_ID</code> for creating a service principal. 
+</p><pre class="terminal">info:    Executing command ad app create
+<span>+</span> Creating application Service Principal for BOSH
+data:    AppId:                   246e4af7-75b5-494a-89b5-363addb9f0fa
+data:    ObjectId:                208096bb-4899-49e2-83ea-1a270154f427
+data:    DisplayName:             Service Principal for BOSH
+data:    IdentifierUris:          0=<span>http</span>://BOSHAzureCPI
+data:    ReplyUrls:
+data:    AvailableToOtherTenants:  False
+info:    ad app create command OK
+</pre><p></p></li>
+</ol>
+
+<h2><a id="create-configure"></a> Step 4: Create and Configure a Service Principal</h2>
+
+<ol>
+<li><p>To create a service principal, run <code>azure ad sp create --applicationId YOUR-APPLICATION-ID</code>, replacing <code>YOUR-APPLICATION-ID</code> with the <code>APPLICATION_ID</code> you recorded in the <a href="#create-aad">previous step</a>:</p>
+
+<pre class="terminal">$ azure ad sp create --applicationId YOUR-APPLICATION-ID
+info:    Executing command ad sp create
+<span>+</span> Creating service principal for application YOUR-APPLICATION-ID
+data:    Object Id:               fcf68d7a-262b-42c4-8ef8-6a4856611155
+data:    Display Name:            Service Principal for BOSH
+data:    Service Principal Names:
+data:                             YOUR-APPLICATION-ID
+data:                             http://BOSHAzureCPI
+info:    ad sp create command OK
+</pre></li>
+<li><p>You must have the Contributor role on your service principal to deploy PCF. Run the following command to assign this role:
+</p><pre class="terminal">$ azure role assignment create --spn "SERVICE-PRINCIPAL-NAME" \
+--roleName "Contributor" --subscription SUBSCRIPTION-ID
+</pre><p></p>
+
+<ul>
+<li>For <strong>SERVICE-PRINCIPAL-NAME</strong>: Use any value of <strong>Service Principal Names</strong> from the output above, such as <code>YOUR-APPLICATION-ID</code>.</li>
+<li>For <strong>SUBSCRIPTION-ID</strong>: Use the ID of the default subscription that you recorded in <a href="#default-subscription">Step 2</a>.</li>
+</ul>
+
+<p class="note"><strong>Note</strong>: If you need to use multiple resource groups for your PCF deployment on Azure, you can define custom roles for your Service Principal. These roles allow BOSH to deploy PCF to pre-existing network resources outside the PCF resource group. For more information, see <a href="http://docs.pivotal.io/pivotalcf/1-10/refarch/azure/azure_ref_arch.html#multiple_resource_groups">Reference Architecture for Pivotal Cloud Foundry on Azure</a>.</p>
+
+<p>For more information about Azure Role-Based Access Control, refer to <a href="https://azure.microsoft.com/en-us/documentation/articles/role-based-access-built-in-roles/">RBAC: Built-in roles</a>.</p></li>
+<li><p>Verify the assignment by running the following command:</p>
+
+<pre class="terminal">$ azure role assignment list --spn "SERVICE-PRINCIPAL-NAME"
+
+info:    Executing command role assignment list
+<span>+</span> Searching for role assignments
+data:    RoleAssignmentId     : /subscriptions/112a3bbc-44de-56ff-a7b8-9a012bbc3456/providers/Microsoft.Authorization/roleAssignments/061581af-118b-45e9-95a5-4e4ccf22c75d
+data:    RoleDefinitionName   : Contributor
+data:    RoleDefinitionId     : b24988ac-6180-42a0-ab88-20f7382dd24c
+data:    Scope                : /subscriptions/112a3bbc-44de-56ff-a7b8-9a012bbc3456
+data:    Display Name         : Service Principal for BOSH
+data:    SignInName           : undefined
+data:    ObjectId             : 11b11a1-11c1-1111-a222-3df3f33e333f
+data:    ObjectType           : ServicePrincipal
+data:
+info:    role assignment list command OK
+</pre></li>
+</ol>
+
+<h2><a id="verify-your-service-principal"></a> Step 5: Verify Your Service Principal</h2>
+
+<p>To verify your service principal, log in to your service principal with your <code>APPLICATION_ID</code>, <code>CLIENT_SECRET</code>, and <code>TENANT_ID</code>. Replace <code>YOUR-ENVIRONMENT</code> with <code>AzureCloud</code> or <code>AzureChinaCloud</code>.
+</p><pre class="terminal">$ azure login --username APPLICATION_ID --password CLIENT_SECRET \
+--service-principal --tenant TENANT_ID --environment YOUR-ENVIRONMENT
+info:    Executing command login
+-info:    Added subscription Example
+<span>+</span>
+info:    login command OK
+</pre><p></p>
+
+<p>If you cannot log in, the service principal is invalid. Create a new service principal and try again.</p>
+
+<p>After you complete this topic, continue to one of the following topics:</p>
+
+<ul>
+<li><a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/azure-arm-template.html">Launching an Ops Manager Director Instance with an ARM Template</a>: Perform the procedures in this topic to deploy Ops Manager Director with an Azure Resource Manager (ARM) template. Pivotal recommends using an ARM template.</li>
+<li><a href="http://docs.pivotal.io/pivotalcf/1-10/customizing/azure-om-deploy.html">Launching an Ops Manager Director Instance on Azure without an ARM Template</a>: Perform the procedures in this topic to deploy Ops Manager Director manually.</li>
+</ul>
+
+        <div><a id="repo-link" href="http://github.com/pivotal-cf/docs-pcf-install/tree/1.10/azure-prepare-env.html.md.erb">Create a pull request or raise an issue on the source for this page in GitHub</a></div>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<div id="scrim"></div>
+
+<div class="container">
+  <footer class="site-footer-links">
+    <div class="copyright">
+  <a href="https://pivotal.io/privacy-policy">Privacy Policy</a> | 
+  <a href="https://pivotal.io/terms-of-use">Terms of Use</a><br>
+  <a href="default_001.html" indepth="true">Pivotal Documentation</a>
+  © 2017 <a href="https://pivotal.io/">Pivotal Software</a>, Inc. All Rights Reserved.
+</div>
+<div class="support">
+  Need help? <a href="https://support.pivotal.io/" target="_top">Visit Support</a>
+</div>
+
+  </footer>
+</div><!--end of container-->
+
+
+
+
+
+</body></html>
